@@ -1,0 +1,336 @@
+.features-section {
+  position: relative;
+  background: #fff;
+  padding: 100px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.features-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.features-content h6 {
+  color: #0063da;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.features-content h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.feature-box {
+  display: flex;
+  gap: 25px;
+  padding: 25px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background: #fff;
+  cursor: pointer;
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.feature-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 24px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.feature-box:hover .feature-icon {
+  transform: rotateY(180deg);
+}
+
+.feature-text h4 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 12px;
+}
+
+.feature-text p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.learn-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  background: #0063da;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  background: #0051b3;
+}
+
+.learn-more-btn .btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.learn-more-btn:hover .btn-icon {
+  transform: translateX(5px);
+}
+
+.features-image {
+  position: relative;
+}
+
+.image-wrapper {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.features-image img {
+  width: 100%;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.image-container {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+.features-image img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.5s ease;
+}
+
+.features-image:hover img {
+  transform: scale(1.05);
+}
+
+.floating-card {
+  position: absolute;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.floating-card.top {
+  top: 30px;
+  left: -25px;
+  min-width: 200px;
+}
+
+.floating-card.bottom {
+  bottom: 30px;
+  right: -25px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  display: flex;
+  gap: 30px;
+}
+
+.card-icon {
+  width: 50px;
+  height: 50px;
+  background: #0063da;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content .number {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1;
+}
+
+.card-content .text {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat .number {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0063da;
+  line-height: 1;
+}
+
+.stat .label {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  margin-top: 8px;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.experience-badge {
+  position: absolute;
+  top: 30px;
+  left: -20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.experience-badge .number {
+  display: block;
+  font-size: 36px;
+  font-weight: 700;
+  color: #0063da;
+  line-height: 1;
+}
+
+.experience-badge .text {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.stats-card {
+  position: absolute;
+  bottom: 30px;
+  right: -20px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 20px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: #0063da;
+}
+
+.stat-label {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+}
+
+@media (max-width: 1024px) {
+  .features-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .features-content h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-card {
+    position: relative;
+    right: 0;
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+  .experience-badge {
+    left: 20px;
+  }
+
+  .feature-box {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .features-content h2 {
+    font-size: 28px;
+  }
+
+  .floating-card.top {
+    left: 20px;
+  }
+  
+  .floating-card.bottom {
+    right: 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .features-image img {
+    height: 400px;
+  }
+}
