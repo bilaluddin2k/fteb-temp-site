@@ -7,6 +7,7 @@ import {
   faInstagram 
 } from '@fortawesome/free-brands-svg-icons'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import logo from "../../assets/images/image.jpeg"
 
 const Footer = () => {
   return (
@@ -16,8 +17,7 @@ const Footer = () => {
           <div className="footer-widgets">
             <div className="footer-widget about-widget">
               <div className="footer-logo">
-                {/* <img src={logo || "/placeholder.svg"} alt="Mitech" /> */}
-                Ftechtab
+                     <img src={logo} alt="Mitech Logo" className="logo-icon" />
               </div>
               <p>We are leading technology solutions providing company all over the world doing over 40 years.</p>
               <div className="social-links">
