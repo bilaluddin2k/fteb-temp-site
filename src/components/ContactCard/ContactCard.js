@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./ContactCard.css";
+import "./ContactCard.scss";
 import contactGuy from "../../assets/contact-guy.png";
 
 const ContactCard = () => {

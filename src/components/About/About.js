@@ -1,4 +1,4 @@
-import "./About.css"
+import "./About.scss"
 import aboutImage from "../../assets/images/Screenshot 2025-05-12 185016.png"
 
 const About = () => {

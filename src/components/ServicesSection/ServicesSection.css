@@ -93,7 +93,7 @@
 }
 
 .service-card:hover .icon-wrapper {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgb(248, 248, 248);
   transform: scale(1.1) rotate(5deg);
   animation: floatAnimation 3s ease-in-out infinite;
 }

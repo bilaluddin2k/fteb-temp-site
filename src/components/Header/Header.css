@@ -5,7 +5,7 @@
   right: 0;
   z-index: 1000;
   background: transparent;
-  transition: all 0.3sz ease;
+  transition: all 0.3s ease;
 }
 
 .header .nav-link {

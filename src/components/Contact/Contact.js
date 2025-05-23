@@ -1,7 +1,10 @@
 "use client"
 
-import { useState } from "react"
-import "./Contact.css"
+import { useState, useRef } from "react"
+import "./Contact.scss"
+import emailjs from '@emailjs/browser'
+import ReCAPTCHA from "react-google-recaptcha"
+import { EMAILJS_CONFIG } from '../../config/email'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { 
   faMapMarkerAlt, 
@@ -17,6 +20,12 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 
 const Contact = () => {
+  const form = useRef()
+  const recaptchaRef = useRef()
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
+  const [success, setSuccess] = useState("")
+  const [recaptchaValue, setRecaptchaValue] = useState(null)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -32,17 +41,45 @@ const Contact = () => {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleRecaptchaChange = (value) => {
+    setRecaptchaValue(value)
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log("Form submitted:", formData)
-    // Here you would typically send the data to a server
-    alert("Message sent successfully!")
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    })
+    setLoading(true)
+    setError("")
+    setSuccess("")
+
+    if (!recaptchaValue) {
+      setError("Please complete the reCAPTCHA verification")
+      setLoading(false)
+      return
+    }
+
+    try {
+      await emailjs.sendForm(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        form.current,
+        EMAILJS_CONFIG.PUBLIC_KEY
+      )
+
+      setSuccess("Message sent successfully!")
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      })
+      recaptchaRef.current.reset()
+      setRecaptchaValue(null)
+    } catch (error) {
+      setError("Failed to send message. Please try again.")
+      console.error("EmailJS error:", error)
+    } finally {
+      setLoading(false)
+    }
   }
 
   const contactInfo = [
@@ -91,7 +128,7 @@ const Contact = () => {
     <section className="contact section bg-light">
       <div className="container">
         <div className="section-title">
-          <h6>CONTACT US</h6>
+          <h6 className="titless">CONTACT US</h6>
           <h2>Get in Touch</h2>
           <p className="para">Have questions or need assistance? Our team is here to help you with any inquiries.</p>
         </div>
@@ -99,25 +136,16 @@ const Contact = () => {
         <div className="contact-wrapper">
           <div className="contact-infos">
             <h3>Contact Information</h3>
-
             <div className="info-list">
               {contactInfo.map((info, index) => (
-                <div key={index} className="info-item">
-                  <div className="info-icon">
+                <div className="info-item" key={index}>
+                  <div className="icon">
                     <FontAwesomeIcon icon={info.icon} />
                   </div>
                   <div className="info-content">
-                    <h4>{info.title}</h4>
+                    <h6>{info.title}</h6>
                     {info.isEmail ? (
-                      <p>
-                        <a 
-                          href={`mailto:${info.content}`}
-                          className="email-link"
-                          title="Click to send email"
-                        >
-                          {info.content}
-                        </a>
-                      </p>
+                      <a href={`mailto:${info.content}`}>{info.content}</a>
                     ) : (
                       <p>{info.content}</p>
                     )}
@@ -125,65 +153,96 @@ const Contact = () => {
                 </div>
               ))}
             </div>
-
             <div className="social-links">
-              <h4>Follow Us</h4>
-              <div className="social-iconss">
-                {socialLinks.map((social, index) => (
-                  <a 
-                    key={index}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.label}
-                  >
-                    <FontAwesomeIcon icon={social.icon} />
-                  </a>
-                ))}
-              </div>
+              {socialLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                >
+                  <FontAwesomeIcon icon={link.icon} />
+                </a>
+              ))}
             </div>
           </div>
 
-          <div className="contact-form-wrapper">
-            <h3>Send Us a Message</h3>
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="name">Your Name</label>
-                  <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="email">Your Email</label>
-                  <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
-                </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="subject">Subject</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="message">Your Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" className="btn btn-primary">
-                Send Message <FontAwesomeIcon icon={faPaperPlane} />
-              </button>
-            </form>
-          </div>
+          <form ref={form} onSubmit={handleSubmit} className="contact-form">
+            {error && <div className="alert alert-error">{error}</div>}
+            {success && <div className="alert alert-success">{success}</div>}
+            
+            <div className="form-group">
+              <label htmlFor="name">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="email">Your Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="subject">Subject</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows="5"
+              ></textarea>
+            </div>
+
+            <div className="form-group">
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={EMAILJS_CONFIG.RECAPTCHA_SITE_KEY}
+                onChange={handleRecaptchaChange}
+              />
+            </div>
+
+            <button 
+              type="submit" 
+              className="submit-btn"
+              disabled={loading}
+            >
+              {loading ? (
+                "Sending..."
+              ) : (
+                <>
+                  <FontAwesomeIcon icon={faPaperPlane} className="btn-icon" />
+                  Send Message
+                </>
+              )}
+            </button>
+          </form>
         </div>
       </div>
     </section>

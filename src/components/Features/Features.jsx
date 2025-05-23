@@ -1,4 +1,4 @@
-import "./Features.css"
+import "./Features.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { 
   faDesktop, 
@@ -20,13 +20,13 @@ const Features = () => {
       icon: faGears,
       title: "Cloud Operations & Management",
       description: "From deployment to continuous optimization, we manage your cloud services with best practices in automation, governance, and performance monitoring.",
-      color: "#FF5630"
+      color: "#0063da"
     },
     {
       icon: faShieldHalved,
       title: "Cloud Security & Compliance",
       description: "Our team ensures your infrastructure is protected with enterprise-grade security, active threat monitoring, data backup strategies, and compliance readiness.",
-      color: "#36B37E"
+      color: "#4C9AFF"
     },
   ]
 

@@ -29,7 +29,7 @@ const services = [
   {
     icon: faSitemap,
     title: "Infrastructure Plan",
-    desc: "Mitech takes into account all conditions and budgets needed for building infrastructure plan."
+    desc: "Fteb takes into account all conditions and budgets needed for building infrastructure plan."
   },
   {
     icon: faLock,

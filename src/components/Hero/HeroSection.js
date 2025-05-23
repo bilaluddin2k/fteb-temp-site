@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import "./../../components/Hero/HeroSection.css"
 import headphone from "../../assets/images/headphone.png"
-import laptop from "../../assets/134036.jpg"
+import laptop from "../../assets/images/1693.jpg"
 import mouse from "../../assets/images/mouse.png"
 import watch from "../../assets/images/watch.png"
 import keyboard from "../../assets/images/keyboard.png"

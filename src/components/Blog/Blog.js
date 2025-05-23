@@ -1,4 +1,4 @@
-import "./Blog.css"
+import "./Blog.scss"
 import BlogCard from "./BlogCard"
 import blog1 from "../../assets/blog-1.jpg"
 import blog2 from "../../assets/blog-2.jpg"

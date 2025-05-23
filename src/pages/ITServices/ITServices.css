@@ -109,9 +109,7 @@
   transition: all 0.3s ease;
 }
 
-.service-card:hover .icon-container {
-  background: #007bff;
-}
+
 
 .service-icon {
   font-size: 1.8rem !important;
@@ -179,7 +177,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(0, 123, 255, 0.1);
+  background: #d3d4d67c;
   transition: all 0.3s ease;
 }
 
@@ -195,7 +193,7 @@
 }
 
 .service-card:hover .service-arrow {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgb(2, 61, 255);
   transform: translateX(5px);
 }
 
