@@ -16,7 +16,6 @@ const Resolution = () => {
       <CaseStudies />
       <Features />
 <ServicesSection/>
-      <Testimonials />
       <Contact />
     </div>
   );

@@ -48,6 +48,7 @@
 }
 
 .testimonials-slider {
+  display: none;
   max-width: 1000px;
   margin: 0 auto;
   position: relative;
@@ -100,7 +101,7 @@
 
 .testimonial-content::before,
 .testimonial-content::after {
-  content: """;
+  content: "";
   font-size: 80px;
   font-family: Georgia, serif;
   color: #007bff;
@@ -115,7 +116,7 @@
 }
 
 .testimonial-content::after {
-  content: """;
+  content: "";
   bottom: -40px;
   right: -10px;
 }

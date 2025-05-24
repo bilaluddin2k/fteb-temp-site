@@ -14,19 +14,19 @@ const Features = () => {
       icon: faDesktop,
       title: "Cloud Infrastructure Design",
       description: "We architect cost-optimized, scalable, and highly available Azure environments tailored to your workloads reducing TCO while maximizing efficiency.",
-      color: "#4C9AFF"
+      color: "#007bff"
     },
     {
       icon: faGears,
       title: "Cloud Operations & Management",
       description: "From deployment to continuous optimization, we manage your cloud services with best practices in automation, governance, and performance monitoring.",
-      color: "#FF5630"
+      color: "#007bff"
     },
     {
       icon: faShieldHalved,
       title: "Cloud Security & Compliance",
       description: "Our team ensures your infrastructure is protected with enterprise-grade security, active threat monitoring, data backup strategies, and compliance readiness.",
-      color: "#36B37E"
+      color: "#007bff"
     },
   ]
 

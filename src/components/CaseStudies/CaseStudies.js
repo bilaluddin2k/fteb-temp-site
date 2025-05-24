@@ -50,7 +50,7 @@ const CaseStudies = () => {
           <h6 className="headingser">IT SERVICES</h6>
           <h2 className="headstwo">What We Offer</h2>
           <p className="headsthree">
-            Mitech specializes in technological and IT-related services such as product engineering, warranty management, building cloud, infrastructure, network, etc.
+            Fteb specializes in technological and IT-related services such as product engineering, warranty management, building cloud, infrastructure, network, etc.
           </p>
         </div>
 

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import "./Contact.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { 
@@ -24,6 +24,8 @@ const Contact = () => {
     message: "",
   })
 
+  const [recaptchaToken, setRecaptchaToken] = useState("")
+
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData((prevState) => ({
@@ -32,18 +34,33 @@ const Contact = () => {
     }))
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
-    // Here you would typically send the data to a server
-    alert("Message sent successfully!")
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    })
-  }
+  // Load reCAPTCHA script
+  useEffect(() => {
+    const scriptId = "recaptcha-script"
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script")
+      script.id = scriptId
+      script.src = "https://www.google.com/recaptcha/api.js?render=explicit"
+      script.async = true
+      script.defer = true
+      document.body.appendChild(script)
+      script.onload = () => {
+        if (window.grecaptcha) {
+          window.grecaptcha.ready(() => {
+            window.grecaptcha.render("recaptcha-container", {
+              sitekey: "6LcutUcrAAAAACsSigyJ-tiJbYyLtb2aLgkAqcg7", // Replace with your site key
+              callback: (token) => {
+                setRecaptchaToken(token)
+              },
+              "expired-callback": () => {
+                setRecaptchaToken("")
+              }
+            })
+          })
+        }
+      }
+    }
+  }, [])
 
   const contactInfo = [
     {
@@ -146,7 +163,13 @@ const Contact = () => {
 
           <div className="contact-form-wrapper">
             <h3>Send Us a Message</h3>
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <form 
+              className="contact-form" 
+              action="https://formsubmit.co/YOUR_EMAIL_HERE" 
+              method="POST"
+            >
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="g-recaptcha-response" value={recaptchaToken} />
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="name">Your Name</label>
@@ -179,7 +202,8 @@ const Contact = () => {
                   required
                 ></textarea>
               </div>
-              <button type="submit" className="btn btn-primary">
+              <div id="recaptcha-container" className="g-recaptcha"></div>
+              <button type="submit" className="btn btn-primary" disabled={!recaptchaToken}>
                 Send Message <FontAwesomeIcon icon={faPaperPlane} />
               </button>
             </form>

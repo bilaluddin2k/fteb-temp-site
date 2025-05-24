@@ -25,7 +25,6 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #007bff, #00a0ff);
   opacity: 0;
   z-index: -1;
   transition: opacity 0.4s ease;
@@ -63,7 +62,7 @@
 
 .services-section .service-card:hover h3,
 .services-section .service-card:hover p {
-  color: #fff;
+  color: #000000;
 }
 
 .services-section .service-card h3 {

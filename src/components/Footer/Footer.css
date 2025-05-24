@@ -36,6 +36,23 @@
   margin-bottom: 20px;
 }
 
+.footer-logo h1 {
+  font-size: 28px;
+  font-weight: 900;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  margin: 0;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+
+.footer-logo h1:hover {
+  color: #007bff;
+  transform: scale(1.1);
+  text-shadow: 0 0 8px rgba(0, 123, 255, 0.7);
+}
+
 .footer-logo img {
   height: 40px;
 }

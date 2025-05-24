@@ -18,7 +18,7 @@ body {
 }
 
 .landing-page {
-  min-height: 100vh;
+  height: 79vh;
   position: relative;
  padding: 69px 4%;
 }
@@ -84,7 +84,7 @@ main {
 }
 
 .content {
-  max-width: 500px;
+  max-width: 660px;
   z-index: 2;
 }
 
@@ -213,7 +213,7 @@ top: -15%;
 }
 
 .watch {
-      bottom: -10%;
+      bottom: -1%;
     left: 52%;
   --x-offset-1: -5px;
   --y-offset-1: -10px;

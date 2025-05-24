@@ -6,7 +6,7 @@ import { routes } from '../../routes.js'
 import "./Header.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import logo from "../../assets/images/image.jpeg"
+// import logo from "../../assets/images/image.jpeg"
 
 const Header = ({ scrolled }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -29,7 +29,8 @@ const Header = ({ scrolled }) => {
           <div className="main-header-inner">
             <div className="logo">
               <Link to={routes.home.path}>
-                <img src={logo} alt="Mitech Logo" className="logo-icon" />
+                {/* <img src={logo} alt="Mitech Logo" className="logo-icon" /> */}
+                <h1>FTEB</h1>
               </Link>
             </div>
 
