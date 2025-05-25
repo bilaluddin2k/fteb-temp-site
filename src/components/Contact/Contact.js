@@ -66,42 +66,30 @@ const Contact = () => {
     {
       icon: faMapMarkerAlt,
       title: "Visit Us",
-      content: "58 Howard Street #2 San Francisco, CA 94105",
+      content: "AG house, sala al din, dubai, UAE",
     },
     {
       icon: faPhoneAlt,
       title: "Call Us",
-      content: "+1 (0122) 8899900",
+      content: +971588481295,
     },
     {
       icon: faEnvelope,
       title: "Email Us",
-      content: "info@mitech.com",
+      content: "Connect@ftebtech.com",
       isEmail: true,
     },
   ]
 
   const socialLinks = [
-    {
-      icon: faFacebookF,
-      url: "https://facebook.com/mitech",
-      label: "Follow us on Facebook"
-    },
-    {
-      icon: faTwitter,
-      url: "https://twitter.com/mitech",
-      label: "Follow us on Twitter"
-    },
+ 
+  
     {
       icon: faLinkedinIn,
       url: "https://linkedin.com/company/mitech",
       label: "Follow us on LinkedIn"
     },
-    {
-      icon: faInstagram,
-      url: "https://instagram.com/mitech",
-      label: "Follow us on Instagram"
-    }
+  
   ]
 
   return (
@@ -128,7 +116,7 @@ const Contact = () => {
                     {info.isEmail ? (
                       <p>
                         <a 
-                          href={`mailto:${info.content}`}
+                          href={`mailto:${info.content}` }
                           className="email-link"
                           title="Click to send email"
                         >

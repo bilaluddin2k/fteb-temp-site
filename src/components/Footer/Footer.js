@@ -19,21 +19,12 @@ const Footer = () => {
               <div className="footer-logo">
                      {/* <img src={logo} alt="Mitech Logo" className="logo-icon" />
                       */}
-                      <h1>FTEB</h1>
+                      <h1>FTEB Tech LLC</h1>
               </div>
               <p>We are leading technology solutions providing company all over the world doing over 40 years.</p>
               <div className="social-links">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faFacebookF} />
-                </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faTwitter} />
-                </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
                   <FontAwesomeIcon icon={faLinkedinIn} />
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faInstagram} />
                 </a>
               </div>
             </div>
@@ -107,7 +98,7 @@ const Footer = () => {
                 <div className="form-group">
                   <input type="email" placeholder="Your Email" required />
                   <button type="submit">
- <FontAwesomeIcon icon={faMagnifyingGlass} />             
+                    <FontAwesomeIcon icon={faMagnifyingGlass} />             
                   </button>
                 </div>
               </form>
@@ -119,7 +110,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="container">
           <div className="footer-bottom-inner">
-            <p>&copy; {new Date().getFullYear()} Mitech. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} FTEB Tech LLC. All rights reserved.</p>
             <div className="footer-bottom-links">
               <a href="/privacy-policy">Privacy Policy</a>
               <a href="/terms">Terms of Service</a>

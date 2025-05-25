@@ -129,7 +129,7 @@ const ITServices = () => {
               </div>
               <div className="contact-text">
                 <div className="contact-label">Call for advice now!</div>
-                <a href="tel:1900 68668" className="contact-value">1900 68668</a>
+                <a href="tel:+971588481295" className="contact-value">+971588481295</a>
               </div>
             </div>
 
@@ -139,7 +139,7 @@ const ITServices = () => {
               </div>
               <div className="contact-text">
                 <div className="contact-label">Say hello</div>
-                <a href="mailto:hello@mitech.com" className="contact-value">hello@mitech.com</a>
+                <a href="mailto:Connect@ftebtech.com" className="contact-value">Connect@ftebtech.com</a>
               </div>
             </div>
           </div>
