@@ -21,6 +21,10 @@ steps:
       yarn build
     displayName: 'Build React App'
 
+  - script: |
+      ls -la $(System.DefaultWorkingDirectory)/build
+    displayName: 'List Build Folder Contents'
+
   - task: ArchiveFiles@2
     inputs:
       rootFolderOrFile: '$(System.DefaultWorkingDirectory)/build'
@@ -32,8 +36,9 @@ steps:
 
   - task: AzureWebApp@1
     inputs:
-      azureSubscription: 'f522847d-2bbc-4f90-b8a6-19e6ec6485e6'
-      appName: 'fteb-temp-site'
+      azureSubscription: 'fteb-devops'
+      appName: 'fteb-website'
       package: '$(Build.ArtifactStagingDirectory)/app.zip'
       appType: 'webAppLinux'
+      startUpCommand: 'pm2 serve /home/site/wwwroot --no-daemon --spa'
     displayName: 'Deploy to Azure App Service'
