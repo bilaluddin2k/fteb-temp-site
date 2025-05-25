@@ -29,7 +29,7 @@ function App() {
           <h1 className="headingglogo">FTebTech LLC</h1>
           <span className="subtitle">TECHNOLOGY AND SOFTWARE</span>
           <h2>
-            FTEB – Your All-in-One IT Partner for Software, Cloud, Hardware, and
+            Your All-in-One IT Partner for Software, Cloud, Hardware, and
             Beyond.
           </h2>
         </div>
