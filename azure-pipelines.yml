@@ -36,7 +36,7 @@ steps:
 
   - task: AzureWebApp@1
     inputs:
-      azureSubscription: 'f522847d-2bbc-4f90-b8a6-19e6ec6485e6'
+      azureSubscription: 'fteb-devops'
       appName: 'fteb-temp-site'
       package: '$(Build.ArtifactStagingDirectory)/app.zip'
       appType: 'webAppLinux'
