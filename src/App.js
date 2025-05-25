@@ -6,7 +6,7 @@ import "./App.css"
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
 import Resolution from "./pages/Resolution/Resolution"
-import ITServices from "./pages/ITServices/ITServices"
+import Servicess from "./pages/Servicess/Servicess"
 import { routes } from './routes.js'
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
         <Header scrolled={scrolled} />
         <Routes>
           <Route path={routes.home.path} element={<Resolution />} />
-          <Route path={routes.itSolutions.path} element={<ITServices />} />
+          <Route path={routes.servicess.path} element={<Servicess />} />
           <Route path={routes.company.path} element={<Resolution />} />
           <Route path={routes.elements.path} element={<Resolution />} />
           <Route path={routes.caseStudies.path} element={<Resolution />} />

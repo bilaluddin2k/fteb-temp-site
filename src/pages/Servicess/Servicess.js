@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./ITServices.css";
+import "../../pages/Servicess/Servicess.css";
 import PageWrapper from "../../components/PageWrapper/PageWrapper";
 import men from "../../assets/men.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

@@ -30,7 +30,7 @@ const Header = ({ scrolled }) => {
             <div className="logo">
               <Link to={routes.home.path}>
                 {/* <img src={logo} alt="Mitech Logo" className="logo-icon" /> */}
-                <h1>FTEB</h1>
+                {/* <h1>FTEB</h1> */}
               </Link>
             </div>
 
@@ -47,7 +47,7 @@ const Header = ({ scrolled }) => {
                 </li>
                
                 <li className="menu-item">
-                  <NavLink to={routes.itSolutions.path}>{routes.itSolutions.name}</NavLink>
+                  <NavLink to={routes.servicess.path}>{routes.servicess.name}</NavLink>
                 </li>
                 
                

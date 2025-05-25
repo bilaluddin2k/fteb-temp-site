@@ -25,7 +25,7 @@ const About = () => {
             <p className="description">
               We are committed to providing our clients with exceptional service while offering our employees the best
               training and a working atmosphere that promotes self-development and teamwork.
-            </p>
+            </p>Hello. Add. Best friend? Subscribe for next month. Hey, Cortana. I don't know. Hi. I. I. I. Hello. Hello. Rudra. Hello. Tomato salad from Peppa Pig. Hi. Hey. Cortana. Magical erasers. What? What? Does that mean? Don't you see me? Hey, Cortana play. Parents, teacher meeting whose time? You are so beautiful. Where are you from? Oh, we're making some. Revelation. Goodbye, Tori. Yes. Dhimaner Dinkaal. Send me. Ice cream. Hamburger flavor ice cream. I. Shut it off. I. You have a girlfriend. What's your name? My name is Adam. Hey, Cortana. 
           </div>
         </div>
       </div>

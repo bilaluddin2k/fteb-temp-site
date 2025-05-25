@@ -109,9 +109,6 @@
   transition: all 0.3s ease;
 }
 
-.service-card:hover .icon-container {
-  background: #007bff;
-}
 
 .service-icon {
   font-size: 1.8rem !important;
@@ -195,7 +192,7 @@
 }
 
 .service-card:hover .service-arrow {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgb(9 6 226);
   transform: translateX(5px);
 }
 

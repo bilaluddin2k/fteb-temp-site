@@ -1,18 +1,18 @@
 export const routes = {
   home: {
     path: '/',
-    name: 'Resolution',
-    title: 'Resolution - Home'
+    name: 'Home',
+    title: 'Home'
   },
   company: {
     path: '/company',
     name: 'Company',
     title: 'About Our Company'
   },
-  itSolutions: {
-    path: '/it-solutions',
-    name: 'IT Solutions',
-    title: 'IT Solutions'
+  servicess: {
+    path: '/servicess',
+    name: 'Services',
+    title: 'Services'
   },
   elements: {
     path: '/elements',

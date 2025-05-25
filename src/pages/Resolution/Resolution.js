@@ -8,17 +8,17 @@ import CounterSection from '../../components/CounterSection/CounterSection';
 import Contact from '../../components/Contact/Contact';
 import ServicesSection from '../../components/ServicesSection/ServicesSection';
 
-const Resolution = () => {
+const HomePage = () => {
   return (
-    <div className="resolution-page">
+    <div className="home-page">
       <HeroSection />
       <About />
       <CaseStudies />
       <Features />
-<ServicesSection/>
+      <ServicesSection/>
       <Contact />
     </div>
   );
 };
 
-export default Resolution;
+export default HomePage;
