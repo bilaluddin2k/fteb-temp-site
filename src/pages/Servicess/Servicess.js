@@ -11,6 +11,7 @@ import {
   faLock, 
   faDesktop 
 } from "@fortawesome/free-solid-svg-icons";
+import ServiceDescription from "../../components/Services/ServiceDescription";
 
 const services = [
   {
@@ -45,6 +46,7 @@ const services = [
   },
 ];
 
+
 const ITServices = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -65,7 +67,9 @@ const ITServices = () => {
   }, []);
 
   return (
-    <PageWrapper>
+    <div>
+    <PageWrapper />
+
       <div className="itservices-hero-bg">
         <div className="itservices-hero-content">
           <h1 className="itservices-title">IT Services</h1>
@@ -77,6 +81,40 @@ const ITServices = () => {
         </div>
         <div className="itservices-hero-pattern"></div>
       </div>
+      <section className="descriptions bg-light"> 
+      <ServiceDescription
+        title="Cloud Services – Azure, AWS, GCP"
+        paragraphs={[
+          "Build. Migrate. Secure. Scale. Repeat.",
+          "At FTEB Tech LLC, we architect and execute cloud-first strategies that are secure, agile, and future-ready. From Azure to AWS to Google Cloud, we offer unmatched expertise across IaaS, PaaS, DevOps, Hybrid, and everything in between—delivering 100% project success across every deployment."
+        ]}
+        bulletPointsLeft={[
+          "☁️ Microsoft Azure Services",
+          "🔹 IaaS (Infrastructure as a Service)",
+          "🔹 PaaS (Platform as a Service)",
+          "🔹 DevOps on Azure"
+        ]}
+        bulletPointsRight={[
+          "🔹 Lift-and-Shift Migrations",
+          "🔹 Hybrid Cloud Deployments",
+          "🔹 Backup & Disaster Recovery (DR)",
+          "🔹 Greenfield Cloud Projects"
+        ]}
+        detailedServices={{
+          "☁️ Microsoft Azure Services": "From Greenfield to Enterprise-Grade—We Own the Cloud Journey.",
+          "🔹 IaaS (Infrastructure as a Service)": "Provision and manage secure, scalable VMs, virtual networks, firewalls, storage, and governance frameworks—built for performance and resilience.",
+          "🔹 PaaS (Platform as a Service)": "Deploy apps and services faster with Azure App Services, Azure Functions, AKS (Kubernetes), and fully managed databases. We modernize legacy code into cloud-native stacks.",
+          "🔹 DevOps on Azure": "CI/CD pipelines, GitHub Actions, Azure DevOps, infrastructure as code (Terraform/ARM/Bicep), automated testing—we bring speed and control to software delivery.",
+          "🔹 Lift-and-Shift Migrations": "We move legacy workloads to Azure with zero data loss and minimal disruption. Proven migration blueprints for VMs, apps, databases, and even SAP.",
+          "🔹 Hybrid Cloud Deployments": "Extend your datacenter to Azure using Azure Arc, ExpressRoute, and site-to-site VPNs. Keep critical workloads on-prem while unlocking cloud elasticity.",
+          "🔹 Backup & Disaster Recovery (DR)": "Protect what matters with Azure Site Recovery, Geo-redundant storage, and automated failover strategies—fully tested and cost-optimized.",
+          "🔹 Greenfield Cloud Projects": "Starting from scratch? We build clean-slate cloud environments with zero technical debt, secured from day one, with CI/CD, monitoring, and automation baked in."
+        }}
+        links={[]}
+        brochureText={{ title: "", description: "" }}
+      />
+      </section>
+
 
       <div className="itservices-section">
         <div className="services-grid">
@@ -146,7 +184,7 @@ const ITServices = () => {
         </div>
         <div className="pattern-background"></div>
       </div>
-    </PageWrapper>
+    </div>
   );
 };
 

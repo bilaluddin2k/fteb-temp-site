@@ -52,19 +52,11 @@ const Header = ({ scrolled }) => {
                 
                
                 <li className="menu-item">
-                  <div className="search-container">
-                    <button className="search-toggle" onClick={toggleSearch}>
-                      <FontAwesomeIcon icon={faSearch} />
-                    </button>
-                    {searchOpen && (
-                      <div className="search-field">
-                        <input type="text" placeholder="Search..." />
-                        <button className="search-submit">
-                          <FontAwesomeIcon icon={faSearch} />
-                        </button>
-                      </div>
-                    )}
-                  </div>
+                <div className="get-quote-container">
+                  <a href="mailto:Connect@ftebtech.com" className="get-quote-button">
+                    Get Quote
+                  </a>
+                </div>
                 </li>
               </ul>
             </nav>

@@ -84,14 +84,209 @@
   transform: translateX(5px);
 }
 
+/* New styles for ServiceDescription component */
+
+.service-description-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  gap: 40px;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.service-description-left {
+  flex: 1 1 60%;
+  max-width: 60%;
+}
+
+.service-description-title {
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 24px;
+  color: #0a3286;
+  line-height: 1.2;
+}
+
+.service-description-paragraph {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.service-description-bullets {
+  margin-top: 30px;
+}
+
+.bullets-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+}
+
+.service-description-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bullet-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.bullet-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-top: 2px;
+}
+
+.bullet-title {
+  font-weight: 600;
+  font-size: 16px;
+  color: #0a3286;
+  line-height: 1.4;
+}
+
+.service-detail {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+  padding-left: 36px;
+}
+
+.cloud-icon {
+  font-size: 20px;
+}
+
+.diamond-icon {
+  font-size: 16px;
+  color: #0066ff;
+}
+
+.service-description-right {
+  flex: 1 1 35%;
+  max-width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+.service-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.service-link-item a {
+  color: #0a3286;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  position: relative;
+  padding-left: 24px;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.service-link-item a::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #0066ff;
+  transition: transform 0.3s ease;
+}
+
+.service-link-item a:hover {
+  color: #0066ff;
+}
+
+.service-link-item a:hover::before {
+  transform: translate(3px, -50%);
+}
+
+.brochure-section {
+  background: #f8faff;
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.brochure-title {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #0a3286;
+}
+
+.brochure-description {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.brochure-button {
+  background-color: #0066ff;
+  color: white;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.brochure-button:hover {
+  background-color: #0052cc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.2);
+}
+
 @media (max-width: 992px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .service-description-wrapper {
+    padding: 30px;
+    gap: 30px;
+  }
+
+  .service-description-left,
+  .service-description-right {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .service-description-bullets {
+    gap: 20px;
+    flex-direction: column;
   }
 }
 
 @media (max-width: 768px) {
-  .services-grid {
-    grid-template-columns: 1fr;
+  .service-description-wrapper {
+    padding: 24px;
+  }
+
+  .service-description-title {
+    font-size: 28px;
+  }
+
+  .bullets-column {
+    gap: 16px;
   }
 }
