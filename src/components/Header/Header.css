@@ -8,14 +8,11 @@
   transition: all 0.3s ease;
 }
 
-.get-quote-container {
-  margin-left: 20px;
-}
 
 .get-quote-button {
   background-color: #f5c518; /* shade of yellow */
-  color: #0a1f44; /* dark blue text to suit project theme */
-  padding: 8px 16px;
+  color: #0a1f44 !important; /* dark blue text to suit project theme */
+  padding: 8px 16px !important;
   font-weight: 600;
   border-radius: 4px;
   text-decoration: none;
@@ -58,6 +55,7 @@
 .header .logo h1 {
   color: #fff;
   padding-left: 57px;
+  font-family: poppins, sans-serif;
 }
 
 .header.scrolled .logo h1 {

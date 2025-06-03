@@ -16,13 +16,13 @@ import ServiceDescription from "../../components/Services/ServiceDescription";
 const services = [
   {
     icon: faServer,
-    title: "IT Management",
-    desc: `It's possible to simultaneously manage and transform information from one server to another.`,
+    title: "End-to-End Implementation Excellence",
+    desc: `From discovery and planning to deployment and optimization—we own every phase.`,
   },
   {
     icon: faShieldAlt,
-    title: "Data Security",
-    desc: "Back up your database, store in a safe and secure place while still maintaining its accessibility.",
+    title: "Proven Cloud Strategy",
+    desc: "We don’t just move workloads to Azure—we align them with your business goals, cost models, and security posture.",
   },
   {
     icon: faChartLine,
@@ -31,18 +31,18 @@ const services = [
   },
   {
     icon: faSitemap,
-    title: "Infrastructure Plan",
-    desc: "Mitech takes into account all conditions and budgets needed for building infrastructure plan.",
+    title: "100% Project Success Rate",
+    desc: "Our track record? Every Azure engagement delivered with zero overruns and zero surprises.",
   },
   {
     icon: faLock,
-    title: "Firewall Advance",
-    desc: "Enhancing the strength and security of firewalls to protect online data from malicious sources.",
+    title: "Secure-by-Design",
+    desc: "Every build includes zero-trust principles, role-based access, policy enforcement, encryption, and monitoring.",
   },
   {
     icon: faDesktop,
-    title: "Desktop Computing",
-    desc: "Programming is taken care of by our experienced and professional specialist in IT management.",
+    title: "Cost Optimization Experts",
+    desc: "We right-size your Azure spend—pay only for what drives value.",
   },
 ];
 
