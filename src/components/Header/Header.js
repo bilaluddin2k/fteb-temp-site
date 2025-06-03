@@ -30,7 +30,7 @@ const Header = ({ scrolled }) => {
             <div className="logo">
               <Link to={routes.home.path}>
                 {/* <img src={logo} alt="Mitech Logo" className="logo-icon" /> */}
-                <h1>FTEB Tech LLC</h1>
+                <h1>FTEB </h1>
               </Link>
             </div>
 
