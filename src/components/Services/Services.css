@@ -27,24 +27,24 @@
 }
 
 .service-description-title {
-  font-weight: 700;
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  color: #0a3286;
-  line-height: 1.2;
-  padding-bottom: 20px;
-  position: relative;
-  overflow: hidden;
+font-weight: 400;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: #0a3286;
+    line-height: 1.2;
+    padding-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+
 }
 
 
 
 .service-description-subtitle {
-  font-size: 1.25rem;
+    font-size: 1.25rem;
     color: #000000;
-    font-weight: 500;
-    max-width: 1200px;
-    margin: 0 13rem;
+    font-weight: 400;
+    margin: 0rem 13rem;
     text-align: left;
     position: relative;
     overflow: hidden;

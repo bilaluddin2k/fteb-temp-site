@@ -106,14 +106,15 @@
   background: transparent;
 }
 .itservices-title {
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 15px;
-  position: relative;
-  animation: fadeInDown 1s ease;
-  letter-spacing: -0.5px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+font-size: 3rem;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 14px;
+    position: relative;
+    animation: fadeInDown 1s ease;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(-70px);
 }
 
 .itservices-title::after {
@@ -129,27 +130,9 @@
   opacity: 0.8;
 }
 
-.itservices-breadcrumb {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  color: rgba(255, 255, 255, 0.9);
-  animation: fadeInUp 1s ease 0.2s both;
-  font-size: 14px;
-  padding: 8px 0;
-  background: transparent;
-}
 
-.itservices-breadcrumb span {
-  color: rgba(255, 255, 255, 0.9);
-  transition: all 0.3s ease;
-}
 
-.itservices-breadcrumb span:hover {
-  color: #fff;
-  transform: translateX(3px);
-}
+
 
 .breadcrumb-sep {
   color: rgba(255, 255, 255, 0.6);
@@ -358,13 +341,11 @@
 .product-logos-swiper .swiper-slide img {
   width: 100%;
   max-width: 180px;
-  height: 80px;
-  object-fit: contain;
+  height: 140px;
   margin: 0 auto;
   display: block;
+  object-fit: contain;
   opacity: 0.8;
-  transition: all 0.3s ease;
-  transform: translateZ(0);
 }
 
 .product-logos-swiper .swiper-slide:hover img {
@@ -388,8 +369,6 @@
   display: block;
   object-fit: contain;
   opacity: 0.8;
-  transition: opacity 0.3s, transform 0.3s;
-  transform: scale(0.95);
 }
 
 .logo-img:hover {

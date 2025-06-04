@@ -14,7 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import ServiceDescription from "../../components/Services/ServiceDescription";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination, Virtual } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 
 import awsLogo from "../../assets/images/ProductLogos/aws.jpg";
@@ -239,12 +239,9 @@ const ITServices = () => {
 
       <div className="itservices-hero-bg">
         <div className="itservices-hero-content">
-          <h1 className="itservices-title">IT Services</h1>
-          <div className="itservices-breadcrumb">
-            <span>Home</span>
-            <span className="breadcrumb-sep">/</span>
-            <span>IT Services</span>
-          </div>
+          <h1 className="itservices-title">Our Services</h1>
+            
+         
         </div>
         <div className="itservices-hero-pattern"></div>
       </div>
@@ -257,11 +254,11 @@ const ITServices = () => {
           spaceBetween={30}
           slidesPerGroup={1}
           allowTouchMove={true}
-          autoplay={{
-            delay: 0,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
+          // autoplay={{
+          //   delay: 0,
+          //   disableOnInteraction: false,
+          //   pauseOnMouseEnter: true,
+          // }}
           className="product-logos-swiper"
           
           freeMode={true}
