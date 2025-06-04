@@ -46,7 +46,7 @@ const CaseStudies = () => {
   return (
     <section className="section">
       <div className="container">
-        <div className="section-title">
+        <div className="section-titles">
           <h6 className="headingser">IT SERVICES</h6>
           <h2 className="headstwo">What We Offer</h2>
           <p className="headsthree">

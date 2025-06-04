@@ -10,6 +10,12 @@ import {
   faDesktop 
 } from "@fortawesome/free-solid-svg-icons";
 
+// Import Swiper React components and styles
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Navigation , Pagination , Autoplay} from 'swiper/modules';
+
 const services = [
   {
     icon: faServer,
@@ -63,6 +69,10 @@ const ServicesSection = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleSlideChange = (swiper) => {
+    setHoveredIndex(swiper.realIndex);
+  };
+
   return (
     <section className="services-section">
       <h2 style={{
@@ -83,58 +93,92 @@ const ServicesSection = () => {
         }}>truly prominent IT solutions.</span>
       </h2>
 
-      <div className="SericeSecion services-grid">
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={30}
+          slidesPerView={3}
+          centeredSlides={true}
+          loop={true}
+          navigation={true}
+          speed={800}
+          pagination={{
+            clickable: true,
+            dynamicBullets: true,
+          }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+          }}
+        className="services-swiper"
+        onSlideChange={handleSlideChange}
+        onSwiper={(swiper) => setHoveredIndex(swiper.realIndex)}
+      >
         {services.map((service, idx) => (
-          <div
-            className="service-card animated-service-card"
-            key={idx}
-            style={{
-              animation: isVisible ? `fadeInUp 0.7s ${0.1 * idx + 0.2}s both` : 'none',
-              opacity: isVisible ? 1 : 0,
-              transform: hoveredIndex === idx ? 'translateY(-10px)' : 'none',
-              transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
-            }}
-            onMouseEnter={() => setHoveredIndex(idx)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            <div className={`icon-wrapper ${hoveredIndex === idx ? 'floating-icon' : ''}`}>
-              <FontAwesomeIcon
-                icon={service.icon}
-                style={{
-                  width: 40,
-                  height: 40,
-                  color: '#007bff',
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                  transform: hoveredIndex === idx ? 'scale(1.2) rotate(5deg)' : 'scale(1) rotate(0deg)'
-                }}
-              />
+          <SwiperSlide key={idx}>
+            <div
+              className="service-card animated-service-card"
+              style={{
+                animation: isVisible ? `fadeInUp 0.7s ${0.1 * idx + 0.2}s both` : 'none',
+                opacity: isVisible ? 1 : 0,
+                transform: hoveredIndex === idx ? 'translateY(-10px)' : 'none',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}
+              onMouseEnter={() => setHoveredIndex(idx)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <div className={`icon-wrapper ${hoveredIndex === idx ? 'floating-icon' : ''}`}>
+                <FontAwesomeIcon
+                  icon={service.icon}
+                  style={{
+                    width: 40,
+                    height: 40,
+                    color: '#007bff',
+                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                    transform: hoveredIndex === idx ? 'scale(1.2) rotate(5deg)' : 'scale(1) rotate(0deg)'
+                  }}
+                />
+              </div>
+              <h3 className="title-highlight">{service.title}</h3>
+              <p>{service.desc}</p>
+              
+              <div style={{
+                marginTop: 'auto',
+                paddingTop: 20,
+                opacity: hoveredIndex === idx ? 1 : 0,
+                transform: hoveredIndex === idx ? 'translateY(0)' : 'translateY(10px)',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}>
+                <button
+                  className="service-btn"
+                  onClick={() => {
+                    console.log(`Clicked ${service.title}`);
+                  }}
+                  style={{
+                    transform: hoveredIndex === idx ? 'scale(1.05)' : 'scale(1)'
+                  }}
+                >
+                  Learn More
+                </button>
+              </div>
             </div>
-            <h3 className="title-highlight">{service.title}</h3>
-            <p>{service.desc}</p>
-            
-            <div style={{
-              marginTop: 'auto',
-              paddingTop: 20,
-              opacity: hoveredIndex === idx ? 1 : 0,
-              transform: hoveredIndex === idx ? 'translateY(0)' : 'translateY(10px)',
-              transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
-            }}>
-              <button
-                className="service-btn"
-                onClick={() => {
-                  // Add your button click handler here
-                  console.log(`Clicked ${service.title}`);
-                }}
-                style={{
-                  transform: hoveredIndex === idx ? 'scale(1.05)' : 'scale(1)'
-                }}
-              >
-                Learn More
-              </button>
-            </div>
-          </div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </section>
   );
 };

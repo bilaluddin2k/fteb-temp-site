@@ -120,7 +120,7 @@ img {
 }
 
 .bg-light {
-  background-color: var(--light-color);
+  background: linear-gradient(135deg, #f8faff 10%, #f0f7ff 100%);
 }
 
 @media (max-width: 992px) {

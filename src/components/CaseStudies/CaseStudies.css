@@ -67,20 +67,20 @@
   margin: 0;
 }
 
-.section-title {
+.section-titles {
   text-align: center;
   max-width: 770px;
   margin: 0 auto 50px;
 }
 
-.section-title h2 {
-  color: #ffffff;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
+.section-titles h2 {
+  color: #ffffff ;
+  font-weight: 600 ;
+  text-transform: uppercase ;
+  margin-bottom: 15px ;
+  letter-spacing: 1px ;
 }
-.section-title h6 {
+.section-titles h6 {
   color: #0063da;
     font-size: 14px;
     font-weight: 600;
