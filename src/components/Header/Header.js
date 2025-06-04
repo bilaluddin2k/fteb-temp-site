@@ -43,11 +43,11 @@ const Header = ({ scrolled }) => {
             <nav className={`main-nav ${mobileMenuOpen ? "active" : ""}`}>
               <ul className="menu">
                 <li className="menu-item">
-                  <NavLink to={routes.home.path} end>{routes.home.name}</NavLink>
+                  <NavLink to={routes.home.path} end onClick={() => setMobileMenuOpen(false)}>{routes.home.name}</NavLink>
                 </li>
                
                 <li className="menu-item">
-                  <NavLink to={routes.servicess.path}>{routes.servicess.name}</NavLink>
+                  <NavLink to={routes.servicess.path} onClick={() => setMobileMenuOpen(false)}>{routes.servicess.name}</NavLink>
                 </li>
                 
                

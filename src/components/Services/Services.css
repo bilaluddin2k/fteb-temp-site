@@ -110,8 +110,8 @@
     color: #666;
     font-weight: normal;
     max-width: 1200px;
-    text-align: center;
-    margin: auto;
+    text-align: left;
+    margin: 0px 12rem ;
 }
 
 .service-content-section {
@@ -250,5 +250,62 @@
  
   .bullets-column {
     gap: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-description-wrapper {
+    padding: 0.75rem;
+  }
+
+  .service-description-title {
+    font-size: 1.75rem;
+  }
+
+  .service-header-section .service-description-subtitle {
+    font-size: 14px;
+    margin: 0 1rem;
+    text-align: center;
+  }
+
+  .service-description-bullets {
+    padding: 0 1rem;
+  }
+
+  .bullet-title {
+    font-size: 15px;
+  }
+
+  .service-detail {
+    font-size: 13px;
+    padding-left: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-description-wrapper {
+    padding: 0.5rem;
+  }
+
+  .service-description-title {
+    font-size: 1.5rem;
+  }
+
+  .service-header-section .service-description-subtitle {
+    font-size: 13px;
+    margin: 0 0.5rem;
+  }
+
+  .service-description-bullets {
+    padding: 0 0.5rem;
+  }
+
+  .bullet-title {
+    font-size: 14px;
+  }
+
+  .service-detail {
+    font-size: 12px;
+    padding-left: 1.25rem;
   }
 }

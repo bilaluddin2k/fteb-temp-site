@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../../pages/Servicess/Servicess.css";
 import PageWrapper from "../../components/PageWrapper/PageWrapper";
-import men from "../../assets/men.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import men from "../../assets/men.png";
 import {
   faServer,
   faShieldAlt,
@@ -14,10 +14,23 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import ServiceDescription from "../../components/Services/ServiceDescription";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+
+import awsLogo from "../../assets/images/ProductLogos/aws.jpg";
+import azureLogo from "../../assets/images/ProductLogos/azure.jpg";
+import developmentLogo from "../../assets/images/ProductLogos/Development.png";
+import dynamicsLogo from "../../assets/images/ProductLogos/Dynamics-365.png";
+import erosourceLogo from "../../assets/images/ProductLogos/erosource.png";
+import googlecloudLogo from "../../assets/images/ProductLogos/googlecloud.jpg";
+import linuxLogo from "../../assets/images/ProductLogos/linux.png";
+import m365Logo from "../../assets/images/ProductLogos/m365.png";
+import mlLogo from "../../assets/images/ProductLogos/Machine_Learning_Logo.png";
+import microsoftLogo from "../../assets/images/ProductLogos/Microsoft-Logo.png";
+import pythonLogo from "../../assets/images/ProductLogos/Python.png";
+import reactLogo from "../../assets/images/ProductLogos/react-logo.png";
+import terraformLogo from "../../assets/images/ProductLogos/terraform.png";
+import turbo360Logo from "../../assets/images/ProductLogos/Turbo360.png";
 
 const points = {
   left: [
@@ -68,7 +81,8 @@ const microsoft365 = {
   left: [
     {
       title: "M365 Migration & Deployment",
-      subline: "Seamless, zero-downtime migration from on-prem or other platforms (Google Workspace, legacy Exchange, etc.) with best-in-class setup and configuration.",
+      subline:
+        "Seamless, zero-downtime migration from on-prem or other platforms (Google Workspace, legacy Exchange, etc.) with best-in-class setup and configuration.",
     },
     {
       title: "Identity & Access Management (IAM)",
@@ -106,6 +120,62 @@ const microsoft365 = {
       title: "Licensing Optimization & Support",
       subline:
         "We help you choose the right plans, cut redundant costs, and ensure every license adds value.",
+    },
+  ],
+};
+const Dynamics365 = {
+  left: [
+    {
+      title: "Dynamics 365 Business Central",
+      subline:
+        "Cloud-based ERP for small to mid-sized businesses, covering financials, inventory, procurement, project accounting, and seamless integration with Microsoft 365.",
+    },
+    {
+      title: "Dynamics 365 Finance & Operations",
+      subline:
+        "Enterprise-grade ERP for global operations—features include financial management, supply chain, HR/payroll, and advanced analytics with AI-powered forecasting.",
+    },
+    {
+      title: "Sales, Customer Service & Marketing Modules",
+      subline:
+        "Manage leads, automate campaigns, track opportunities, support omnichannel service, and engage customers through intelligent insights.",
+    },
+    {
+      title: "Field Service & Project Operations",
+      subline:
+        "Optimize scheduling, dispatch, and resource planning with mobile access and IoT integration—ideal for service-based and project-focused companies.",
+    },
+    {
+      title: "User Training & Change Management",
+      subline:
+        "End-user training programs, adoption strategies, and support to ensure smooth transitions and long-term success.",
+    },
+  ],
+  right: [
+    {
+      title: "Human Resources Management",
+      subline:
+        "Centralize employee lifecycle, benefits, compliance, and leave management with payroll system integration.",
+    },
+    {
+      title: "Industry-Specific Solutions",
+      subline:
+        "Tailored deployments for manufacturing, retail, healthcare, public sector, and professional services—each aligned with regulatory and operational needs.",
+    },
+    {
+      title: "System Architecture & Custom Development",
+      subline:
+        "We design scalable systems and build custom workflows using Power Platform, including Power Apps and Power Automate.",
+    },
+    {
+      title: "Data Migration & Integration",
+      subline:
+        "Seamless integration with Microsoft 365, Azure services, and third-party or legacy systems for a unified data experience.",
+    },
+    {
+      title: "24/7 Support & Managed Services",
+      subline:
+        "SLA-based support, governance setup, licensing guidance, and role-based security tailored to your organization’s needs.",
     },
   ],
 };
@@ -160,6 +230,23 @@ const ITServices = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const productLogos = [
+    awsLogo,
+    azureLogo,
+    developmentLogo,
+    dynamicsLogo,
+    erosourceLogo,
+    googlecloudLogo,
+    linuxLogo,
+    m365Logo,
+    mlLogo,
+    microsoftLogo,
+    pythonLogo,
+    reactLogo,
+    terraformLogo,
+    turbo360Logo,
+  ];
+
   return (
     <div>
       <PageWrapper />
@@ -175,7 +262,59 @@ const ITServices = () => {
         </div>
         <div className="itservices-hero-pattern"></div>
       </div>
+
       <section className="descriptions bg-light">
+        <Swiper
+          modules={[Autoplay]}
+          loop={true}
+          speed={1000}
+          spaceBetween={20}
+          slidesPerGroup={1}
+          slidesPerView={10}
+          allowTouchMove={true}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+            waitForTransition: true,
+          }}
+          className="product-logos-swiper"
+          freeMode={true}
+          breakpoints={{
+            320: { slidesPerView: 2, spaceBetween: 20 },
+            480: { slidesPerView: 3, spaceBetween: 20 },
+            768: { slidesPerView: 4, spaceBetween: 30 },
+            1024: { slidesPerView: 6, spaceBetween: 30 },
+          }}
+        >
+          {[...productLogos, ...productLogos, ...productLogos].map(
+            (logo, idx) => (
+              <SwiperSlide key={idx} style={{ opacity: 1 }}>                <img
+                  src={logo}
+                  alt={`Product logo ${(idx % productLogos.length) + 1}`}
+                  style={{
+                    width: "100%",
+                    maxWidth: "240px",
+                    margin: "0 auto",
+                    display: "block",
+                    objectFit: "contain",
+                    opacity: 0.8,
+                    transition: "all 0.3s ease",
+                    transform: "scale(0.9)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.opacity = 1;
+                    e.target.style.transform = "scale(1)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.opacity = 0.8;
+                    e.target.style.transform = "scale(0.9)";
+                  }}
+                />
+              </SwiperSlide>
+            )
+          )}
+        </Swiper>
         <ServiceDescription
           title="Cloud Services – Azure, AWS, GCP"
           subtitle="Build. Migrate. Secure. Scale. Repeat.At FTEB Tech LLC, we architect and execute cloud-first strategies that are secure, agile, and future-ready. From Azure to AWS to Google Cloud, we offer unmatched expertise across IaaS, PaaS, DevOps, Hybrid, and everything in between—delivering 100% project success across every deployment."
@@ -185,6 +324,11 @@ const ITServices = () => {
           title="Microsoft 365 Services"
           subtitle="Empowering Productivity, Securing Collaboration — End-to-End.At FTEB Tech LLC, we specialize in end-to-end implementation and optimization of Microsoft 365 solutions, tailored to power modern workplaces. Whether you’re starting from scratch, migrating from legacy systems, or looking to enhance security and collaboration—we deliver 100% project success, every time."
           points={microsoft365}
+        />
+        <ServiceDescription
+          title="Dynamics 365 Services"
+          subtitle="Intelligent Business Applications. Seamlessly Connected. Fully Managed.At FTEB Tech LLC, we empower businesses to streamline operations, enhance productivity, and gain real-time insights using Microsoft Dynamics 365. Whether you're starting new or migrating from a legacy system, we provide end-to-end implementation, customization, and ongoing support."
+          points={Dynamics365}
         />
       </section>
 
@@ -198,19 +342,14 @@ const ITServices = () => {
         </div>
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={30}
-          slidesPerView={3}
           loop={true}
           navigation={true}
-          speed={800}
-          pagination={{
-            clickable: true,
-            dynamicBullets: true,
-          }}
+          pagination={{ clickable: true }}
           autoplay={{
-            delay: 3000,
+            delay: 0,
             disableOnInteraction: false,
-            pauseOnMouseEnter: true,
+            pauseOnMouseEnter: false,
+            waitForTransition: false,
           }}
           breakpoints={{
             320: {
