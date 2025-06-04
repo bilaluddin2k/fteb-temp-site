@@ -17,9 +17,7 @@ const ServiceDescription = ({
             {points.left?.map((point, idx) => (
               <div key={`left-${idx}`} className="service-description-item interactive-bullet">
                 <div className="bullet-point">
-                  <div className="bullet-icon blue-icon">
-                    {idx % 2 === 0 ? '→' : '•'}
-                  </div>
+                  <div className="bullet-icon blue-icon">•</div>
                   <div className="bullet-title">{point.title}</div>
                 </div>
                 {point.subline && (
@@ -32,9 +30,7 @@ const ServiceDescription = ({
             {points.right?.map((point, idx) => (
               <div key={`right-${idx}`} className="service-description-item interactive-bullet">
                 <div className="bullet-point">
-                  <div className="bullet-icon blue-icon">
-                    {idx % 2 === 0 ? '→' : '•'}
-                  </div>
+                  <div className="bullet-icon blue-icon">•</div>
                   <div className="bullet-title">{point.title}</div>
                 </div>
                 {point.subline && (

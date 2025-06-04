@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../../pages/Servicess/Servicess.css";
 import PageWrapper from "../../components/PageWrapper/PageWrapper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,7 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import ServiceDescription from "../../components/Services/ServiceDescription";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination, Virtual } from "swiper/modules";
 import "swiper/css";
 
 import awsLogo from "../../assets/images/ProductLogos/aws.jpg";
@@ -214,20 +214,17 @@ const services = [
 
 const ITServices = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const element = document.querySelector(".itservices-section");
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
-        setIsVisible(isVisible);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check initial visibility
-    return () => window.removeEventListener("scroll", handleScroll);
+    const section = sectionRef.current;
+    if (!section) return;
+    const observer = new window.IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.15 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
   }, []);
 
   const productLogos = [
@@ -265,55 +262,38 @@ const ITServices = () => {
 
       <section className="descriptions bg-light">
         <Swiper
-          modules={[Autoplay]}
+          modules={[Autoplay, Virtual]}
           loop={true}
-          speed={1000}
-          spaceBetween={20}
-          slidesPerGroup={1}
-          slidesPerView={10}
-          allowTouchMove={true}
+          speed={3000}
+          spaceBetween={30}
+          slidesPerView="auto"
+          allowTouchMove={false}
           autoplay={{
             delay: 0,
             disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-            waitForTransition: true,
+            pauseOnMouseEnter: false,
           }}
           className="product-logos-swiper"
-          freeMode={true}
+          virtual
           breakpoints={{
-            320: { slidesPerView: 2, spaceBetween: 20 },
+            320: { slidesPerView: 2, spaceBetween: 15 },
             480: { slidesPerView: 3, spaceBetween: 20 },
+            640: { slidesPerView: 3, spaceBetween: 25 },
             768: { slidesPerView: 4, spaceBetween: 30 },
-            1024: { slidesPerView: 6, spaceBetween: 30 },
+            1024: { slidesPerView: 5, spaceBetween: 35 },
+            1200: { slidesPerView: 6, spaceBetween: 40 },
           }}
         >
-          {[...productLogos, ...productLogos, ...productLogos].map(
-            (logo, idx) => (
-              <SwiperSlide key={idx} style={{ opacity: 1 }}>                <img
-                  src={logo}
-                  alt={`Product logo ${(idx % productLogos.length) + 1}`}
-                  style={{
-                    width: "100%",
-                    maxWidth: "240px",
-                    margin: "0 auto",
-                    display: "block",
-                    objectFit: "contain",
-                    opacity: 0.8,
-                    transition: "all 0.3s ease",
-                    transform: "scale(0.9)",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.opacity = 1;
-                    e.target.style.transform = "scale(1)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.opacity = 0.8;
-                    e.target.style.transform = "scale(0.9)";
-                  }}
-                />
-              </SwiperSlide>
-            )
-          )}
+          {[...productLogos, ...productLogos].map((logo, idx) => (
+            <SwiperSlide key={idx} virtualIndex={idx} className="logo-slide">
+              <img
+                src={logo}
+                alt={`Product logo ${(idx % productLogos.length) + 1}`}
+                className="logo-img"
+                loading="lazy"
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
         <ServiceDescription
           title="Cloud Services – Azure, AWS, GCP"
@@ -332,7 +312,7 @@ const ITServices = () => {
         />
       </section>
 
-      <div className="itservices-section">
+      <div className="itservices-section" ref={sectionRef}>
         <div className="section-title">
           <span className="subtitle">WHAT WE OFFER</span>
           <h2>
@@ -370,12 +350,9 @@ const ITServices = () => {
           {services.map((service, idx) => (
             <SwiperSlide
               key={idx}
+              className={`service-slide${isVisible ? " visible" : ""}`}
               style={{
-                opacity: isVisible ? 1 : 0,
-                transform: `translateY(${isVisible ? "0" : "20px"})`,
-                transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${
-                  idx * 0.1
-                }s`,
+                transitionDelay: `${idx * 0.1}s`,
               }}
             >
               <div className="service-card">
