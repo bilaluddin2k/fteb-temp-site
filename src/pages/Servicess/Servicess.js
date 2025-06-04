@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import "../../pages/Servicess/Servicess.css";
 import PageWrapper from "../../components/PageWrapper/PageWrapper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -31,6 +31,7 @@ import pythonLogo from "../../assets/images/ProductLogos/Python.png";
 import reactLogo from "../../assets/images/ProductLogos/react-logo.png";
 import terraformLogo from "../../assets/images/ProductLogos/terraform.png";
 import turbo360Logo from "../../assets/images/ProductLogos/Turbo360.png";
+import useServicessScroll from "../../hooks/useServicessScroll";
 
 const points = {
   left: [
@@ -213,19 +214,7 @@ const services = [
 ];
 
 const ITServices = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-    const observer = new window.IntersectionObserver(
-      ([entry]) => setIsVisible(entry.isIntersecting),
-      { threshold: 0.15 }
-    );
-    observer.observe(section);
-    return () => observer.disconnect();
-  }, []);
+  const isVisible = useServicessScroll();
 
   const productLogos = [
     awsLogo,
@@ -262,19 +251,20 @@ const ITServices = () => {
 
       <section className="descriptions bg-light">
         <Swiper
-          modules={[Autoplay, Virtual]}
+          modules={[Autoplay]}
           loop={true}
-          speed={3000}
+          speed={1000}
           spaceBetween={30}
-          slidesPerView="auto"
-          allowTouchMove={false}
+          slidesPerGroup={1}
+          allowTouchMove={true}
           autoplay={{
             delay: 0,
             disableOnInteraction: false,
-            pauseOnMouseEnter: false,
+            pauseOnMouseEnter: true,
           }}
           className="product-logos-swiper"
-          virtual
+          
+          freeMode={true}
           breakpoints={{
             320: { slidesPerView: 2, spaceBetween: 15 },
             480: { slidesPerView: 3, spaceBetween: 20 },
@@ -312,7 +302,7 @@ const ITServices = () => {
         />
       </section>
 
-      <div className="itservices-section" ref={sectionRef}>
+      <div className="itservices-section">
         <div className="section-title">
           <span className="subtitle">WHAT WE OFFER</span>
           <h2>
