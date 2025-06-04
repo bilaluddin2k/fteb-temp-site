@@ -59,13 +59,13 @@
 
 .service-description-subtitle {
   font-size: 1.25rem;
-  color: #000000;
-  font-weight: 500;
-  max-width: 1200px;
-  margin: 0 auto 2rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+    color: #000000;
+    font-weight: 500;
+    max-width: 1200px;
+    margin: 0 13rem;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
 }
 
 .service-description-subtitle::after {
