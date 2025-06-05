@@ -252,7 +252,7 @@ const ITServices = () => {
         <Swiper
           modules={[Autoplay]}
           loop={true}
-          speed={8000}
+          speed={1500}
           spaceBetween={30}
           slidesPerGroup={1}
           allowTouchMove={true}
