@@ -100,7 +100,7 @@ const ServicesSection = () => {
           centeredSlides={true}
           loop={true}
           navigation={true}
-          speed={800}
+          speed={450}
           pagination={{
             clickable: true,
             dynamicBullets: true,
