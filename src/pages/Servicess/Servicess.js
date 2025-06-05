@@ -257,11 +257,11 @@ const ITServices = () => {
           slidesPerGroup={1}
           allowTouchMove={true}
           watchSlidesProgress={true}
-          autoplay={{
-            delay: 0,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
+          // autoplay={{
+          //   delay: 0,
+          //   disableOnInteraction: false,
+          //   pauseOnMouseEnter: true,
+          // }}
           className="product-logos-swiper"
           breakpoints={{
             320: { slidesPerView: 2, spaceBetween: 15 },

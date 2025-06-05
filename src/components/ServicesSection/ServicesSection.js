@@ -105,11 +105,11 @@ const ServicesSection = () => {
             clickable: true,
             dynamicBullets: true,
           }}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
+          // autoplay={{
+          //   delay: 3000,
+          //   disableOnInteraction: false,
+          //   pauseOnMouseEnter: true,
+          // }}
           breakpoints={{
             320: {
               slidesPerView: 1,
