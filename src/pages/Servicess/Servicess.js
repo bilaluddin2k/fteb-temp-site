@@ -314,7 +314,7 @@ const ITServices = () => {
           loop={true}
           navigation={true}
           pagination={{ clickable: true }}
-          speed={450}
+          speed={350}
           autoplay={{
             delay: 3000,
             disableOnInteraction: true,

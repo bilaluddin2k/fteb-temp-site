@@ -100,16 +100,16 @@ const ServicesSection = () => {
           centeredSlides={true}
           loop={true}
           navigation={true}
-          speed={450}
+          speed={350}
           pagination={{
             clickable: true,
             dynamicBullets: true,
           }}
-          // autoplay={{
-          //   delay: 3000,
-          //   disableOnInteraction: false,
-          //   pauseOnMouseEnter: true,
-          // }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
           breakpoints={{
             320: {
               slidesPerView: 1,
