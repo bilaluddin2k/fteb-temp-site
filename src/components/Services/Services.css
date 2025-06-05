@@ -159,6 +159,10 @@ font-weight: 400;
     flex-direction: column;
     padding: 0 1rem;
   }
+    .service-description-subtitle {
+    font-size: 1rem;
+    margin: 0rem 3rem;
+  }
 
   .bullets-column {
     margin-bottom: 1.5rem;
@@ -172,6 +176,7 @@ font-weight: 400;
 
   .service-description-subtitle {
     font-size: 1rem;
+    margin: 0rem 1rem;
   }
 
   .service-description-bullets {
@@ -195,6 +200,7 @@ font-weight: 400;
 
   .service-description-subtitle {
     font-size: 0.9rem;
+    margin: 0rem 1rem;
   }
 
   .bullet-title {

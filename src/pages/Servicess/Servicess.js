@@ -12,6 +12,7 @@ import {
   faDesktop,
   faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
+
 import ServiceDescription from "../../components/Services/ServiceDescription";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
@@ -217,20 +218,20 @@ const ITServices = () => {
   const isVisible = useServicessScroll();
 
   const productLogos = [
-    awsLogo,
-    azureLogo,
-    developmentLogo,
-    dynamicsLogo,
-    erosourceLogo,
-    googlecloudLogo,
-    linuxLogo,
-    m365Logo,
-    mlLogo,
-    microsoftLogo,
-    pythonLogo,
-    reactLogo,
-    terraformLogo,
-    turbo360Logo,
+    { src: awsLogo, class: 'logo-aws', alt: 'AWS Logo' },
+    { src: azureLogo, class: 'logo-azure', alt: 'Azure Logo' },
+    { src: developmentLogo, class: 'logo-development', alt: 'Development Logo' },
+    { src: dynamicsLogo, class: 'logo-dynamics', alt: 'Dynamics 365 Logo' },
+    { src: erosourceLogo, class: 'logo-erosource', alt: 'Erosource Logo' },
+    { src: googlecloudLogo, class: 'logo-googlecloud', alt: 'Google Cloud Logo' },
+    { src: linuxLogo, class: 'logo-linux', alt: 'Linux Logo' },
+    { src: m365Logo, class: 'logo-m365', alt: 'Microsoft 365 Logo' },
+    { src: mlLogo, class: 'logo-ml', alt: 'Machine Learning Logo' },
+    { src: microsoftLogo, class: 'logo-microsoft', alt: 'Microsoft Logo' },
+    { src: pythonLogo, class: 'logo-python', alt: 'Python Logo' },
+    { src: reactLogo, class: 'logo-react', alt: 'React Logo' },
+    { src: terraformLogo, class: 'logo-terraform', alt: 'Terraform Logo' },
+    { src: turbo360Logo, class: 'logo-turbo360', alt: 'Turbo360 Logo' },
   ];
 
   return (
@@ -247,21 +248,21 @@ const ITServices = () => {
       </div>
 
       <section className="descriptions bg-light">
+        {/* Logo Marquee Slider */}
         <Swiper
           modules={[Autoplay]}
           loop={true}
-          speed={1000}
+          speed={8000}
           spaceBetween={30}
           slidesPerGroup={1}
           allowTouchMove={true}
-          // autoplay={{
-          //   delay: 0,
-          //   disableOnInteraction: false,
-          //   pauseOnMouseEnter: true,
-          // }}
+          watchSlidesProgress={true}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
           className="product-logos-swiper"
-          
-          freeMode={true}
           breakpoints={{
             320: { slidesPerView: 2, spaceBetween: 15 },
             480: { slidesPerView: 3, spaceBetween: 20 },
@@ -271,12 +272,12 @@ const ITServices = () => {
             1200: { slidesPerView: 6, spaceBetween: 40 },
           }}
         >
-          {[...productLogos, ...productLogos].map((logo, idx) => (
-            <SwiperSlide key={idx} virtualIndex={idx} className="logo-slide">
+          {[...productLogos, ...productLogos, ...productLogos].map((logo, idx) => (
+            <SwiperSlide key={idx} className="logo-slide">
               <img
-                src={logo}
-                alt={`Product logo ${(idx % productLogos.length) + 1}`}
-                className="logo-img"
+                src={logo.src}
+                alt={logo.alt}
+                className={`logo-img ${logo.class}`}
                 loading="lazy"
               />
             </SwiperSlide>
@@ -307,16 +308,17 @@ const ITServices = () => {
             Advanced IT Solutions
           </h2>
         </div>
+        {/* Second Slider - Services */}
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           loop={true}
           navigation={true}
           pagination={{ clickable: true }}
+          speed={800}
           autoplay={{
-            delay: 0,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: false,
-            waitForTransition: false,
+            delay: 3000,
+            disableOnInteraction: true,
+            pauseOnMouseEnter: true,
           }}
           breakpoints={{
             320: {
