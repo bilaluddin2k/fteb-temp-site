@@ -390,6 +390,10 @@ font-size: 3rem;
   max-width: 220px;
   height: 200px;
 }
+.logo-adevops {
+  max-width: 210px;
+  height: 200px;
+}
 
 /* You can further tweak each logo's size as needed for best visual alignment */
 

@@ -32,6 +32,7 @@ import pythonLogo from "../../assets/images/ProductLogos/Python.png";
 import reactLogo from "../../assets/images/ProductLogos/react-logo.png";
 import terraformLogo from "../../assets/images/ProductLogos/terraform.png";
 import turbo360Logo from "../../assets/images/ProductLogos/Turbo360.png";
+import adevops from "../../assets/images/ProductLogos/a-devops.png";
 import useServicessScroll from "../../hooks/useServicessScroll";
 
 const points = {
@@ -232,6 +233,7 @@ const ITServices = () => {
     { src: reactLogo, class: 'logo-react', alt: 'React Logo' },
     { src: terraformLogo, class: 'logo-terraform', alt: 'Terraform Logo' },
     { src: turbo360Logo, class: 'logo-turbo360', alt: 'Turbo360 Logo' },
+    { src: adevops, class: 'logo-adevops', alt: 'adevops' },
   ];
 
   return (
