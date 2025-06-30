@@ -1,5 +1,5 @@
-import React from "react";
-import "../../pages/Servicess/Servicess.css";
+import React, { useEffect } from "react";
+import "../../styles/pages/Servicess/Servicess.css";
 import PageWrapper from "../../components/PageWrapper/PageWrapper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import men from "../../assets/men.png";
@@ -11,12 +11,17 @@ import {
   faLock,
   faDesktop,
   faArrowRight,
+  faPhoneVolume,
+  faEnvelope
 } from "@fortawesome/free-solid-svg-icons";
 
 import ServiceDescription from "../../components/Services/ServiceDescription";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
 
 import awsLogo from "../../assets/images/ProductLogos/aws.jpg";
 import azureLogo from "../../assets/images/ProductLogos/azure.jpg";
@@ -35,188 +40,61 @@ import turbo360Logo from "../../assets/images/ProductLogos/Turbo360.png";
 import adevops from "../../assets/images/ProductLogos/a-devops.png";
 import useServicessScroll from "../../hooks/useServicessScroll";
 
-const points = {
-  left: [
-    {
-      title: "Microsoft Azure Services",
-      subline: "From Greenfield to Enterprise-Grade—We Own the Cloud Journey.",
-    },
-    {
-      title: "IaaS (Infrastructure as a Service)",
-      subline:
-        "Provision and manage secure, scalable VMs, virtual networks, firewalls, storage, and governance frameworks—built for performance and resilience",
-    },
-    {
-      title: "PaaS (Platform as a Service)",
-      subline:
-        "Deploy apps and services faster with Azure App Services, Azure Functions, AKS (Kubernetes), and fully managed databases. We modernize legacy code into cloud-native stacks",
-    },
-    {
-      title: "DevOps on Azure",
-      subline:
-        "CI/CD pipelines, GitHub Actions, Azure DevOps, infrastructure as code (Terraform/ARM/Bicep), automated testing—we bring speed and control to software delivery.",
-    },
-  ],
-  right: [
-    {
-      title: "Lift-and-Shift Migrations",
-      subline:
-        "We move legacy workloads to Azure with zero data loss and minimal disruption. Proven migration blueprints for VMs, apps, databases, and even SAP.",
-    },
-    {
-      title: "Hybrid Cloud Deployments",
-      subline:
-        "Extend your datacenter to Azure using Azure Arc, ExpressRoute, and site-to-site VPNs. Keep critical workloads on-prem while unlocking cloud elasticity.",
-    },
-    {
-      title: "Backup & Disaster Recovery (DR)",
-      subline:
-        "Protect what matters with Azure Site Recovery, Geo-redundant storage, and automated failover strategies—fully tested and cost-optimized.",
-    },
-    {
-      title: "Greenfield Cloud Projects",
-      subline:
-        "Starting from scratch? We build clean-slate cloud environments with zero technical debt, secured from day one, with CI/CD, monitoring, and automation baked in.",
-    },
-  ],
-};
-const microsoft365 = {
-  left: [
-    {
-      title: "M365 Migration & Deployment",
-      subline:
-        "Seamless, zero-downtime migration from on-prem or other platforms (Google Workspace, legacy Exchange, etc.) with best-in-class setup and configuration.",
-    },
-    {
-      title: "Identity & Access Management (IAM)",
-      subline:
-        "Secure user provisioning, Azure AD integration, SSO setup, MFA enforcement—your data stays in the right hands.",
-    },
-    {
-      title: "Exchange Online & Outlook Configuration",
-      subline:
-        "Fast, reliable email systems with retention policies, hybrid setups, and smart mail flow rules for business continuity. We modernize legacy code into cloud-native stacks",
-    },
-    {
-      title: "SharePoint Online & OneDrive for Business",
-      subline:
-        "Smart intranet and document management solutions that streamline collaboration, access control, and file governance.",
-    },
-  ],
-  right: [
-    {
-      title: "Microsoft Teams Implementation",
-      subline:
-        "Collaboration reimagined. We configure Teams for departments, projects, external guests, and secure chat/video/file sharing.",
-    },
-    {
-      title: "Security & Compliance Hardening",
-      subline:
-        "Implementation of Microsoft Purview, DLP, Intune MDM, Defender for M365, and compliance center policies to ensure zero risk operations.",
-    },
-    {
-      title: "Power Platform Integration",
-      subline:
-        "Automate workflows and boost productivity with Power Automate, Power BI, and Power Apps—no-code to enterprise-grade.",
-    },
-    {
-      title: "Licensing Optimization & Support",
-      subline:
-        "We help you choose the right plans, cut redundant costs, and ensure every license adds value.",
-    },
-  ],
-};
-const Dynamics365 = {
-  left: [
-    {
-      title: "Dynamics 365 Business Central",
-      subline:
-        "Cloud-based ERP for small to mid-sized businesses, covering financials, inventory, procurement, project accounting, and seamless integration with Microsoft 365.",
-    },
-    {
-      title: "Dynamics 365 Finance & Operations",
-      subline:
-        "Enterprise-grade ERP for global operations—features include financial management, supply chain, HR/payroll, and advanced analytics with AI-powered forecasting.",
-    },
-    {
-      title: "Sales, Customer Service & Marketing Modules",
-      subline:
-        "Manage leads, automate campaigns, track opportunities, support omnichannel service, and engage customers through intelligent insights.",
-    },
-    {
-      title: "Field Service & Project Operations",
-      subline:
-        "Optimize scheduling, dispatch, and resource planning with mobile access and IoT integration—ideal for service-based and project-focused companies.",
-    },
-    {
-      title: "User Training & Change Management",
-      subline:
-        "End-user training programs, adoption strategies, and support to ensure smooth transitions and long-term success.",
-    },
-  ],
-  right: [
-    {
-      title: "Human Resources Management",
-      subline:
-        "Centralize employee lifecycle, benefits, compliance, and leave management with payroll system integration.",
-    },
-    {
-      title: "Industry-Specific Solutions",
-      subline:
-        "Tailored deployments for manufacturing, retail, healthcare, public sector, and professional services—each aligned with regulatory and operational needs.",
-    },
-    {
-      title: "System Architecture & Custom Development",
-      subline:
-        "We design scalable systems and build custom workflows using Power Platform, including Power Apps and Power Automate.",
-    },
-    {
-      title: "Data Migration & Integration",
-      subline:
-        "Seamless integration with Microsoft 365, Azure services, and third-party or legacy systems for a unified data experience.",
-    },
-    {
-      title: "24/7 Support & Managed Services",
-      subline:
-        "SLA-based support, governance setup, licensing guidance, and role-based security tailored to your organization’s needs.",
-    },
-  ],
-};
 const services = [
   {
     icon: faServer,
-    title: "End-to-End Implementation Excellence",
-    desc: `From  planning to deployment and optimization—we own every phase.`,
+    title: "End-to-End Implementation",
+    desc: "From planning to deployment and optimization—we own every phase with precision and expertise.",
+    link: "#implementation"
   },
   {
     icon: faShieldAlt,
-    title: "Proven Cloud Strategy",
-    desc: "We don’t just move workloads to Azure—we align them with your business goals, cost models, and security posture.",
+    title: "Cloud Strategy & Security",
+    desc: "Align workloads with business goals while ensuring robust security measures and cost optimization.",
+    link: "#strategy"
   },
   {
     icon: faChartLine,
-    title: "Business Reform",
-    desc: "We propose feasible & practical plans for successfully transform businesses based on their needs.",
+    title: "Business Transformation",
+    desc: "Strategic solutions and practical roadmaps for successful digital transformation initiatives.",
+    link: "#transformation"
   },
   {
     icon: faSitemap,
-    title: "100% Project Success Rate",
-    desc: "Our track record? Every Azure engagement delivered with zero overruns and zero surprises.",
+    title: "Project Excellence",
+    desc: "100% success rate with zero overruns—our proven track record speaks for itself.",
+    link: "#excellence"
   },
   {
     icon: faLock,
-    title: "Secure-by-Design",
-    desc: "Every build includes zero-trust principles, role-based access, policy enforcement, encryption, and monitoring.",
+    title: "Security First Design",
+    desc: "Zero-trust architecture with comprehensive security features built into every solution.",
+    link: "#security"
   },
   {
     icon: faDesktop,
-    title: "Cost Optimization Experts",
-    desc: "We right-size your Azure spend—pay only for what drives value.",
-  },
+    title: "Cost Optimization",
+    desc: "Strategic resource allocation ensuring maximum value from your technology investments.",
+    link: "#optimization"
+  }
 ];
 
 const ITServices = () => {
   const isVisible = useServicessScroll();
+
+  useEffect(() => {
+    // Add smooth scroll behavior
+    const handleScroll = () => {
+      const scrolled = window.scrollY;
+      const header = document.querySelector('.itservices-title');
+      if (header) {
+        header.style.transform = `translateY(${scrolled * 0.4}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const productLogos = [
     { src: awsLogo, class: 'logo-aws', alt: 'AWS Logo' },
@@ -237,24 +115,21 @@ const ITServices = () => {
   ];
 
   return (
-    <div>
+    <div className="it-services-page">
       <PageWrapper />
 
       <div className="itservices-hero-bg">
         <div className="itservices-hero-content">
-          <h1 className="itservices-title">Our Services</h1>
-            
-         
+          <h1 className="itservices-title">Innovative IT Solutions</h1>
         </div>
         <div className="itservices-hero-pattern"></div>
       </div>
 
-      <section className="descriptions bg-light">
-        {/* Logo Marquee Slider */}
+      <section className="descriptions">
         <Swiper
           modules={[Autoplay]}
           loop={true}
-          speed={1500}
+          speed={2000}
           spaceBetween={30}
           slidesPerGroup={1}
           allowTouchMove={true}
@@ -263,18 +138,19 @@ const ITServices = () => {
             delay: 0,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
+            reverseDirection: false
           }}
           className="product-logos-swiper"
           breakpoints={{
             320: { slidesPerView: 2, spaceBetween: 15 },
             480: { slidesPerView: 3, spaceBetween: 20 },
-            640: { slidesPerView: 3, spaceBetween: 25 },
-            768: { slidesPerView: 4, spaceBetween: 30 },
-            1024: { slidesPerView: 5, spaceBetween: 35 },
-            1200: { slidesPerView: 6, spaceBetween: 40 },
+            640: { slidesPerView: 4, spaceBetween: 25 },
+            768: { slidesPerView: 5, spaceBetween: 30 },
+            1024: { slidesPerView: 6, spaceBetween: 35 },
+            1200: { slidesPerView: 7, spaceBetween: 40 },
           }}
         >
-          {[...productLogos, ...productLogos, ...productLogos].map((logo, idx) => (
+          {[...productLogos].map((logo, idx) => (
             <SwiperSlide key={idx} className="logo-slide">
               <img
                 src={logo.src}
@@ -285,56 +161,42 @@ const ITServices = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <ServiceDescription
-          title="Cloud Services – Azure, AWS, GCP"
-          subtitle="Build. Migrate. Secure. Scale. Repeat.At FTEB Tech LLC, we architect and execute cloud-first strategies that are secure, agile, and future-ready. From Azure to AWS to Google Cloud, we offer unmatched expertise across IaaS, PaaS, DevOps, Hybrid, and everything in between—delivering 100% project success across every deployment."
-          points={points}
-        />
-        <ServiceDescription
-          title="Microsoft 365 Services"
-          subtitle="Empowering Productivity, Securing Collaboration — End-to-End.At FTEB Tech LLC, we specialize in end-to-end implementation and optimization of Microsoft 365 solutions, tailored to power modern workplaces. Whether you’re starting from scratch, migrating from legacy systems, or looking to enhance security and collaboration—we deliver 100% project success, every time."
-          points={microsoft365}
-        />
-        <ServiceDescription
-          title="Dynamics 365 Services"
-          subtitle="Intelligent Business Applications. Seamlessly Connected. Fully Managed.At FTEB Tech LLC, we empower businesses to streamline operations, enhance productivity, and gain real-time insights using Microsoft Dynamics 365. Whether you're starting new or migrating from a legacy system, we provide end-to-end implementation, customization, and ongoing support."
-          points={Dynamics365}
-        />
+        
+        <ServiceDescription />
       </section>
 
       <div className="itservices-section">
         <div className="section-title">
-          <span className="subtitle">WHAT WE OFFER</span>
+          <span className="subtitle">OUR SERVICES</span>
           <h2>
-            Transforming Businesses with <br />
-            Advanced IT Solutions
+            Transforming Businesses Through<br />
+            Technology Innovation
           </h2>
         </div>
-        {/* Second Slider - Services */}
+
         <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
+          modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
+          effect="coverflow"
           loop={true}
           navigation={true}
           pagination={{ clickable: true }}
-          speed={350}
+          speed={500}
           autoplay={{
-            delay: 3000,
-            disableOnInteraction: true,
+            delay: 5000,
+            disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: false,
+          }}
           breakpoints={{
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 30,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
+            320: { slidesPerView: 1, spaceBetween: 20 },
+            768: { slidesPerView: 2, spaceBetween: 30 },
+            1024: { slidesPerView: 3, spaceBetween: 40 },
           }}
           className="services-swiper"
         >
@@ -367,32 +229,33 @@ const ITServices = () => {
       <div className="contact-info-section">
         <div className="contact-info-container">
           <div className="contact-info-image">
-            <img src={men} alt="Support Representative" />
+            <img src={men} alt="IT Support Representative" loading="lazy" />
           </div>
           <div className="contact-info-content">
             <div className="rating-value">4.9/5.0</div>
             <div className="rating-stars">★★★★★</div>
             <div className="rating-text">
-              by 700+ customers for 3200+ clients
+              Trusted by 700+ customers for 3200+ successful projects
             </div>
+            
             <div className="contact-method">
               <div className="contact-icon">
-                <i className="fas fa-phone-volume"></i>
+                <FontAwesomeIcon icon={faPhoneVolume} />
               </div>
               <div className="contact-text">
-                <div className="contact-label">Call for advice now!</div>
+                <div className="contact-label">Get Expert Advice</div>
                 <a href="tel:+971588481295" className="contact-value">
-                  +971588481295
+                  +971 58 848 1295
                 </a>
               </div>
             </div>
 
             <div className="contact-method">
               <div className="contact-icon">
-                <i className="far fa-envelope"></i>
+                <FontAwesomeIcon icon={faEnvelope} />
               </div>
               <div className="contact-text">
-                <div className="contact-label">Say hello</div>
+                <div className="contact-label">Email Us</div>
                 <a href="mailto:Connect@ftebtech.com" className="contact-value">
                   Connect@ftebtech.com
                 </a>
@@ -400,7 +263,6 @@ const ITServices = () => {
             </div>
           </div>
         </div>
-        <div className="pattern-background"></div>
       </div>
     </div>
   );

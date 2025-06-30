@@ -1,16 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import "./../../components/Hero/HeroSection.css";
+import "../../styles/components/Hero/HeroSection.css";
 import headphone from "../../assets/images/headphone.png";
 import laptop from "../../assets/images/WhatsAppImage.jpg";
 import mouse from "../../assets/images/mouse.png";
 import watch from "../../assets/images/watch.png";
 import keyboard from "../../assets/images/keyboard.png";
-
-// import azure from "../../assets/images/azure.png"
-// import googleCloud from "../../assets/images/google-cloud.png"
-// import aws from "../../"
 
 function App() {
   const [imagesLoaded, setImagesLoaded] = useState(false);
@@ -66,21 +62,6 @@ function App() {
           >
             <img src={keyboard} alt="Keyboard" className="accessory-image" />
           </div>
-          {/* 
-          <div className={`image-wrapper azure ${imagesLoaded ? "loaded" : ""}`}>
-            <img src={azure} alt="Azure" className="cloud-image" />
-            <div className="image-label">Azure</div>
-          </div>
-
-          <div className={`image-wrapper aws ${imagesLoaded ? "loaded" : ""}`}>
-            <img src={aws} alt="Amazon Web Services" className="cloud-image" />
-            <div className="image-label">Amazon</div>
-          </div>
-
-          <div className={`image-wrapper google-cloud ${imagesLoaded ? "loaded" : ""}`}>
-            <img src={googleCloud} alt="Google Cloud" className="cloud-image" />
-            <div className="image-label">Google Cloud</div>
-          </div> */}
         </div>
       </main>
     </div>

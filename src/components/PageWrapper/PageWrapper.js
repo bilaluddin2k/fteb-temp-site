@@ -1,5 +1,5 @@
 import React from 'react';
-import './PageWrapper.css';
+import '../../styles/components/PageWrapper/PageWrapper.css';
 
 const PageWrapper = ({ children, title, description }) => {
   return (

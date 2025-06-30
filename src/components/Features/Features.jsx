@@ -1,10 +1,9 @@
-import "./Features.css"
+import "../../styles/components/Features/Features.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { 
   faDesktop, 
   faGears, 
-  faShieldHalved,
-  faArrowRight 
+  faShieldHalved
 } from '@fortawesome/free-solid-svg-icons'
 import featureImage from "../../assets/images/computer-scientists-data-center-managing-maintaining-databases (1).jpg"
 
@@ -25,7 +24,7 @@ const Features = () => {
     {
       icon: faShieldHalved,
       title: "Cloud Security & Compliance",
-      description: "Our team ensures your infrastructure is protected with enterprise-grade security, active threat monitoring, data backup strategies, and compliance readiness.",
+      description: "Our team ensures your infrastructure is protected with enterprise-grade security, active threat monitoring, data backup strategies, and compliance readiness.",
       color: "#007bff"
     },
   ]

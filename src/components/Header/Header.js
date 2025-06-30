@@ -3,21 +3,14 @@
 import { useState } from "react"
 import { Link, NavLink } from "react-router-dom"
 import { routes } from '../../routes.js'
-import "./Header.css"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import "../../styles/components/Header/Header.css"
 // import logo from "../../assets/images/image.jpeg"
 
 const Header = ({ scrolled }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [searchOpen, setSearchOpen] = useState(false)
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen)
-  }
-
-  const toggleSearch = () => {
-    setSearchOpen(!searchOpen)
   }
 
   return (

@@ -31,14 +31,6 @@ const Contact = () => {
     },
   ]
 
-  const socialLinks = [
-    {
-      icon: faLinkedinIn,
-      url: "https://linkedin.com/company/mitech",
-      label: "Follow us on LinkedIn"
-    },
-  ]
-
   return (
     <section className="contact section bg-light">
       <div className="container">
