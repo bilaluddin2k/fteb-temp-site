@@ -15,7 +15,7 @@ import {
   faChartBar,
   faComment
 } from '@fortawesome/free-solid-svg-icons';
-import './ServicePageTemplate.css';
+import '../../styles/components/ServicePageTemplate/ServicePageTemplate.css';
 
 const ServicePageTemplate = ({ data }) => {
   const navigate = useNavigate();
@@ -31,6 +31,49 @@ const ServicePageTemplate = ({ data }) => {
   const handleCallClick = () => {
     window.location.href = 'tel:+971588481295';
   };
+  const certificationsData = [
+    {
+      competency: "Cloud Platform and Infrastructure",
+      certifications: [
+        { name: "Microsoft Certified: Azure Administrator Associate", code: "AZ-104", count: 4 },
+        { name: "Microsoft Certified: Azure Virtual Desktop Specialty", code: "AZ-140", count: 4 },
+        { name: "Microsoft Certified: Azure Solutions Architect Expert", code: "AZ-305", count: 3 },
+        { name: "Microsoft Certified: DevOps Engineer Expert", code: "AZ-400", count: 1 },
+        { name: "Microsoft Certified: Azure Security Engineer Associate", code: "AZ-500", count: 2 },
+        { name: "Microsoft Certified: Azure Network Engineer Associate", code: "AZ-700", count: 4 },
+      ]
+    },
+    {
+      competency: "Cloud Productivity and Modern Workplace",
+      certifications: [
+        { name: "Microsoft 365 Certified: Endpoint Administrator Associate", code: "MD-102", count: 2 },
+        { name: "Microsoft 365 Certified: Administrator Expert", code: "MS-102", count: 1 },
+        { name: "Microsoft 365 Certified: Teams Administrator Associate", code: "MS-700", count: 1 },
+        { name: "Microsoft 365 Certified: Fundamentals", code: "MS-900", count: 2 },
+      ]
+    },
+    {
+      competency: "Cloud M365 Security and Compliance",
+      certifications: [
+        { name: "Microsoft Certified: Security Operations Analyst Associate", code: "SC-200", count: 2 },
+        { name: "Microsoft Certified: Identity and Access Administrator Associate", code: "SC-300", count: 3 },
+        { name: "Microsoft Certified: Information Protection and Compliance Administrator Associate", code: "SC-400", count: 2 },
+      ]
+    },
+    {
+      competency: "AWS",
+      certifications: [
+        { name: "Cloud solution Architect", code: "SAP-C02", count: 3 },
+      ]
+    },
+    {
+      competency: "Redhat",
+      certifications: [
+        { name: "RHCSA Certified system administrator", code: "EX-200", count: 2 },
+        { name: "RHCE Certified Enginer", code: "EX-294", count: 2 },
+      ]
+    }
+  ];
 
   return (
     <div className="service-page">
@@ -136,37 +179,8 @@ const ServicePageTemplate = ({ data }) => {
 
             <div className="content-right">
               <div className="sidebar">
-                <div className="sidebar-section">
-                  <h3>Service Categories</h3>
-                  <ul className="service-list">
-                    <li>
-                      <a href="#compute">Compute Services</a>
-                    </li>
-                    <li>
-                      <a href="#storage">Storage Solutions</a>
-                    </li>
-                    <li>
-                      <a href="#networking">Networking</a>
-                    </li>
-                    <li>
-                      <a href="#databases">Databases</a>
-                    </li>
-                    <li>
-                      <a href="#ai-ml">AI & Machine Learning</a>
-                    </li>
-                    <li>
-                      <a href="#security">Security & Identity</a>
-                    </li>
-                    <li>
-                      <a href="#devops">DevOps Tools</a>
-                    </li>
-                    <li>
-                      <a href="#analytics">Analytics & BI</a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="sidebar-section">
+                
+                {/* <div className="sidebar-section">
                   <div className="certification-card">
                     <h4>Certified Team</h4>
                     <p>
@@ -179,18 +193,9 @@ const ServicePageTemplate = ({ data }) => {
                       <div className="badge">DevOps Engineer</div>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
-                <div className="sidebar-section">
-                  <div className="contact-card">
-                    <h4>Free Assessment</h4>
-                    <p>Get a comprehensive analysis of your current infrastructure and migration roadmap.</p>
-                    <button className="btn-contact" onClick={handleContactClick}>
-                      <FontAwesomeIcon icon={faComment} />
-                      Schedule Assessment
-                    </button>
-                  </div>
-                </div>
+               
               </div>
             </div>
           </div>
@@ -260,12 +265,13 @@ const ServicePageTemplate = ({ data }) => {
 
       {/* Process Section */}
       <section className="process-section">
-        <div className="container">
+
           <div className="section-header">
             <h2>Our Implementation Process</h2>
             <p>A proven methodology for successful project delivery</p>
           </div>
           
+        <div className="container d-flex flex-row align-items-center">
           <div className="process-timeline">
             {data.process.map((step, index) => (
               <div key={index} className="process-step">
@@ -277,6 +283,16 @@ const ServicePageTemplate = ({ data }) => {
               </div>
             ))}
           </div>
+           <div className="sidebar-section">
+                  <div className="contact-card">
+                    <h4>Free Assessment</h4>
+                    <p>Get a comprehensive analysis of your current infrastructure and migration roadmap.</p>
+                    <button className="btn-contact" onClick={handleContactClick}>
+                      <FontAwesomeIcon icon={faComment} />
+                      Schedule Assessment
+                    </button>
+                  </div>
+                </div>
         </div>
       </section>
 
@@ -284,17 +300,36 @@ const ServicePageTemplate = ({ data }) => {
       <section className="technologies-section">
         <div className="container">
           <div className="section-header">
-            <h2>Technologies We Use</h2>
-            <p>Cutting-edge tools and platforms for optimal results</p>
+            <h2>Certified Team</h2>
+            <p>Our team holds multiple certifications including Solutions Architect, DevOps Engineer, and Security Engineer.</p>
           </div>
           
-          <div className="technologies-grid">
-            {data.technologies.map((tech, index) => (
-              <div key={index} className="tech-item">
-                {tech}
-              </div>
-            ))}
-          </div>
+          <div className="certifications-table-wrapper">
+            <table className="certifications-table">
+              <thead>
+                <tr>
+                  <th>Competency</th>
+                  <th>Certification (Exam Code)</th>
+                  <th># of Certified Professionals</th>
+                </tr>
+              </thead>
+              <tbody>
+                {certificationsData.map((group, idx) =>
+                  group.certifications.map((cert, cidx) => (
+                    <tr key={group.competency + cert.code}>
+                      {cidx === 0 && (
+                        <td rowSpan={group.certifications.length} className="competency-cell">
+                          {group.competency}
+                        </td>
+                      )}
+                      <td>{cert.name} <span className="exam-code">({cert.code})</span></td>
+                      <td>{cert.count}</td>
+                    </tr>
+                  ))
+                )}
+              </tbody>
+            </table>
+        </div>
         </div>
       </section>
 

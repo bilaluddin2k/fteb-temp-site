@@ -22,7 +22,7 @@ function App() {
     <div className="landing-page">
       <main>
         <div className="content">
-          <h1 className="headingglogo">FTEB </h1>
+          <h1 className="headingglogo">Future Technology Empowering Business </h1>
           <span className="subtitle">TECHNOLOGY AND SOFTWARE</span>
           <h2>
             Your All-in-One IT Partner for Software, Cloud, Hardware, and

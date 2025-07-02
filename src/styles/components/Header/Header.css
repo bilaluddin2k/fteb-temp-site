@@ -24,11 +24,10 @@
 }
 
 .main-header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: var(--container-xl);
-  margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 46px;
 }
 
 .logo {
@@ -59,11 +58,7 @@
   color: var(--color-text);
 }
 
-.logo h1:hover {
-  color: var(--color-primary);
-  transform: scale(1.05);
-  text-shadow: 0 0 8px rgba(0, 86, 210, 0.7);
-}
+
 
 /* Navigation Menu */
 .main-nav {
@@ -105,7 +100,6 @@
 }
 
 .menu-item a:hover {
-  color: var(--color-primary);
   background: rgba(0, 86, 210, 0.1);
 }
 
@@ -116,9 +110,12 @@
   left: 16px;
   right: 16px;
   height: 2px;
-  background: var(--color-primary);
+  background: #0645a2;
   transform: scaleX(0);
   transition: transform var(--transition-normal);
+}
+.swiper-wrapper{
+  align-items: center;
 }
 
 .menu-item a:hover::after,
@@ -373,12 +370,7 @@
 }
 
 /* Focus Styles for Accessibility */
-.menu-item a:focus,
-.get-quote-button:focus,
-.mobile-menu-toggle:focus {
-  outline: 2px solid var(--color-secondary);
-  outline-offset: 2px;
-}
+
 
 /* Print Styles */
 @media print {

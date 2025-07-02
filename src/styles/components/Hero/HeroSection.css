@@ -60,7 +60,7 @@ main {
 
 .content .headingglogo {
   font-family: var(--font-heading) !important;
-  font-size: clamp(3rem, 8vw, 4.5rem);
+  font-size: clamp(1rem, 4vw, 3rem);
   font-weight: var(--font-weight-black);
   color: var(--white);
   margin-bottom: 20px;
@@ -69,30 +69,20 @@ main {
   letter-spacing: 2px;
 }
 
-.content .headingglogo::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 100px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--white), rgba(255, 255, 255, 0.5));
-  border-radius: 2px;
-}
+/* Removed the line under the heading as per user request */
 
 .subtitle {
   font-family: var(--font-body) !important;
   display: inline-block;
-  background: rgba(242, 246, 252, 0.95);
-  color: var(--primary-blue);
+  background: rgba(23, 33, 165, 0);
+  color: var(--white);
   padding: 12px 28px;
-  border-radius: 30px;
+  border-radius: 17px;
   font-size: clamp(11px, 2vw, 13px);
   font-weight: var(--font-weight-bold);
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 30px;
-  backdrop-filter: blur(10px);
+  margin: 20px 0px ;
   border: 2px solid rgba(255, 255, 255, 0.2);
   animation: pulse 2s infinite;
 }
@@ -215,7 +205,6 @@ main {
   width: 280px;
   height: auto;
   border-radius: 15px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
 .laptop {
@@ -234,7 +223,6 @@ main {
   max-width: 100%;
   height: auto;
   border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   border: 3px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -253,7 +241,6 @@ main {
   width: 120px;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .watch {
@@ -271,7 +258,6 @@ main {
   width: 220px;
   height: auto;
   border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .keyboard {
@@ -289,13 +275,12 @@ main {
   width: 380px;
   height: auto;
   border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
+@media (max-width: var(--breakpoint-xl)) {
   .laptop-image {
-    width: 550px;
+    width: clamp(400px, 50vw, 550px);
   }
 
   .headphones {
@@ -303,29 +288,29 @@ main {
   }
 
   .headphones img {
-    width: 240px;
+    width: clamp(200px, 20vw, 240px);
   }
 
   .keyboard img {
-    width: 320px;
+    width: clamp(280px, 30vw, 320px);
   }
 
   .content .headingglogo {
-    font-size: clamp(2.8rem, 7vw, 3.8rem);
+    font-size: var(--text-4xl);
   }
 
   .content h2 {
-    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-size: var(--text-2xl);
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: var(--breakpoint-lg)) {
   .landing-page {
-    padding: 100px 3% 50px;
+    padding: var(--spacing-xl) 3% var(--spacing-lg);
   }
 
   .content h2 {
-    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-size: var(--text-xl);
   }
 
   .laptop {
@@ -333,7 +318,7 @@ main {
   }
 
   .laptop-image {
-    width: 480px;
+    width: clamp(350px, 45vw, 480px);
   }
 
   .mouse {
@@ -341,7 +326,7 @@ main {
   }
 
   .mouse img {
-    width: 100px;
+    width: clamp(80px, 10vw, 100px);
   }
 
   .watch {
@@ -349,27 +334,27 @@ main {
   }
 
   .watch img {
-    width: 200px;
+    width: clamp(180px, 20vw, 200px);
   }
 
   .keyboard img {
-    width: 280px;
+    width: clamp(240px, 25vw, 280px);
   }
 
   .content .headingglogo {
-    font-size: clamp(2.5rem, 6vw, 3.2rem);
+    font-size: var(--text-3xl);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: var(--breakpoint-md)) {
   .landing-page {
-    padding: 80px 4% 40px;
+    padding: var(--spacing-lg) 4% var(--spacing-md);
   }
 
   main {
     flex-direction: column;
     text-align: center;
-    padding-top: 20px;
+    padding-top: var(--spacing-sm);
   }
 
   .content {
@@ -378,17 +363,17 @@ main {
   }
 
   .content .headingglogo {
-    font-size: clamp(2.2rem, 6vw, 2.8rem);
+    font-size: var(--text-2xl);
   }
 
   .content h2 {
-    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    font-size: var(--text-lg);
   }
 
   .images-container {
     position: relative;
     height: 400px;
-    margin-top: 30px;
+    margin-top: var(--spacing-md);
   }
 
   .laptop {
@@ -398,7 +383,7 @@ main {
   }
 
   .laptop-image {
-    width: 400px;
+    width: clamp(300px, 80vw, 400px);
   }
 
   .image-wrapper.loaded.laptop {
@@ -431,19 +416,19 @@ main {
   }
 
   .subtitle {
-    font-size: clamp(10px, 2vw, 12px);
-    padding: 10px 20px;
+    font-size: var(--text-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
   }
 
   .browse-btn {
-    padding: 15px 30px;
-    font-size: 15px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--text-sm);
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: var(--breakpoint-sm)) {
   .landing-page {
-    padding: 70px 3% 30px;
+    padding: var(--spacing-md) 3% var(--spacing-sm);
   }
 
   .content {
@@ -451,16 +436,16 @@ main {
   }
 
   .content .headingglogo {
-    font-size: clamp(1.8rem, 6vw, 2.2rem);
+    font-size: var(--text-xl);
   }
 
   .content h2 {
-    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    font-size: var(--text-base);
   }
 
   .browse-btn {
-    padding: 12px 25px;
-    font-size: 14px;
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--text-xs);
   }
 
   .images-container {
@@ -468,11 +453,11 @@ main {
   }
 
   .laptop-image {
-    width: 320px;
+    width: clamp(280px, 85vw, 320px);
   }
 
   .subtitle {
-    font-size: clamp(9px, 2vw, 11px);
+    font-size: var(--text-xs);
     padding: 8px 16px;
   }
 }

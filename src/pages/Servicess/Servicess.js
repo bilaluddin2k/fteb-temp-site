@@ -3,6 +3,12 @@ import "../../styles/pages/Servicess/Servicess.css";
 import PageWrapper from "../../components/PageWrapper/PageWrapper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import men from "../../assets/men.png";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation, Pagination, EffectCoverflow } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
 import {
   faServer,
   faShieldAlt,
@@ -16,29 +22,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import ServiceDescription from "../../components/Services/ServiceDescription";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination, EffectCoverflow } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/effect-coverflow";
 
-import awsLogo from "../../assets/images/ProductLogos/aws.jpg";
-import azureLogo from "../../assets/images/ProductLogos/azure.jpg";
-import developmentLogo from "../../assets/images/ProductLogos/Development.png";
-import dynamicsLogo from "../../assets/images/ProductLogos/Dynamics-365.png";
-import erosourceLogo from "../../assets/images/ProductLogos/erosource.png";
-import googlecloudLogo from "../../assets/images/ProductLogos/googlecloud.jpg";
-import linuxLogo from "../../assets/images/ProductLogos/linux.png";
-import m365Logo from "../../assets/images/ProductLogos/m365.png";
-import mlLogo from "../../assets/images/ProductLogos/Machine_Learning_Logo.png";
-import microsoftLogo from "../../assets/images/ProductLogos/Microsoft-Logo.png";
-import pythonLogo from "../../assets/images/ProductLogos/Python.png";
-import reactLogo from "../../assets/images/ProductLogos/react-logo.png";
-import terraformLogo from "../../assets/images/ProductLogos/terraform.png";
-import turbo360Logo from "../../assets/images/ProductLogos/Turbo360.png";
-import adevops from "../../assets/images/ProductLogos/a-devops.png";
 import useServicessScroll from "../../hooks/useServicessScroll";
+
+
 
 const services = [
   {
@@ -96,74 +83,20 @@ const ITServices = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const productLogos = [
-    { src: awsLogo, class: 'logo-aws', alt: 'AWS Logo' },
-    { src: azureLogo, class: 'logo-azure', alt: 'Azure Logo' },
-    { src: developmentLogo, class: 'logo-development', alt: 'Development Logo' },
-    { src: dynamicsLogo, class: 'logo-dynamics', alt: 'Dynamics 365 Logo' },
-    { src: erosourceLogo, class: 'logo-erosource', alt: 'Erosource Logo' },
-    { src: googlecloudLogo, class: 'logo-googlecloud', alt: 'Google Cloud Logo' },
-    { src: linuxLogo, class: 'logo-linux', alt: 'Linux Logo' },
-    { src: m365Logo, class: 'logo-m365', alt: 'Microsoft 365 Logo' },
-    { src: mlLogo, class: 'logo-ml', alt: 'Machine Learning Logo' },
-    { src: microsoftLogo, class: 'logo-microsoft', alt: 'Microsoft Logo' },
-    { src: pythonLogo, class: 'logo-python', alt: 'Python Logo' },
-    { src: reactLogo, class: 'logo-react', alt: 'React Logo' },
-    { src: terraformLogo, class: 'logo-terraform', alt: 'Terraform Logo' },
-    { src: turbo360Logo, class: 'logo-turbo360', alt: 'Turbo360 Logo' },
-    { src: adevops, class: 'logo-adevops', alt: 'adevops' },
-  ];
-
+ 
   return (
     <div className="it-services-page">
       <PageWrapper />
-
+{/* 
       <div className="itservices-hero-bg">
         <div className="itservices-hero-content">
           <h1 className="itservices-title">Innovative IT Solutions</h1>
         </div>
         <div className="itservices-hero-pattern"></div>
-      </div>
+      </div> */}
 
-      <section className="descriptions">
-        <Swiper
-          modules={[Autoplay]}
-          loop={true}
-          speed={2000}
-          spaceBetween={30}
-          slidesPerGroup={1}
-          allowTouchMove={true}
-          watchSlidesProgress={true}
-          autoplay={{
-            delay: 0,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-            reverseDirection: false
-          }}
-          className="product-logos-swiper"
-          breakpoints={{
-            320: { slidesPerView: 2, spaceBetween: 15 },
-            480: { slidesPerView: 3, spaceBetween: 20 },
-            640: { slidesPerView: 4, spaceBetween: 25 },
-            768: { slidesPerView: 5, spaceBetween: 30 },
-            1024: { slidesPerView: 6, spaceBetween: 35 },
-            1200: { slidesPerView: 7, spaceBetween: 40 },
-          }}
-        >
-          {[...productLogos].map((logo, idx) => (
-            <SwiperSlide key={idx} className="logo-slide">
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className={`logo-img ${logo.class}`}
-                loading="lazy"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        
         <ServiceDescription />
-      </section>
+      
 
       <div className="itservices-section">
         <div className="section-title">
