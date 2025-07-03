@@ -1,10 +1,7 @@
-"use client"
-
+import "../../styles/components/Header/Header.scss"
 import { useState } from "react"
 import { Link, NavLink } from "react-router-dom"
 import { routes } from '../../routes.js'
-import "../../styles/components/Header/Header.css"
-// import logo from "../../assets/images/image.jpeg"
 
 const Header = ({ scrolled }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -15,14 +12,11 @@ const Header = ({ scrolled }) => {
 
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
-     
-
       <div className="main-header">
         <div className="wrapper">
           <div className="main-header-inner">
             <div className="logo">
               <Link to={routes.home.path}>
-                {/* <img src={logo} alt="Mitech Logo" className="logo-icon" /> */}
                 <h1>FTEB </h1>
               </Link>
             </div>
@@ -43,6 +37,9 @@ const Header = ({ scrolled }) => {
                   <NavLink to={routes.servicess.path} onClick={() => setMobileMenuOpen(false)}>{routes.servicess.name}</NavLink>
                 </li>
                 
+                <li className="menu-item">
+                  <NavLink to={routes.contact.path} onClick={() => setMobileMenuOpen(false)}>{routes.contact.name}</NavLink>
+                </li>
                
                 <li className="menu-item">
                 <div className="get-quote-container">

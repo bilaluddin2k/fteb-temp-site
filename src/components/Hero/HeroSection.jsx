@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import "../../styles/components/Hero/HeroSection.css";
+import "../../styles/components/Hero/HeroSection.scss";
 import headphone from "../../assets/images/headphone.png";
-import laptop from "../../assets/images/WhatsAppImage.jpg";
+import laptop from "../../assets/images/Microsoft365.png";
 import mouse from "../../assets/images/mouse.png";
 import watch from "../../assets/images/watch.png";
 import keyboard from "../../assets/images/keyboard.png";

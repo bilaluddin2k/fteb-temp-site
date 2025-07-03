@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../../styles/pages/Servicess/Servicess.css";
+import "../../styles/pages/Servicess/Servicess.scss";
 import PageWrapper from "../../components/PageWrapper/PageWrapper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import men from "../../assets/men.png";
@@ -22,10 +22,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import ServiceDescription from "../../components/Services/ServiceDescription";
-
 import useServicessScroll from "../../hooks/useServicessScroll";
-
-
 
 const services = [
   {
@@ -83,21 +80,12 @@ const ITServices = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
- 
   return (
     <div className="it-services-page">
       <PageWrapper />
-{/* 
-      <div className="itservices-hero-bg">
-        <div className="itservices-hero-content">
-          <h1 className="itservices-title">Innovative IT Solutions</h1>
-        </div>
-        <div className="itservices-hero-pattern"></div>
-      </div> */}
 
-        <ServiceDescription />
+      <ServiceDescription />
       
-
       <div className="itservices-section">
         <div className="section-title">
           <span className="subtitle">OUR SERVICES</span>

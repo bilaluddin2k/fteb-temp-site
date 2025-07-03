@@ -47,7 +47,7 @@ const Contact = () => {
             <div className="info-list">
               {contactInfo.map((info, index) => (
                 <div key={index} className="info-item">
-                  <div className="info-icon">
+                  <div className="project-icon">
                     <FontAwesomeIcon icon={info.icon} />
                   </div>
                   <div className="info-content">

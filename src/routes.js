@@ -14,6 +14,11 @@ export const routes = {
     name: 'Services',
     title: 'Services'
   },
+  contact: {
+    path: '/contact',
+    name: 'Contact',
+    title: 'Contact Us'
+  },
   elements: {
     path: '/elements',
     name: 'Elements',

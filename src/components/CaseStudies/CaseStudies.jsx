@@ -1,4 +1,4 @@
-import "../../styles/components/CaseStudies/CaseStudies.css"
+import "../../styles/components/CaseStudies/CaseStudies.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { 
   faCloud,

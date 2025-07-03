@@ -98,6 +98,35 @@ body {
   line-height: var(--line-height-normal);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
+}
+
+/* Global Icon Styles */
+.project-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-light);
+  border-radius: var(--border-radius-md);
+  color: var(--color-primary);
+  font-size: var(--font-size-2xl);
+  transition: var(--transition-normal);
+  border: 2px solid transparent;
+  margin-bottom: 1.5rem;
+}
+
+.project-icon:hover {
+  transform: translateY(-5px);
+  background-color: var(--color-white);
+  border-color: var(--color-primary);
+  box-shadow: var(--box-shadow);
+}
+
+.project-icon svg,
+.project-icon i {
+  width: 32px;
+  height: 32px;
   -moz-osx-font-smoothing: grayscale;
 }
 

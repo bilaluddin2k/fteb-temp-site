@@ -35,17 +35,6 @@
       padding: 20px 15px;
     }
 
-    .info-icon {
-      width: 40px !important;
-      height: 40px !important;
-
-      svg {
-        font-size: 1.1rem !important;
-        width: 1.1rem !important;
-        height: 1.1rem !important;
-      }
-    }
-
     .info-content h4 {
       font-size: 1rem;
     }
@@ -58,17 +47,6 @@
   @media (max-width: 480px) {
     .contact-infos {
       padding: 15px 10px;
-    }
-
-    .info-icon {
-      width: 35px !important;
-      height: 35px !important;
-
-      svg {
-        font-size: 1rem !important;
-        width: 1rem !important;
-        height: 1rem !important;
-      }
     }
 
     .info-content h4 {
@@ -129,28 +107,6 @@
         display: flex;
         align-items: flex-start;
         margin-bottom: 2rem;
-
-        .info-icon {
-          min-width: 50px;
-          width: 50px;
-          height: 50px;
-          background: rgba(102, 161, 231, 0.1);
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-right: 1.5rem;
-          transition: all 0.3s ease;
-          flex-shrink: 0;
-
-          svg {
-            color: var(--color-primary);
-            font-size: 1.4rem;
-            width: 1.4rem !important;
-            height: 1.4rem !important;
-            transition: all 0.3s ease;
-          }
-        }
 
         &:hover {
           .info-icon {

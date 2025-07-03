@@ -1,10 +1,9 @@
-import "../../styles/components/Footer/Footer.css"
+import "../../styles/components/Footer/Footer.scss"
 import { 
   faLinkedinIn
 } from '@fortawesome/free-brands-svg-icons'
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import logo from "../../assets/images/image.jpeg"
 
 const Footer = () => {
   return (
@@ -14,9 +13,7 @@ const Footer = () => {
           <div className="footer-widgets">
             <div className="footer-widget about-widget">
               <div className="footer-logo">
-                     {/* <img src={logo} alt="Mitech Logo" className="logo-icon" />
-                      */}
-                      <h1>FTEB </h1>
+                <h1>FTEB </h1>
               </div>
               <p>We are leading technology solutions providing company all over the world doing over 40 years.</p>
               <div className="social-links">
@@ -95,7 +92,7 @@ const Footer = () => {
                 <div className="form-group">
                   <input type="email" placeholder="Your Email" required />
                   <button type="submit">
-                    <FontAwesomeIcon icon={faMagnifyingGlass} />             
+                    <FontAwesomeIcon icon={faSearch} />             
                   </button>
                 </div>
               </form>
