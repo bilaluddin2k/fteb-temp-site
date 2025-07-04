@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "../../styles/pages/Servicess/Servicess.scss";
 import PageWrapper from "../../components/PageWrapper/PageWrapper";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Icon } from '../../components/Icons/IconSystem';
 import men from "../../assets/men.png";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination, EffectCoverflow } from "swiper/modules";
@@ -9,54 +9,43 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
-import {
-  faServer,
-  faShieldAlt,
-  faChartLine,
-  faSitemap,
-  faLock,
-  faDesktop,
-  faArrowRight,
-  faPhoneVolume,
-  faEnvelope
-} from "@fortawesome/free-solid-svg-icons";
 
 import ServiceDescription from "../../components/Services/ServiceDescription";
 import useServicessScroll from "../../hooks/useServicessScroll";
 
 const services = [
   {
-    icon: faServer,
+    icon: "Server",
     title: "End-to-End Implementation",
     desc: "From planning to deployment and optimization—we own every phase with precision and expertise.",
     link: "#implementation"
   },
   {
-    icon: faShieldAlt,
+    icon: "Shield",
     title: "Cloud Strategy & Security",
     desc: "Align workloads with business goals while ensuring robust security measures and cost optimization.",
     link: "#strategy"
   },
   {
-    icon: faChartLine,
+    icon: "Analytics",
     title: "Business Transformation",
     desc: "Strategic solutions and practical roadmaps for successful digital transformation initiatives.",
     link: "#transformation"
   },
   {
-    icon: faSitemap,
+    icon: "Network",
     title: "Project Excellence",
     desc: "100% success rate with zero overruns—our proven track record speaks for itself.",
     link: "#excellence"
   },
   {
-    icon: faLock,
+    icon: "Shield",
     title: "Security First Design",
     desc: "Zero-trust architecture with comprehensive security features built into every solution.",
     link: "#security"
   },
   {
-    icon: faDesktop,
+    icon: "Settings",
     title: "Cost Optimization",
     desc: "Strategic resource allocation ensuring maximum value from your technology investments.",
     link: "#optimization"
@@ -99,7 +88,6 @@ const ITServices = () => {
           modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
           effect="coverflow"
           loop={true}
-          navigation={true}
           pagination={{ clickable: true }}
           speed={500}
           autoplay={{
@@ -130,16 +118,13 @@ const ITServices = () => {
               }}
             >
               <div className="service-card">
-                <div className="icon-container">
-                  <FontAwesomeIcon
-                    icon={service.icon}
-                    className="service-icon"
-                  />
+                <div className="icon-container icon-container-lg icon-container-primary">
+                  <Icon name={service.icon} size={32} />
                 </div>
                 <h3>{service.title}</h3>
                 <p>{service.desc}</p>
                 <span className="service-arrow">
-                  <FontAwesomeIcon icon={faArrowRight} className="arrow-icon" />
+                  <Icon name="ArrowRight" size={18} />
                 </span>
               </div>
             </SwiperSlide>
@@ -160,8 +145,8 @@ const ITServices = () => {
             </div>
             
             <div className="contact-method">
-              <div className="contact-icon">
-                <FontAwesomeIcon icon={faPhoneVolume} />
+              <div className="icon-container icon-container-sm icon-container-primary">
+                <Icon name="Phone" size={20} />
               </div>
               <div className="contact-text">
                 <div className="contact-label">Get Expert Advice</div>
@@ -172,8 +157,8 @@ const ITServices = () => {
             </div>
 
             <div className="contact-method">
-              <div className="contact-icon">
-                <FontAwesomeIcon icon={faEnvelope} />
+              <div className="icon-container icon-container-sm icon-container-primary">
+                <Icon name="Email" size={20} />
               </div>
               <div className="contact-text">
                 <div className="contact-label">Email Us</div>

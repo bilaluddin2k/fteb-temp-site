@@ -1,30 +1,22 @@
 "use client"
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { 
-  faMapMarkerAlt, 
-  faPhoneAlt, 
-  faEnvelope
-} from '@fortawesome/free-solid-svg-icons'
-import {
-  faLinkedinIn
-} from '@fortawesome/free-brands-svg-icons'
+import { Icon } from '../Icons/IconSystem'
 import "./Contact.scss"
 
 const Contact = () => {
   const contactInfo = [
     {
-      icon: faMapMarkerAlt,
+      icon: "Location",
       title: "Visit Us",
       content: "AG house, sala al din, dubai, UAE",
     },
     {
-      icon: faPhoneAlt,
+      icon: "Phone",
       title: "Call Us",
-      content: +971588481295,
+      content: "+971588481295",
     },
     {
-      icon: faEnvelope,
+      icon: "Email",
       title: "Email Us",
       content: "Connect@ftebtech.com",
       isEmail: true,
@@ -47,8 +39,8 @@ const Contact = () => {
             <div className="info-list">
               {contactInfo.map((info, index) => (
                 <div key={index} className="info-item">
-                  <div className="project-icon">
-                    <FontAwesomeIcon icon={info.icon} />
+                  <div className="icon-container icon-container-md icon-container-primary">
+                    <Icon name={info.icon} size={24} />
                   </div>
                   <div className="info-content">
                     <h4>{info.title}</h4>
@@ -71,14 +63,12 @@ const Contact = () => {
             </div>
 
              <div className="contact-button-wrapper">
-           
             <button className="service-btn" onClick={() => window.location.href = 'mailto:Connect@ftebtech.com'}>
+              <Icon name="Email" size={18} className="button-icon" />
               Contact Us
             </button>
           </div>
           </div>
-
-        
         </div>
       </div>
     </section>

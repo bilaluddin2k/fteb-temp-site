@@ -45,13 +45,7 @@
     }
   }
 
-  .headsthree {
-    color: var(--color-text);
-    font-size: 18px;
-    line-height: 1.7;
-    max-width: 700px;
-    margin: 0 auto;
-  }
+ 
 }
 
 .servicess-grid {
@@ -133,20 +127,12 @@
     flex: 1;
 
     h3 {
-      color: var(--color-primary);
       font-size: 22px;
-      font-weight: var(--font-weight-semibold);
-      margin-bottom: 18px;
-      line-height: 1.4;
-      transition: color 0.3s ease;
     }
 
     p {
-      color: var(--color-text);
-      font-size: 15px;
-      line-height: 1.8;
-      margin: 0;
-      transition: color 0.3s ease;
+      font-size: 16px;
+ 
     }
   }
 }

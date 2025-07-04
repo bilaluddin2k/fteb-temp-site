@@ -1,5 +1,5 @@
 {
-  "name": "nitech",
+  "name": "ftebtech",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -23,11 +23,11 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "dev": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "node ftebtech.js start",
+    "dev": "node ftebtech.js start",
+    "build": "node ftebtech.js build",
+    "test": "node ftebtech.js test",
+    "eject": "node ftebtech.js eject"
   },
   "eslintConfig": {
     "extends": [

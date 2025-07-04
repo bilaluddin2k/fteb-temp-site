@@ -297,8 +297,6 @@
   transform: translateX(5px);
 }
 
-=
-
 .badge {
   background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
   color: white;
@@ -332,10 +330,14 @@
 
 
 /* Section Header */
+.services-grid-container {
+  margin: 0 auto;
+  padding:70px 0;
+}
 .section-header {
   text-align: center;
   margin-bottom: 60px;
-}
+padding: 30px;}
 
 .section-header h2 {
   font-family: var(--font-heading);
@@ -461,18 +463,6 @@
   border: 1px solid #e5e7eb;
 }
 
-.benefit-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 32px;
-  margin: 0 auto 24px;
-}
 
 .benefit-card h3 {
   font-family: var(--font-heading);
@@ -637,7 +627,7 @@
 
 .certifications-table th {
   background: #f5f7fa;
-  color: #222;
+  color:#0056d2;
   font-weight: 600;
   border-bottom: 2px solid #e3e8ee;
 }

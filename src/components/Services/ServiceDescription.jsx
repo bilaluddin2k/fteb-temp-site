@@ -30,12 +30,12 @@ const ServiceDescription = () => {
 
   const services = [
     {
-      id: 'azure',
-      title: 'Microsoft Azure Services',
-      description: 'Complete cloud infrastructure solutions with Azure. From migration to optimization, we handle your entire cloud journey with enterprise-grade security and scalability.',
+      id: 'cloud-services',
+      title: 'Cloud Services (Azure, AWS, GCP)',
+      description: 'Complete multi-cloud infrastructure solutions. From migration to optimization, we handle your entire cloud journey across Azure, AWS, and Google Cloud with enterprise-grade security and scalability.',
       logo: azureLogo,
-      features: ['Cloud Migration', 'Infrastructure Setup', 'DevOps Integration', 'Cost Optimization'],
-      path: '/services/azure'
+      features: ['Multi-Cloud Strategy', 'Cloud Migration', 'Infrastructure Setup', 'Cost Optimization'],
+      path: '/services/cloud-services'
     },
     {
       id: 'microsoft365',
@@ -76,6 +76,22 @@ const ServiceDescription = () => {
       logo: microsoftLogo,
       features: ['Security Assessment', 'Threat Protection', 'Compliance', '24/7 Monitoring'],
       path: '/services/security'
+    },
+    {
+      id: 'turbo360',
+      title: 'Turbo360 Management',
+      description: 'Comprehensive Azure and Office 365 management platform for monitoring, governance, and optimization of your cloud environment.',
+      logo: turbo360Logo,
+      features: ['Cloud Monitoring', 'Governance', 'Cost Management', 'Performance Analytics'],
+      path: '/services/turbo360'
+    },
+    {
+      id: 'erosource',
+      title: 'Erosource Solutions',
+      description: 'Advanced enterprise resource planning and business intelligence solutions to streamline operations and drive data-driven decisions.',
+      logo: erosourceLogo,
+      features: ['ERP Implementation', 'Business Intelligence', 'Data Analytics', 'Process Automation'],
+      path: '/services/erosource'
     }
   ];
  const productLogos = [

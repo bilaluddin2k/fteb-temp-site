@@ -8,12 +8,17 @@ import Footer from "./components/Footer/Footer"
 import Resolution from "./pages/Resolution/Resolution"
 import Servicess from "./pages/Servicess/Servicess"
 import Contact from "./pages/Contact/Contact"
+import CloudServices from "./pages/Services/CloudServices"
 import AzureServices from "./pages/Services/AzureServices"
+import AWSServices from "./pages/Services/AWSServices"
+import GCPServices from "./pages/Services/GCPServices"
 import Microsoft365Services from "./pages/Services/Microsoft365Services"
 import Dynamics365Services from "./pages/Services/Dynamics365Services"
 import DevelopmentServices from "./pages/Services/DevelopmentServices"
 import InfrastructureServices from "./pages/Services/InfrastructureServices"
 import SecurityServices from "./pages/Services/SecurityServices.jsx"
+import Turbo360Services from "./pages/Services/Turbo360Services"
+import ErosourceServices from "./pages/Services/ErosourceServices"
 import { routes } from './routes.js'
 
 function ScrollToTop() {
@@ -27,28 +32,11 @@ function ScrollToTop() {
 }
 
 function App() {
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true)
-      } else {
-        setScrolled(false)
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
-
   return (
     <Router>
       <ScrollToTop />
       <div className="app">
-        <Header scrolled={scrolled} />
+        <Header />
         <Routes>
           <Route path={routes.home.path} element={<Resolution />} />
           <Route path={routes.servicess.path} element={<Servicess />} />
@@ -58,13 +46,20 @@ function App() {
           <Route path={routes.caseStudies.path} element={<Resolution />} />
           <Route path={routes.blog.path} element={<Resolution />} />
           
-          {/* Individual Service Pages */}
+          {/* Cloud Services */}
+          <Route path={routes.cloudServices.path} element={<CloudServices />} />
           <Route path={routes.azure.path} element={<AzureServices />} />
+          <Route path={routes.aws.path} element={<AWSServices />} />
+          <Route path={routes.gcp.path} element={<GCPServices />} />
+          
+          {/* Other Individual Service Pages */}
           <Route path={routes.microsoft365.path} element={<Microsoft365Services />} />
           <Route path={routes.dynamics365.path} element={<Dynamics365Services />} />
           <Route path={routes.development.path} element={<DevelopmentServices />} />
           <Route path={routes.infrastructure.path} element={<InfrastructureServices />} />
           <Route path={routes.security.path} element={<SecurityServices />} />
+          <Route path={routes.turbo360.path} element={<Turbo360Services />} />
+          <Route path={routes.erosource.path} element={<ErosourceServices />} />
         </Routes>
         <Footer />
       </div>

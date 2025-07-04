@@ -34,12 +34,29 @@ export const routes = {
     name: 'Blog',
     title: 'Blog'
   },
-  // Individual service pages
+  // Cloud Services
+  cloudServices: {
+    path: '/services/cloud-services',
+    name: 'Cloud Services',
+    title: 'Multi-Cloud Services (Azure, AWS, GCP)'
+  },
+  // Individual Cloud Platform Pages
   azure: {
     path: '/services/azure',
     name: 'Azure Services',
     title: 'Microsoft Azure Services'
   },
+  aws: {
+    path: '/services/aws',
+    name: 'AWS Services',
+    title: 'Amazon Web Services'
+  },
+  gcp: {
+    path: '/services/gcp',
+    name: 'GCP Services',
+    title: 'Google Cloud Platform'
+  },
+  // Other Services
   microsoft365: {
     path: '/services/microsoft365',
     name: 'Microsoft 365',
@@ -64,6 +81,16 @@ export const routes = {
     path: '/services/security',
     name: 'Security',
     title: 'Cybersecurity Solutions'
+  },
+  turbo360: {
+    path: '/services/turbo360',
+    name: 'Turbo360',
+    title: 'Turbo360 Management Platform'
+  },
+  erosource: {
+    path: '/services/erosource',
+    name: 'Erosource',
+    title: 'Erosource Enterprise Solutions'
   }
 };
 

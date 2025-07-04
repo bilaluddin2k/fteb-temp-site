@@ -176,6 +176,42 @@
           }
         }
 
+        // Email Client Selection
+        .email-client-selection {
+          background: var(--color-bg-light);
+          padding: clamp(20px, 4vw, 25px);
+          border-radius: 12px;
+          border: 2px solid rgba(0, 86, 210, 0.1);
+
+          h6 {
+            font-family: var(--font-heading);
+            color: var(--color-primary);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: clamp(12px, 2vw, 16px);
+          }
+
+          .btn-group {
+            .btn {
+              font-family: var(--font-body);
+              padding: clamp(12px, 2.5vw, 16px) clamp(16px, 3vw, 20px);
+              border-radius: 8px;
+              font-weight: var(--font-weight-medium);
+              transition: all 0.3s ease;
+              min-height: var(--touch-target-comfortable);
+
+              small {
+                font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+                opacity: 0.8;
+              }
+
+              &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0, 86, 210, 0.2);
+              }
+            }
+          }
+        }
+
         // Form Styles
         .form-group {
           margin-bottom: clamp(20px, 3vw, 25px);
@@ -458,6 +494,21 @@
     .main-contact-section {
       .contact-sidebar {
         margin-top: clamp(30px, 5vw, 40px);
+      }
+    }
+
+    .email-client-selection {
+      .btn-group {
+        flex-direction: column;
+        
+        .btn {
+          border-radius: 8px !important;
+          margin-bottom: 8px;
+          
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
       }
     }
   }

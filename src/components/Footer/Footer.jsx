@@ -1,9 +1,5 @@
 import "../../styles/components/Footer/Footer.scss"
-import { 
-  faLinkedinIn
-} from '@fortawesome/free-brands-svg-icons'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Icon } from '../Icons/IconSystem'
 
 const Footer = () => {
   return (
@@ -18,7 +14,7 @@ const Footer = () => {
               <p>We are leading technology solutions providing company all over the world doing over 40 years.</p>
               <div className="social-links">
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faLinkedinIn} />
+                  <Icon name="LinkedIn" size={20} />
                 </a>
               </div>
             </div>
@@ -28,27 +24,32 @@ const Footer = () => {
               <ul className="footer-links">
                 <li>
                   <a href="/about">
-                    <i className="fi fi-rr-angle-right"></i> About Us
+                    <Icon name="ArrowRight" size={14} />
+                    About Us
                   </a>
                 </li>
                 <li>
                   <a href="/services">
-                    <i className="fi fi-rr-angle-right"></i> Services
+                    <Icon name="ArrowRight" size={14} />
+                    Services
                   </a>
                 </li>
                 <li>
                   <a href="/case-studies">
-                    <i className="fi fi-rr-angle-right"></i> Case Studies
+                    <Icon name="ArrowRight" size={14} />
+                    Case Studies
                   </a>
                 </li>
                 <li>
                   <a href="/testimonials">
-                    <i className="fi fi-rr-angle-right"></i> Testimonials
+                    <Icon name="ArrowRight" size={14} />
+                    Testimonials
                   </a>
                 </li>
                 <li>
                   <a href="/contact">
-                    <i className="fi fi-rr-angle-right"></i> Contact Us
+                    <Icon name="ArrowRight" size={14} />
+                    Contact Us
                   </a>
                 </li>
               </ul>
@@ -59,27 +60,32 @@ const Footer = () => {
               <ul className="footer-links">
                 <li>
                   <a href="/services/it-management">
-                    <i className="fi fi-rr-angle-right"></i> IT Management
+                    <Icon name="ArrowRight" size={14} />
+                    IT Management
                   </a>
                 </li>
                 <li>
                   <a href="/services/cyber-security">
-                    <i className="fi fi-rr-angle-right"></i> Cyber Security
+                    <Icon name="ArrowRight" size={14} />
+                    Cyber Security
                   </a>
                 </li>
                 <li>
                   <a href="/services/cloud">
-                    <i className="fi fi-rr-angle-right"></i> Cloud Services
+                    <Icon name="ArrowRight" size={14} />
+                    Cloud Services
                   </a>
                 </li>
                 <li>
                   <a href="/services/web-development">
-                    <i className="fi fi-rr-angle-right"></i> Web Development
+                    <Icon name="ArrowRight" size={14} />
+                    Web Development
                   </a>
                 </li>
                 <li>
                   <a href="/services/business-analysis">
-                    <i className="fi fi-rr-angle-right"></i> Business Analysis
+                    <Icon name="ArrowRight" size={14} />
+                    Business Analysis
                   </a>
                 </li>
               </ul>
@@ -92,7 +98,7 @@ const Footer = () => {
                 <div className="form-group">
                   <input type="email" placeholder="Your Email" required />
                   <button type="submit">
-                    <FontAwesomeIcon icon={faSearch} />             
+                    <Icon name="ArrowRight" size={18} />
                   </button>
                 </div>
               </form>

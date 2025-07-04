@@ -84,23 +84,16 @@
       }
     }
 
-    .about-description {
-      font-family: var(--font-body);
-      color: var(--color-muted);
-      margin-bottom: 30px;
-      line-height: var(--line-height-relaxed);
-      font-size: var(--font-size-base);
-      font-weight: var(--font-weight-normal);
-    }
+    
   }
 
   // Experience Badge
   .experience-badge {
     position: absolute;
-    bottom: 30px;
+    bottom: 3px;
     right: -30px;
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
     color: white;
     border-radius: 50%;
@@ -127,14 +120,7 @@
     }
 
     .experience-text {
-      font-family: var(--font-body);
-      font-size: var(--font-size-sm);
-      margin: 8px 0 0;
-      opacity: 0.95;
-      text-transform: uppercase;
-      letter-spacing: var(--letter-spacing-wider);
-      text-align: center;
-      font-weight: var(--font-weight-semibold);
+     
       color: #ffffff;
     }
   }

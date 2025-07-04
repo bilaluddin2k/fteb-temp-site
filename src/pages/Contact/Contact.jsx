@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Form, Button, Alert, Card } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, Alert, Card, ButtonGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faMapMarkerAlt, 
@@ -9,13 +9,16 @@ import {
   faGlobe,
   faCheckCircle,
   faExclamationTriangle,
-  faPaperPlane
+  faPaperPlane,
+  faDesktop,
+  faGoogleDrive
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faLinkedinIn,
   faTwitter,
   faFacebookF,
-  faInstagram
+  faInstagram,
+  faGoogle
 } from '@fortawesome/free-brands-svg-icons';
 import './Contact.scss';
 
@@ -36,6 +39,7 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const [isFormValid, setIsFormValid] = useState(false);
+  const [emailClientOption, setEmailClientOption] = useState('default'); // 'default' or 'gmail'
 
   const contactInfo = [
     {
@@ -184,6 +188,52 @@ const Contact = () => {
     setIsFormValid(!hasErrors && !hasEmptyRequired);
   }, [formData]);
 
+  // Generate email content
+  const generateEmailContent = () => {
+    const subject = `New Contact Form Submission from ${formData.firstName} ${formData.lastName}`;
+    
+    const body = `Hello FTEB Team,
+
+I am interested in your services and would like to get in touch. Here are my details:
+
+CONTACT INFORMATION:
+• Name: ${formData.firstName} ${formData.lastName}
+• Email: ${formData.email}
+• Phone: ${formData.phone}
+• Company: ${formData.company}
+
+PROJECT DETAILS:
+• Service Interested In: ${formData.service}
+• Project Budget: ${formData.budget || 'Not specified'}
+
+MESSAGE:
+${formData.message}
+
+Please contact me at your earliest convenience to discuss how we can work together.
+
+Best regards,
+${formData.firstName} ${formData.lastName}
+${formData.company}
+${formData.email}
+${formData.phone}`;
+
+    return { subject, body };
+  };
+
+  // Open default email client
+  const openDefaultEmailClient = () => {
+    const { subject, body } = generateEmailContent();
+    const mailtoLink = `mailto:Connect@ftebtech.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
+  };
+
+  // Open Gmail in browser
+  const openGmailInBrowser = () => {
+    const { subject, body } = generateEmailContent();
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=Connect@ftebtech.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.open(gmailUrl, '_blank');
+  };
+
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -198,25 +248,35 @@ const Contact = () => {
     setSubmitStatus(null);
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Simulate processing time
+      await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // Here you would typically send the data to your backend
-      console.log('Form submitted:', formData);
+      // Open email client based on user's choice
+      if (emailClientOption === 'gmail') {
+        openGmailInBrowser();
+      } else {
+        openDefaultEmailClient();
+      }
       
       setSubmitStatus('success');
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        company: '',
-        service: '',
-        budget: '',
-        message: '',
-        agreeToTerms: false
-      });
-      setFormErrors({});
+      
+      // Reset form after successful submission
+      setTimeout(() => {
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          company: '',
+          service: '',
+          budget: '',
+          message: '',
+          agreeToTerms: false
+        });
+        setFormErrors({});
+        setSubmitStatus(null);
+      }, 3000);
+      
     } catch (error) {
       setSubmitStatus('error');
     } finally {
@@ -279,20 +339,45 @@ const Contact = () => {
                 <Card.Body>
                   <div className="form-header">
                     <h2>Send Us a Message</h2>
-                    <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                    <p>Fill out the form below and we'll open your email client with the message pre-filled.</p>
+                  </div>
+
+                  {/* Email Client Selection */}
+                  <div className="email-client-selection mb-4">
+                    <h6 className="mb-3">Choose how to send your message:</h6>
+                    <ButtonGroup className="w-100">
+                      <Button
+                        variant={emailClientOption === 'default' ? 'primary' : 'outline-primary'}
+                        onClick={() => setEmailClientOption('default')}
+                        className="d-flex align-items-center justify-content-center gap-2"
+                      >
+                        <FontAwesomeIcon icon={faDesktop} />
+                        Default Email App
+                        <small className="d-block text-muted">(Outlook, Mail, etc.)</small>
+                      </Button>
+                      <Button
+                        variant={emailClientOption === 'gmail' ? 'primary' : 'outline-primary'}
+                        onClick={() => setEmailClientOption('gmail')}
+                        className="d-flex align-items-center justify-content-center gap-2"
+                      >
+                        <FontAwesomeIcon icon={faGoogle} />
+                        Gmail in Browser
+                        <small className="d-block text-muted">(Opens in new tab)</small>
+                      </Button>
+                    </ButtonGroup>
                   </div>
 
                   {submitStatus === 'success' && (
                     <Alert variant="success" className="d-flex align-items-center">
                       <FontAwesomeIcon icon={faCheckCircle} className="me-2" />
-                      Thank you! Your message has been sent successfully. We'll be in touch soon.
+                      Your email client should have opened with the message pre-filled. If it didn't open automatically, please check your browser's popup settings.
                     </Alert>
                   )}
 
                   {submitStatus === 'error' && (
                     <Alert variant="danger" className="d-flex align-items-center">
                       <FontAwesomeIcon icon={faExclamationTriangle} className="me-2" />
-                      Sorry, there was an error sending your message. Please try again.
+                      Sorry, there was an error processing your request. Please try again or contact us directly.
                     </Alert>
                   )}
 
@@ -466,15 +551,24 @@ const Contact = () => {
                           {isSubmitting ? (
                             <>
                               <span className="spinner-border spinner-border-sm me-2" />
-                              Sending Message...
+                              Opening Email Client...
                             </>
                           ) : (
                             <>
                               <FontAwesomeIcon icon={faPaperPlane} className="me-2" />
-                              Send Message
+                              Open {emailClientOption === 'gmail' ? 'Gmail' : 'Email Client'}
                             </>
                           )}
                         </Button>
+                        
+                        <div className="mt-3">
+                          <small className="text-muted">
+                            {emailClientOption === 'gmail' 
+                              ? 'This will open Gmail in a new browser tab with your message pre-filled.'
+                              : 'This will open your default email application (like Outlook, Mail, etc.) with your message pre-filled.'
+                            }
+                          </small>
+                        </div>
                       </Col>
                     </Row>
                   </Form>

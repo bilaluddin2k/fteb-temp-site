@@ -148,7 +148,6 @@
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 
         .icon-container {
-          background: var(--color-primary);
           transform: scale(1.1);
 
           .service-icon {
@@ -275,6 +274,7 @@
         background: var(--color-bg-light);
         border-radius: 12px;
         transition: all 0.3s ease;
+        gap: 1rem;
 
         &:hover {
           transform: translateX(5px);

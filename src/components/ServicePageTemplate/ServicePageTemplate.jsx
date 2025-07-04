@@ -1,20 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faArrowLeft, 
-  faCheck, 
-  faPhone, 
-  faEnvelope,
-  faCog,
-  faShieldAlt,
-  faChartLine,
-  faUsers,
-  faZap,
-  faLock,
-  faChartBar,
-  faComment
-} from '@fortawesome/free-solid-svg-icons';
+import { Icon } from '../Icons/IconSystem';
 import '../../styles/components/ServicePageTemplate/ServicePageTemplate.css';
 
 const ServicePageTemplate = ({ data }) => {
@@ -31,6 +17,7 @@ const ServicePageTemplate = ({ data }) => {
   const handleCallClick = () => {
     window.location.href = 'tel:+971588481295';
   };
+  
   const certificationsData = [
     {
       competency: "Cloud Platform and Infrastructure",
@@ -81,7 +68,7 @@ const ServicePageTemplate = ({ data }) => {
       <section className="service-hero" style={{ background: data.heroGradient }}>
         <div className="service-hero-content">
           <button className="back-button" onClick={handleBackClick}>
-            <FontAwesomeIcon icon={faArrowLeft} />
+            <Icon name="ArrowLeft" size={16} />
             Back to Services
           </button>
           
@@ -96,7 +83,7 @@ const ServicePageTemplate = ({ data }) => {
                   Get Started
                 </button>
                 <button className="cta-button secondary" onClick={handleCallClick}>
-                  <FontAwesomeIcon icon={faPhone} />
+                  <Icon name="Phone" size={16} />
                   Call Us
                 </button>
               </div>
@@ -142,69 +129,17 @@ const ServicePageTemplate = ({ data }) => {
                 </p>
               </div>
 
-              <div className="service-benefits">
-                <h3>Key Advantages</h3>
-                <div className="benefits-grid">
-                  <div className="benefit-item">
-                    <FontAwesomeIcon icon={faZap} className="benefit-icon" />
-                    <div>
-                      <h4>High Performance</h4>
-                      <p>Lightning-fast processing with global CDN and edge computing</p>
-                    </div>
-                  </div>
-                  <div className="benefit-item">
-                    <FontAwesomeIcon icon={faLock} className="benefit-icon" />
-                    <div>
-                      <h4>Enterprise Security</h4>
-                      <p>Multi-layered security with compliance certifications</p>
-                    </div>
-                  </div>
-                  <div className="benefit-item">
-                    <FontAwesomeIcon icon={faChartBar} className="benefit-icon" />
-                    <div>
-                      <h4>Cost Optimization</h4>
-                      <p>Pay-as-you-use model with intelligent cost management</p>
-                    </div>
-                  </div>
-                  <div className="benefit-item">
-                    <FontAwesomeIcon icon={faCog} className="benefit-icon" />
-                    <div>
-                      <h4>Global Reach</h4>
-                      <p>60+ regions worldwide for optimal performance</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            
             </div>
 
-            <div className="content-right">
-              <div className="sidebar">
-                
-                {/* <div className="sidebar-section">
-                  <div className="certification-card">
-                    <h4>Certified Team</h4>
-                    <p>
-                      Our team holds multiple certifications including Solutions Architect, DevOps Engineer, and
-                      Security Engineer.
-                    </p>
-                    <div className="certification-badges">
-                      <div className="badge">Expert</div>
-                      <div className="badge">Solutions Architect</div>
-                      <div className="badge">DevOps Engineer</div>
-                    </div>
-                  </div>
-                </div> */}
-
-               
-              </div>
-            </div>
+            
           </div>
         </div>
       </section>
 
       {/* Services Grid */}
       <section className="services-grid-section">
-        <div className="container">
+        <div className="container services-grid-container">
           <div className="section-header">
             <h2>Our {data.title} Offerings</h2>
             <p>Comprehensive solutions tailored to your business needs</p>
@@ -214,8 +149,8 @@ const ServicePageTemplate = ({ data }) => {
             {data.services.map((service, index) => (
               <div key={index} className="service-card">
                 <div className="service-card-header">
-                  <div className="service-icon">
-                    <FontAwesomeIcon icon={faCog} />
+                  <div className="icon-container icon-container-md icon-container-primary">
+                    <Icon name="Settings" size={24} />
                   </div>
                   <h3>{service.title}</h3>
                 </div>
@@ -225,7 +160,7 @@ const ServicePageTemplate = ({ data }) => {
                 <ul className="service-features">
                   {service.features.map((feature, idx) => (
                     <li key={idx}>
-                      <FontAwesomeIcon icon={faCheck} />
+                      <Icon name="Check" size={14} className="icon-success" />
                       {feature}
                     </li>
                   ))}
@@ -247,13 +182,13 @@ const ServicePageTemplate = ({ data }) => {
           <div className="benefits-grid">
             {data.benefits.map((benefit, index) => (
               <div key={index} className="benefit-card">
-                <div className="benefit-icon">
-                  <FontAwesomeIcon icon={
-                    index === 0 ? faChartLine :
-                    index === 1 ? faShieldAlt :
-                    index === 2 ? faCog :
-                    faUsers
-                  } />
+                <div className="icon-container icon-container-xl icon-container-primary">
+                  <Icon name={
+                    index === 0 ? "Analytics" :
+                    index === 1 ? "Shield" :
+                    index === 2 ? "Settings" :
+                    "Network"
+                  } size={32} />
                 </div>
                 <h3>{benefit.title}</h3>
                 <p>{benefit.description}</p>
@@ -265,12 +200,11 @@ const ServicePageTemplate = ({ data }) => {
 
       {/* Process Section */}
       <section className="process-section">
-
-          <div className="section-header">
-            <h2>Our Implementation Process</h2>
-            <p>A proven methodology for successful project delivery</p>
-          </div>
-          
+        <div className="section-header">
+          <h2>Our Implementation Process</h2>
+          <p>A proven methodology for successful project delivery</p>
+        </div>
+        
         <div className="container d-flex flex-row align-items-center">
           <div className="process-timeline">
             {data.process.map((step, index) => (
@@ -283,16 +217,16 @@ const ServicePageTemplate = ({ data }) => {
               </div>
             ))}
           </div>
-           <div className="sidebar-section">
-                  <div className="contact-card">
-                    <h4>Free Assessment</h4>
-                    <p>Get a comprehensive analysis of your current infrastructure and migration roadmap.</p>
-                    <button className="btn-contact" onClick={handleContactClick}>
-                      <FontAwesomeIcon icon={faComment} />
-                      Schedule Assessment
-                    </button>
-                  </div>
-                </div>
+          <div className="sidebar-section">
+            <div className="contact-card">
+              <h4>Free Assessment</h4>
+              <p>Get a comprehensive analysis of your current infrastructure and migration roadmap.</p>
+              <button className="btn-contact" onClick={handleContactClick}>
+                <Icon name="Phone" size={16} />
+                Schedule Assessment
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -329,7 +263,7 @@ const ServicePageTemplate = ({ data }) => {
                 )}
               </tbody>
             </table>
-        </div>
+          </div>
         </div>
       </section>
 
@@ -342,22 +276,22 @@ const ServicePageTemplate = ({ data }) => {
             
             <div className="cta-actions">
               <button className="cta-button primary large" onClick={handleContactClick}>
-                <FontAwesomeIcon icon={faEnvelope} />
+                <Icon name="Email" size={16} />
                 Contact Us Today
               </button>
               <button className="cta-button secondary large" onClick={handleCallClick}>
-                <FontAwesomeIcon icon={faPhone} />
+                <Icon name="Phone" size={16} />
                 Schedule a Call
               </button>
             </div>
             
             <div className="contact-info">
               <div className="contact-item">
-                <FontAwesomeIcon icon={faPhone} />
+                <Icon name="Phone" size={16} />
                 <span>+971588481295</span>
               </div>
               <div className="contact-item">
-                <FontAwesomeIcon icon={faEnvelope} />
+                <Icon name="Email" size={16} />
                 <span>Connect@ftebtech.com</span>
               </div>
             </div>
