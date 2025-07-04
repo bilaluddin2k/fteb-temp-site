@@ -7,9 +7,9 @@ import laptop from "../../assets/images/Microsoft365.png";
 import mouse from "../../assets/images/mouse.png";
 import watch from "../../assets/images/watch.png";
 import keyboard from "../../assets/images/keyboard.png";
-import devopsImage from "../../assets/images/32dbb8eb-31d7-4ca1-91d7-16534290b2d1.jpg";
-import azureImage from "../../assets/images/e16e8483-9a58-4e49-8c0d-ef5857f48512.jpg";
-import awsImage from "../../assets/images/4f8f8e0b-2d88-444e-b37f-43eeea3f4283.jpg";
+import devopsImage from "../../assets/images/ProductLogos/dev.png";
+import azureImage from "../../assets/images/ProductLogos/azure.png";
+import awsImage from "../../assets/images/ProductLogos/aws.png";
 
 function App() {
   const [imagesLoaded, setImagesLoaded] = useState(false);

@@ -1,6 +1,6 @@
 import React from 'react';
 import ServicePageTemplate from '../../components/ServicePageTemplate/ServicePageTemplate';
-import azureLogo from '../../assets/images/ProductLogos/azure.jpg';
+import azureLogo from '../../assets/images/ProductLogos/azure.png';
 
 const AzureServices = () => {
   const serviceData = {

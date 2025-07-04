@@ -233,8 +233,7 @@
 
       // New Images Positioning - Desktop
       &.devops {
-        top: 5%;
-        left: 15%;
+        right: 30%;
         --x-offset-1: -6px;
         --y-offset-1: 10px;
         --x-offset-2: 8px;
@@ -243,17 +242,15 @@
         --y-offset-3: 12px;
 
         .tech-image {
-          width: 180px;
-          height: 180px;
-          object-fit: cover;
+          width: 190px;
+
           border-radius: 20px;
-          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         }
       }
 
       &.azure {
-        top: 60%;
-        left: 8%;
+        bottom: 0%;
+        left: 18%;
         --x-offset-1: 12px;
         --y-offset-1: -8px;
         --x-offset-2: -6px;
@@ -262,17 +259,15 @@
         --y-offset-3: -6px;
 
         .tech-image {
-          width: 160px;
-          height: 160px;
-          object-fit: cover;
+          width: 180px;
+
           border-radius: 18px;
-          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
         }
       }
 
       &.aws {
         top: 35%;
-        left: 5%;
+        right: 5%;
         --x-offset-1: -9px;
         --y-offset-1: 6px;
         --x-offset-2: 11px;
@@ -281,11 +276,8 @@
         --y-offset-3: 8px;
 
         .tech-image {
-          width: 140px;
-          height: 140px;
-          object-fit: cover;
+          width: 150px;
           border-radius: 16px;
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
       }
     }
@@ -333,41 +325,41 @@
   }
 
   // Responsive Design - Large Desktop (1400px+)
-  @media (min-width: 1400px) {
-    .images-container {
-      .image-wrapper {
-        &.devops {
-          top: 8%;
-          left: 18%;
+  // @media (min-width: 1400px) {
+  //   .images-container {
+  //     .image-wrapper {
+  //       &.devops {
+  //         top: 8%;
+  //         left: 18%;
           
-          .tech-image {
-            width: 200px;
-            height: 200px;
-          }
-        }
+  //         .tech-image {
+  //           width: 200px;
+  //           height: 200px;
+  //         }
+  //       }
 
-        &.azure {
-          top: 65%;
-          left: 12%;
+  //       &.azure {
+  //         top: 65%;
+  //         left: 12%;
 
-          .tech-image {
-            width: 180px;
-            height: 180px;
-          }
-        }
+  //         .tech-image {
+  //           width: 180px;
+  //           height: 180px;
+  //         }
+  //       }
 
-        &.aws {
-          top: 38%;
-          left: 8%;
+  //       &.aws {
+  //         top: 38%;
+  //         left: 8%;
 
-          .tech-image {
-            width: 160px;
-            height: 160px;
-          }
-        }
-      }
-    }
-  }
+  //         .tech-image {
+  //           width: 160px;
+  //           height: 160px;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 
   // Responsive Design - Tablet adjustments
   @media (max-width: 1200px) and (min-width: 769px) {
@@ -383,8 +375,8 @@
         }
 
         &.laptop {
-          top: 15%;
-          right: 10%;
+         top: 22%;
+        right: -3%;
 
           .laptop-image {
             width: clamp(500px, 55vw, 600px);
@@ -420,18 +412,16 @@
 
         // New images responsive adjustments
         &.devops {
-          top: 8%;
-          left: 12%;
+          right: 30%;
 
           .tech-image {
-            width: clamp(140px, 15vw, 160px);
-            height: clamp(140px, 15vw, 160px);
+            width: clamp(140px, 15vw, 100px);
+            height: clamp(140px, 15vw, 100px);
           }
         }
 
         &.azure {
-          top: 58%;
-          left: 5%;
+          bottom: 0%;
 
           .tech-image {
             width: clamp(120px, 13vw, 140px);
@@ -440,8 +430,8 @@
         }
 
         &.aws {
-          top: 32%;
-          left: 2%;
+          top: 66%;
+          bottom: 10%;
 
           .tech-image {
             width: clamp(100px, 11vw, 120px);

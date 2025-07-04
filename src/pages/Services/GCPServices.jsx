@@ -1,6 +1,6 @@
 import React from 'react';
 import ServicePageTemplate from '../../components/ServicePageTemplate/ServicePageTemplate';
-import gcpLogo from '../../assets/images/ProductLogos/googlecloud.jpg';
+import gcpLogo from '../../assets/images/ProductLogos/googlecloud.png'; // Updated to use the correct GCP logo
 
 const GCPServices = () => {
   const serviceData = {

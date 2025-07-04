@@ -1,6 +1,6 @@
 import React from 'react';
 import ServicePageTemplate from '../../components/ServicePageTemplate/ServicePageTemplate';
-import awsLogo from '../../assets/images/ProductLogos/aws.jpg';
+import awsLogo from '../../assets/images/ProductLogos/aws.png';
 
 const AWSServices = () => {
   const serviceData = {

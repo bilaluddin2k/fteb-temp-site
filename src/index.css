@@ -2,7 +2,7 @@
 @import url("./styles/responsive/breakpoints.css");
 @import url("./styles/responsive/mobile-first.css");
 @import url("./styles/responsive/browser-fixes.css");
-@import "./styles/components/Icons/Icons.scss";
+@import "./styles/components/Icons/Icons.css";
 
 /* Global Reset and Base Styles */
 * {

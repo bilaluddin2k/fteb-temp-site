@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../../styles/components/Services/Services.css';
+import '../../styles/components/Services/Services.scss';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -16,7 +16,7 @@ import developmentLogo from '../../assets/images/ProductLogos/Development.png';
 import microsoftLogo from '../../assets/images/ProductLogos/Microsoft-Logo.png';
 import awsLogo from "../../assets/images/ProductLogos/aws.jpg";
 import erosourceLogo from "../../assets/images/ProductLogos/erosource.png";
-import googlecloudLogo from "../../assets/images/ProductLogos/googlecloud.jpg";
+import googlecloudLogo from "../../assets/images/ProductLogos/googlecloud.png";
 import linuxLogo from "../../assets/images/ProductLogos/linux.png";
 import mlLogo from "../../assets/images/ProductLogos/Machine_Learning_Logo.png";
 import pythonLogo from "../../assets/images/ProductLogos/Python.png";
@@ -29,7 +29,7 @@ const ServiceDescription = () => {
   const navigate = useNavigate();
 
   const services = [
-    {
+       {
       id: 'cloud-services',
       title: 'Cloud Services (Azure, AWS, GCP)',
       description: 'Complete multi-cloud infrastructure solutions. From migration to optimization, we handle your entire cloud journey across Azure, AWS, and Google Cloud with enterprise-grade security and scalability.',
@@ -37,47 +37,7 @@ const ServiceDescription = () => {
       features: ['Multi-Cloud Strategy', 'Cloud Migration', 'Infrastructure Setup', 'Cost Optimization'],
       path: '/services/cloud-services'
     },
-    {
-      id: 'microsoft365',
-      title: 'Microsoft 365 Solutions',
-      description: 'Empower your workforce with comprehensive M365 implementation, security configuration, and ongoing support for maximum productivity.',
-      logo: m365Logo,
-      features: ['Email Migration', 'Teams Setup', 'Security Configuration', 'User Training'],
-      path: '/services/microsoft365'
-    },
-    {
-      id: 'dynamics365',
-      title: 'Dynamics 365 Implementation',
-      description: 'Transform your business operations with intelligent ERP and CRM solutions tailored to your specific industry needs and requirements.',
-      logo: dynamicsLogo,
-      features: ['Business Central', 'Sales & Marketing', 'Field Service', 'Custom Development'],
-      path: '/services/dynamics365'
-    },
-    {
-      id: 'development',
-      title: 'Custom Development',
-      description: 'Build powerful web applications and business tools with modern technologies, ensuring scalability, performance, and user experience.',
-      logo: developmentLogo,
-      features: ['Web Applications', 'Mobile Apps', 'API Development', 'System Integration'],
-      path: '/services/development'
-    },
-    {
-      id: 'infrastructure',
-      title: 'IT Infrastructure Services',
-      description: 'End-to-end infrastructure planning, implementation, and management for optimal performance, reliability, and business continuity.',
-      logo: microsoftLogo,
-      features: ['Network Setup', 'Server Management', 'Hardware Procurement', 'Monitoring'],
-      path: '/services/infrastructure'
-    },
-    {
-      id: 'security',
-      title: 'Cybersecurity Solutions',
-      description: 'Protect your business with comprehensive security strategies, advanced threat protection, and compliance management solutions.',
-      logo: microsoftLogo,
-      features: ['Security Assessment', 'Threat Protection', 'Compliance', '24/7 Monitoring'],
-      path: '/services/security'
-    },
-    {
+        {
       id: 'turbo360',
       title: 'Turbo360 Management',
       description: 'Comprehensive Azure and Office 365 management platform for monitoring, governance, and optimization of your cloud environment.',
@@ -92,7 +52,51 @@ const ServiceDescription = () => {
       logo: erosourceLogo,
       features: ['ERP Implementation', 'Business Intelligence', 'Data Analytics', 'Process Automation'],
       path: '/services/erosource'
-    }
+    },
+ 
+  
+    {
+      id: 'dynamics365',
+      title: 'Dynamics 365 Implementation',
+      description: 'Transform your business operations with intelligent ERP and CRM solutions tailored to your specific industry needs and requirements.',
+      logo: dynamicsLogo,
+      features: ['Business Central', 'Sales & Marketing', 'Field Service', 'Custom Development'],
+      path: '/services/dynamics365'
+    },
+      {
+      id: 'microsoft365',
+      title: 'Microsoft 365 Solutions',
+      description: 'Empower your workforce with comprehensive M365 implementation, security configuration, and ongoing support for maximum productivity.',
+      logo: m365Logo,
+      features: ['Email Migration', 'Teams Setup', 'Security Configuration', 'User Training'],
+      path: '/services/microsoft365'
+    },
+
+    {
+      id: 'infrastructure',
+      title: 'IT Infrastructure Services',
+      description: 'End-to-end infrastructure planning, implementation, and management for optimal performance, reliability, and business continuity.',
+      logo: microsoftLogo,
+      features: ['Network Setup', 'Server Management', 'Hardware Procurement', 'Monitoring'],
+      path: '/services/infrastructure'
+    },
+        {
+      id: 'development',
+      title: 'Custom Development',
+      description: 'Build powerful web applications and business tools with modern technologies, ensuring scalability, performance, and user experience.',
+      logo: developmentLogo,
+      features: ['Web Applications', 'Mobile Apps', 'API Development', 'System Integration'],
+      path: '/services/development'
+    },
+    {
+      id: 'security',
+      title: 'Cybersecurity Solutions',
+      description: 'Protect your business with comprehensive security strategies, advanced threat protection, and compliance management solutions.',
+      logo: microsoftLogo,
+      features: ['Security Assessment', 'Threat Protection', 'Compliance', '24/7 Monitoring'],
+      path: '/services/security'
+    },
+
   ];
  const productLogos = [
     { src: awsLogo, class: 'logo-aws', alt: 'AWS Logo' },
