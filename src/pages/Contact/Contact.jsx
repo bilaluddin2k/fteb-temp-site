@@ -24,7 +24,7 @@ import {
   faYahoo,
   faApple
 } from '@fortawesome/free-brands-svg-icons';
-import './Contact.scss';
+import '../../styles/components/ContactPage/Contact.scss'; // Import custom styles
 
 const Contact = () => {
   const [formData, setFormData] = useState({

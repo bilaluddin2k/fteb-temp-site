@@ -1,7 +1,7 @@
 "use client"
 
 import { Icon } from '../Icons/IconSystem'
-import "./Contact.scss"
+import "../../styles/components/Contact/Contact.scss"
 
 const Contact = () => {
   const contactInfo = [

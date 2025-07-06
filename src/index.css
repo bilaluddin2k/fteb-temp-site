@@ -1,8 +1,9 @@
 @import url("./assets/fonts/fonts.css");
-@import url("./styles/responsive/breakpoints.css");
-@import url("./styles/responsive/mobile-first.css");
-@import url("./styles/responsive/browser-fixes.css");
+@import url("./styles/responsive/breakpoints.scss");
+@import url("./styles/responsive/mobile-first.scss");
+@import url("./styles/responsive/browser-fixes.scss");
 @import "./styles/components/Icons/Icons.css";
+
 
 /* Global Reset and Base Styles */
 * {

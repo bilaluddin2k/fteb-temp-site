@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import './DinoGame.scss';
+import '../../styles/components/DinoGame/DinoGame.scss';
 
 const DinoGame = () => {
   const canvasRef = useRef(null);

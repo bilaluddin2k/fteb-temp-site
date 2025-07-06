@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "../../styles/components/Footer/Footer.scss"
+import footerLogo from '../../assets/images/FTebtech-logo/FTEB logo.png';
 import { Icon } from '../Icons/IconSystem'
 import DinoGame from '../DinoGame/DinoGame';
 
@@ -94,7 +95,7 @@ const Footer = () => {
               {/* Company Info */}
               <div className="footer-section company-section">
                 <div className="footer-logo">
-                  <h2>FTEB</h2>
+                 <img src={footerLogo} width={150} alt="ftechtech" />
                   <span className="logo-tagline">Technology Solutions</span>
                 </div>
                 <p className="company-description">

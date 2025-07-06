@@ -1,6 +1,6 @@
 // Modern Footer Component - SCSS with Nested Structure
 .modern-footer {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background: linear-gradient(135deg, #0056d2 0%, #0056d2 50%, #0358d3 100%);
   color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -85,7 +85,7 @@
         left: 0;
         width: 40px;
         height: 2px;
-        background: linear-gradient(90deg, var(--color-accent), transparent);
+        background: linear-gradient(90deg, var(--color-white), transparent);
       }
     }
 
@@ -141,12 +141,12 @@
           transition: all 0.3s ease;
 
           &:hover {
-            color: var(--color-accent);
+            color: var(--color-white);
             transform: translateX(5px);
           }
 
           svg {
-            color: var(--color-accent);
+            color: var(--color-white);
             flex-shrink: 0;
           }
 
@@ -156,7 +156,7 @@
             transition: color 0.3s ease;
 
             &:hover {
-              color: var(--color-accent);
+              color: var(--color-white);
             }
           }
         }
@@ -186,7 +186,7 @@
           backdrop-filter: blur(10px);
 
           &:focus-within {
-            border-color: var(--color-accent);
+            border-color: var(--color-white);
             box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.2);
           }
 
@@ -206,7 +206,7 @@
           }
 
           button {
-            background: linear-gradient(135deg, var(--color-accent), #ff8c00);
+            background: linear-gradient(135deg, var(--color-white), #ff8c00);
             border: none;
             padding: clamp(12px, 2.5vw, 15px) clamp(16px, 3vw, 20px);
             color: #ffffff;
@@ -218,7 +218,7 @@
             min-width: 50px;
 
             &:hover {
-              background: linear-gradient(135deg, #ff8c00, var(--color-accent));
+              background: linear-gradient(135deg, #ff8c00, var(--color-white));
               transform: scale(1.05);
             }
 
@@ -254,8 +254,8 @@
             backdrop-filter: blur(10px);
 
             &:hover {
-              background: var(--social-color, var(--color-accent));
-              border-color: var(--social-color, var(--color-accent));
+              background: var(--social-color, var(--color-white));
+              border-color: var(--social-color, var(--color-white));
               transform: translateY(-3px);
               box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
             }
@@ -290,12 +290,12 @@
         padding: clamp(4px, 1vw, 6px) 0;
 
         &:hover {
-          color: var(--color-accent);
+          color: var(--color-white);
           transform: translateX(8px);
         }
 
         svg {
-          color: var(--color-accent);
+          color: var(--color-white);
           transition: all 0.3s ease;
           flex-shrink: 0;
         }
@@ -352,7 +352,7 @@
           padding: clamp(4px, 1vw, 6px);
 
           &:hover {
-            color: var(--color-accent);
+            color: var(--color-white);
           }
         }
       }
@@ -375,7 +375,7 @@
 
           &:hover {
             background: linear-gradient(135deg, rgba(255, 165, 0, 0.2), rgba(255, 165, 0, 0.1));
-            border-color: var(--color-accent);
+            border-color: var(--color-white);
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(255, 165, 0, 0.3);
           }
@@ -611,7 +611,7 @@
   .newsletter-form .input-group button:focus,
   .dino-game-trigger:focus,
   .footer-bottom-links a:focus {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--color-white);
     outline-offset: 2px;
   }
 
