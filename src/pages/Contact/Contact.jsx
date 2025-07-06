@@ -584,7 +584,7 @@ ${formData.phone}`;
                       <Col md={12}>
                         <Button
                           type="submit"
-                          className="submit-btn"
+                          className="btn"
                           disabled={!isFormValid || isSubmitting}
                         >
                           {isSubmitting ? (

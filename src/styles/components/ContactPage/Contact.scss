@@ -256,22 +256,12 @@
           }
         }
 
-        .submit-btn {
-          font-family: var(--font-body);
-          background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-          border: none;
-          border-radius: 50px;
-          font-size: clamp(1rem, 2vw, 1.1rem);
-          font-weight: var(--font-weight-semibold);
-          color: var(--color-white);
+        .btn {
+       
           width: 100%;
-          transition: all 0.3s ease;
-          min-height: var(--touch-target-comfortable);
-
+         
           &:hover:not(:disabled) {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 86, 210, 0.3);
-            background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
           }
 
           &:disabled {

@@ -63,7 +63,7 @@ const Contact = () => {
             </div>
 
              <div className="contact-button-wrapper">
-            <button className="service-btn" onClick={() => window.location.href = 'mailto:Connect@ftebtech.com'}>
+            <button className="btn" onClick={() => window.location.href = 'mailto:Connect@ftebtech.com'}>
               <Icon name="Email" size={18} className="button-icon" />
               Contact Us
             </button>

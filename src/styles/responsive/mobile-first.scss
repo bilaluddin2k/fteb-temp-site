@@ -29,21 +29,6 @@ img, video, iframe {
 }
 
 /* Touch-Friendly Interactions */
-button, 
-.btn, 
-a[role="button"],
-input[type="submit"],
-input[type="button"] {
-  min-height: var(--touch-target-min);
-  min-width: var(--touch-target-min);
-  padding: 12px 20px;
-  border: none;
-  border-radius: var(--border-radius-sm);
-  cursor: pointer;
-  transition: var(--transition-normal);
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-}
 
 /* Form Elements */
 input, 
@@ -238,10 +223,7 @@ select:focus {
     border: 2px solid currentColor;
   }
   
-  button,
-  .btn {
-    border: 2px solid currentColor;
-  }
+
 }
 
 /* Dark Mode Support */

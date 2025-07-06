@@ -8,7 +8,7 @@ const CloudServices = () => {
     subtitle: "Azure, AWS & Google Cloud Platform Solutions",
     description: "Transform your business with comprehensive multi-cloud infrastructure solutions. From migration to optimization, we provide end-to-end cloud services across Azure, AWS, and Google Cloud Platform that ensure scalability, security, and cost-effectiveness.",
     logo: azureLogo,
-    heroGradient: "linear-gradient(135deg, #0078d4 0%, #005a9e 50%, #ff9900 100%)",
+    heroGradient: "linear-gradient(136deg, rgb(21 73 146) 50%, rgb(48 173 233) 101%)",
     
     stats: [
       { number: "500+", label: "Cloud Migrations" },
