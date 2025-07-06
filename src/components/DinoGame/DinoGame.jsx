@@ -98,8 +98,9 @@ const DinoGame = () => {
   const startGame = useCallback(() => {
     gameRef.current.isRunning = true;
     gameRef.current.score = 0;
-    gameRef.current.gameSpeed = 3;
+    gameRef.current.gameSpeed = 2;
     obstaclesRef.current = [];
+    
     
     // Reset dino position
     dinoRef.current.y = gameRef.current.groundY - dinoRef.current.height;
@@ -207,7 +208,7 @@ const DinoGame = () => {
     // Update score
     gameRef.current.score += 1;
     if (gameRef.current.score % 100 === 0) {
-      gameRef.current.gameSpeed += 0.2;
+      gameRef.current.gameSpeed += 0.1;
     }
 
     setScore(Math.floor(gameRef.current.score / 10));
