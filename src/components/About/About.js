@@ -30,7 +30,7 @@ const About = () => {
           <div className="about-image">
             <img src={aboutImage || "/placeholder.svg"} alt="About Us" />
             <div className="experience-badge">
-              <h2 className="experience-number">10</h2>
+              <h2 className="experience-number">10+</h2>
               <p className="experience-text">Years Experience</p>
             </div>
           </div>

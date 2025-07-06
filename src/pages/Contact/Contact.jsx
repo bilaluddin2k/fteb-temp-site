@@ -678,52 +678,55 @@ ${formData.phone}`;
       </section>
 
       {/* Email Client Selection Modal */}
-      <Modal 
-        show={showEmailModal} 
+      <Modal
+        className="email-client-modal"
+        show={showEmailModal}
         onHide={() => setShowEmailModal(false)}
         centered
         size="lg"
-        className="email-client-modal"
       >
-        <Modal.Header>
-          <Modal.Title>
-            <FontAwesomeIcon icon={faEnvelope} className="me-2" />
-            Choose Your Email Client
-          </Modal.Title>
-          <Button 
-            variant="link" 
-            onClick={() => setShowEmailModal(false)}
-            className="btn-close-custom"
-          >
-            <FontAwesomeIcon icon={faTimes} />
-          </Button>
-        </Modal.Header>
-        <Modal.Body>
-          <p className="modal-description">
-            Select your preferred email client to send your message. We'll open it with your message pre-filled.
-          </p>
-          <div className="email-clients-grid">
-            {emailClients.map((client, index) => (
-              <button
-                key={index}
-                className="email-client-option"
-                onClick={() => handleEmailClientSelect(client.action)}
-                style={{ '--client-color': client.color }}
-              >
-                <div className="client-icon">
-                  <FontAwesomeIcon icon={client.icon} />
-                </div>
-                <span className="client-name">{client.name}</span>
-              </button>
-            ))}
+          <div className="modal-header">
+            <h5 className="modal-title">
+              <FontAwesomeIcon icon={faEnvelope} className="me-2" />
+              Choose Your Email Client
+            </h5>
+            <button
+              type="button"
+              className="btn-close-custom"
+              onClick={() => setShowEmailModal(false)}
+            >
+              <FontAwesomeIcon icon={faTimes} />
+            </button>
           </div>
-          <div className="modal-note">
-            <small className="text-muted">
-              <FontAwesomeIcon icon={faCheckCircle} className="me-1" />
-              If your preferred email client doesn't open automatically, please check your browser's popup settings.
-            </small>
+
+          <div className="modal-body">
+            <p className="modal-description">
+              Select your preferred email client to send your message. We'll open it with your message pre-filled.
+            </p>
+
+            <div className="email-clients-grid">
+              {emailClients.map((client, index) => (
+                <button
+                  key={index}
+                  className="email-client-option"
+                  onClick={() => handleEmailClientSelect(client.action)}
+                  style={{ '--client-color': client.color }}
+                >
+                  <div className="client-icon">
+                    <FontAwesomeIcon icon={client.icon} />
+                  </div>
+                  <span className="client-name">{client.name}</span>
+                </button>
+              ))}
+            </div>
+
+            <div className="modal-note">
+              <small className="text-muted">
+                <FontAwesomeIcon icon={faCheckCircle} className="me-1" />
+                If your preferred email client doesn't open automatically, please check your browser's popup settings.
+              </small>
+            </div>
           </div>
-        </Modal.Body>
       </Modal>
 
       {/* Map Section */}
