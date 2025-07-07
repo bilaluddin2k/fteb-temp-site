@@ -3,7 +3,8 @@ import { useState, useEffect, useRef } from "react"
 import { Link, NavLink } from "react-router-dom"
 import { routes } from '../../routes.js'
 import { Icon } from '../Icons/IconSystem'
-import fteb from '../../assets/images/FTebtech-logo/FTEB logo.png'
+import fteb from '../../assets/images/FTebtech-logo/FTEB-logo.png'
+import ftebs from '../../assets/images/FTebtech-logo/FTEB-logo-white.png'
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -108,6 +109,13 @@ const Header = () => {
       </Link>
     </div>
   )
+    const Logos = () => (
+    <div className="logo">
+      <Link to={routes.home.path} onClick={closeMobileMenu}>
+        <img src={ftebs} alt="FTEBTECH" />
+      </Link>
+    </div>
+  )
 
   // Mobile menu toggle component
   const MobileMenuToggle = ({ color }) => (
@@ -134,7 +142,7 @@ const Header = () => {
         <div className="main-header">
           <div className="wrapper">
             <div className="main-header-inner">
-              <Logo />
+              <Logos />
               <MobileMenuToggle color="var(--color-white)" />
               <Navigation />
             </div>

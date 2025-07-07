@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "../../styles/components/Footer/Footer.scss"
-import footerLogo from '../../assets/images/FTebtech-logo/FTEB logo.png';
+import footerLogo from '../../assets/images/FTebtech-logo/FTEB-logo-white.png';
 import { Icon } from '../Icons/IconSystem'
 import DinoGame from '../DinoGame/DinoGame';
 
