@@ -37,6 +37,23 @@ const ServiceDescription = () => {
       features: ['Multi-Cloud Strategy', 'Cloud Migration', 'Infrastructure Setup', 'Cost Optimization'],
       path: '/services/cloud-services'
     },
+        {
+      id: 'microsoft365',
+      title: 'Microsoft 365 Solutions',
+      description: 'Empower your workforce with comprehensive M365 implementation, security configuration, and ongoing support for maximum productivity.',
+      logo: m365Logo,
+      features: ['Email Migration', 'Teams Setup', 'Security Configuration', 'User Training'],
+      path: '/services/microsoft365'
+    },
+      {
+      id: 'dynamics365',
+      title: 'Dynamics 365 Implementation',
+      description: 'Transform your business operations with intelligent ERP and CRM solutions tailored to your specific industry needs and requirements.',
+      logo: dynamicsLogo,
+      features: ['Business Central', 'Sales & Marketing', 'Field Service', 'Custom Development'],
+      path: '/services/dynamics365'
+    },
+    
      {
       id: 'infrastructure',
       title: 'ICT',
@@ -45,14 +62,15 @@ const ServiceDescription = () => {
       features: ['Network Setup', 'Server Management', 'Hardware Procurement', 'Monitoring'],
       path: '/services/infrastructure'
     },
-      {
-      id: 'microsoft365',
-      title: 'Microsoft 365 Solutions',
-      description: 'Empower your workforce with comprehensive M365 implementation, security configuration, and ongoing support for maximum productivity.',
-      logo: m365Logo,
-      features: ['Email Migration', 'Teams Setup', 'Security Configuration', 'User Training'],
-      path: '/services/microsoft365'
+        {
+      id: 'security',
+      title: 'Cybersecurity Solutions',
+      description: 'Protect your business with comprehensive security strategies, advanced threat protection, and compliance management solutions.',
+      logo: microsoftLogo,
+      features: ['Security Assessment', 'Threat Protection', 'Compliance', '24/7 Monitoring'],
+      path: '/services/security'
     },
+  
         {
       id: 'turbo360',
       title: 'Turbo360 Management',
@@ -69,19 +87,6 @@ const ServiceDescription = () => {
       features: ['ERP Implementation', 'Business Intelligence', 'Data Analytics', 'Process Automation'],
       path: '/services/eresource'
     },
- 
-  
-    {
-      id: 'dynamics365',
-      title: 'Dynamics 365 Implementation',
-      description: 'Transform your business operations with intelligent ERP and CRM solutions tailored to your specific industry needs and requirements.',
-      logo: dynamicsLogo,
-      features: ['Business Central', 'Sales & Marketing', 'Field Service', 'Custom Development'],
-      path: '/services/dynamics365'
-    },
-    
-
-   
         {
       id: 'development',
       title: 'Custom Development',
@@ -90,14 +95,7 @@ const ServiceDescription = () => {
       features: ['Web Applications', 'Mobile Apps', 'API Development', 'System Integration'],
       path: '/services/development'
     },
-    {
-      id: 'security',
-      title: 'Cybersecurity Solutions',
-      description: 'Protect your business with comprehensive security strategies, advanced threat protection, and compliance management solutions.',
-      logo: microsoftLogo,
-      features: ['Security Assessment', 'Threat Protection', 'Compliance', '24/7 Monitoring'],
-      path: '/services/security'
-    },
+
 
   ];
  const productLogos = [
