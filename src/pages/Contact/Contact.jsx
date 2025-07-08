@@ -572,7 +572,21 @@ ${formData.phone}`;
                             checked={formData.agreeToTerms}
                             onChange={handleInputChange}
                             isInvalid={!!formErrors.agreeToTerms}
-                            label="I agree to the Terms of Service and Privacy Policy *"
+                            label={
+                              <>
+                                I agree to the Terms of Service and Privacy Policy{' '}
+                                <span 
+                                  className='tooltip-custom'
+                                  style={{color: 'red', cursor: 'pointer'}}
+                                >
+                                  *
+                                  <span className="tooltip-text">
+                                    • We may contact you via email or phone regarding your inquiry or service request.<br />
+                                    • Your personal information will remain confidential and will not be shared with third parties
+                                  </span>
+                                </span>
+                              </>
+                            }
                           />
                           <Form.Control.Feedback type="invalid">
                             {formErrors.agreeToTerms}

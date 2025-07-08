@@ -225,7 +225,7 @@
   }
 
   .main-header {
-    padding: clamp(8px, 2vw, 12px) clamp(16px, 4vw, 32px);
+    padding: clamp(4px, 0vw, 6px) clamp(16px, 4vw, 32px);
     transition: all var(--transition-normal);
     width: 100%;
     position: relative;

@@ -37,6 +37,22 @@ const ServiceDescription = () => {
       features: ['Multi-Cloud Strategy', 'Cloud Migration', 'Infrastructure Setup', 'Cost Optimization'],
       path: '/services/cloud-services'
     },
+     {
+      id: 'infrastructure',
+      title: 'ICT',
+      description: 'End-to-end infrastructure planning, implementation, and management for optimal performance, reliability, and business continuity.',
+      logo: microsoftLogo,
+      features: ['Network Setup', 'Server Management', 'Hardware Procurement', 'Monitoring'],
+      path: '/services/infrastructure'
+    },
+      {
+      id: 'microsoft365',
+      title: 'Microsoft 365 Solutions',
+      description: 'Empower your workforce with comprehensive M365 implementation, security configuration, and ongoing support for maximum productivity.',
+      logo: m365Logo,
+      features: ['Email Migration', 'Teams Setup', 'Security Configuration', 'User Training'],
+      path: '/services/microsoft365'
+    },
         {
       id: 'turbo360',
       title: 'Turbo360 Management',
@@ -46,12 +62,12 @@ const ServiceDescription = () => {
       path: '/services/turbo360'
     },
     {
-      id: 'erosource',
-      title: 'Erosource Solutions',
+      id: 'eresource',
+      title: 'eresource Solutions',
       description: 'Advanced enterprise resource planning and business intelligence solutions to streamline operations and drive data-driven decisions.',
       logo: erosourceLogo,
       features: ['ERP Implementation', 'Business Intelligence', 'Data Analytics', 'Process Automation'],
-      path: '/services/erosource'
+      path: '/services/eresource'
     },
  
   
@@ -63,23 +79,9 @@ const ServiceDescription = () => {
       features: ['Business Central', 'Sales & Marketing', 'Field Service', 'Custom Development'],
       path: '/services/dynamics365'
     },
-      {
-      id: 'microsoft365',
-      title: 'Microsoft 365 Solutions',
-      description: 'Empower your workforce with comprehensive M365 implementation, security configuration, and ongoing support for maximum productivity.',
-      logo: m365Logo,
-      features: ['Email Migration', 'Teams Setup', 'Security Configuration', 'User Training'],
-      path: '/services/microsoft365'
-    },
+    
 
-    {
-      id: 'infrastructure',
-      title: 'IT Infrastructure Services',
-      description: 'End-to-end infrastructure planning, implementation, and management for optimal performance, reliability, and business continuity.',
-      logo: microsoftLogo,
-      features: ['Network Setup', 'Server Management', 'Hardware Procurement', 'Monitoring'],
-      path: '/services/infrastructure'
-    },
+   
         {
       id: 'development',
       title: 'Custom Development',

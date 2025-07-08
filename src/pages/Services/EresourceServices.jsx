@@ -1,13 +1,13 @@
 import React from 'react';
 import ServicePageTemplate from '../../components/ServicePageTemplate/ServicePageTemplate';
-import erosourceLogo from '../../assets/images/ProductLogos/erosource.png';
+import eresourceLogo from '../../assets/images/ProductLogos/erosource.png';
 
-const ErosourceServices = () => {
+const EresourceServices = () => {
   const serviceData = {
-    title: "Erosource Enterprise Solutions",
+    title: "Eresource Enterprise Solutions",
     subtitle: "Advanced ERP & Business Intelligence Platform",
-    description: "Transform your business operations with Erosource's comprehensive enterprise resource planning and business intelligence solutions. Streamline processes, gain insights, and drive data-driven decisions.",
-    logo: erosourceLogo,
+    description: "Transform your business operations with Eresource's comprehensive enterprise resource planning and business intelligence solutions. Streamline processes, gain insights, and drive data-driven decisions.",
+    logo: eresourceLogo,
     heroGradient: "linear-gradient(135deg, #059669 0%, #10b981 100%)",
     
     stats: [
@@ -106,4 +106,4 @@ const ErosourceServices = () => {
   return <ServicePageTemplate data={serviceData} />;
 };
 
-export default ErosourceServices;
+export default EresourceServices;

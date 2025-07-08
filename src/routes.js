@@ -87,10 +87,10 @@ export const routes = {
     name: 'Turbo360',
     title: 'Turbo360 Management Platform'
   },
-  erosource: {
-    path: '/services/erosource',
-    name: 'Erosource',
-    title: 'Erosource Enterprise Solutions'
+  eresource: {
+    path: '/services/eresource',
+    name: 'Eresource',
+    title: 'Eresource Enterprise Solutions'
   },
   // Legal Pages
   privacyPolicy: {

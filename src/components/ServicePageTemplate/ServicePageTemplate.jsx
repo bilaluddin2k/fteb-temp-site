@@ -112,8 +112,10 @@ const ServicePageTemplate = ({ data }) => {
                   </div>
                 </div>
               ) : (
-                <div className="hero-logo">
+                <div className="multi-cloud-logos">
+                <div className="cloud-logo-item">
                   <img src={data.logo} alt={`${data.title} Logo`} />
+                </div>
                 </div>
               )}
             </div>
@@ -134,7 +136,7 @@ const ServicePageTemplate = ({ data }) => {
       {/* Main Content Section */}
       <section className="main-content">
         <div className="container">
-          <div className="content-grid">
+          <div className="">
             <div className="content-left">
               <div className="descriptions">
                 <h2>Why Choose {data.title.split(' ')[1] || data.title} for Your Business?</h2>
@@ -244,7 +246,7 @@ const ServicePageTemplate = ({ data }) => {
           </div>
           <div className="sidebar-section">
             <div className="contact-card">
-              <h4>Free Assessment</h4>
+              <h4>Free Assessment worth $ 1000 same content</h4>
               <p>Get a comprehensive analysis of your current infrastructure and migration roadmap.</p>
               <button className="btn" onClick={handleContactClick}>
                 <Icon name="Phone" size={16} />

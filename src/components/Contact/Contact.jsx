@@ -8,7 +8,7 @@ const Contact = () => {
     {
       icon: "Location",
       title: "Visit Us",
-      content: "AG house, sala al din, dubai, UAE",
+      content: "AG house, sala al din deira, UAE",
     },
     {
       icon: "Phone",

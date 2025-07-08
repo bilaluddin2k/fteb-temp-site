@@ -33,9 +33,9 @@ const CloudServices = () => {
         features: ["Compute Engine", "Cloud Storage", "BigQuery", "Cloud Functions", "Kubernetes Engine", "Cloud Security"]
       },
       {
-        title: "Multi-Cloud Strategy & Management",
-        description: "Strategic multi-cloud architecture design and management to avoid vendor lock-in and optimize performance.",
-        features: ["Cloud Strategy", "Vendor Management", "Cost Optimization", "Performance Monitoring", "Disaster Recovery", "Compliance"]
+        title: "Microsoft Azure Managed Services Partner",
+        description: "As a trusted Managed Service Partner (MSP), we help businesses harness the full potential of Microsoft Azure with proactive management, optimization, and 24/7 support.",
+        features: ["Cloud Strategy & Planning", "Azure Infrastructure Management", "Security & Compliance", "Backup & Disaster Recovery", "Monthly report"]
       },
       {
         title: "Cloud Migration Services",
@@ -71,25 +71,31 @@ const CloudServices = () => {
     process: [
       {
         step: "01",
-        title: "Cloud Assessment",
-        description: "Comprehensive analysis of your current infrastructure and multi-cloud strategy requirements."
+        title: "Assessment",
+        description: "In-depth analysis of your existing environment, workloads, and business needs to identify the right Azure solutions."
       },
       {
         step: "02",
-        title: "Strategy Design",
-        description: "Develop customized multi-cloud architecture and migration strategy across Azure, AWS, and GCP."
+        title: "Planning Strategy",
+        description: "Design a tailored cloud architecture, migration roadmap, and governance model aligning with your goals and compliance needs."
       },
       {
         step: "03",
-        title: "Implementation",
-        description: "Execute cloud deployment and migration with minimal disruption to your business operations."
+        title: "Test Migration",
+        description: "Perform pilot migrations in a controlled environment to validate configurations, performance, and risk mitigation strategies."
       },
       {
         step: "04",
+        title: "Migration & Implementation",
+        description: "Execute a full-scale migration with minimal disruption, provisioning all Azure resources and services under managed supervision."
+      },
+      {
+        step: "05",
         title: "Optimization",
-        description: "Continuous monitoring and optimization across all cloud platforms for performance and cost efficiency."
+        description: "Ongoing cost management, performance tuning, security hardening, and 24/7 monitoring under our managed service model."
       }
     ],
+
 
     technologies: [
       "Microsoft Azure",
