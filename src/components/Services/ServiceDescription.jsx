@@ -102,20 +102,20 @@ const ServiceDescription = () => {
   ];
  const productLogos = [
     { src: awsLogo, class: 'logo-aws', alt: 'AWS Logo' },
+    { src: reactLogo, class: 'logo-react', alt: 'React Logo' },
     { src: azureLogo, class: 'logo-azure', alt: 'Azure Logo' },
     { src: developmentLogo, class: 'logo-development', alt: 'Development Logo' },
-    { src: dynamicsLogo, class: 'logo-dynamics', alt: 'Dynamics 365 Logo' },
-    { src: erosourceLogo, class: 'logo-erosource', alt: 'Erosource Logo' },
+    { src: terraformLogo, class: 'logo-terraform', alt: 'Terraform Logo' },
     { src: googlecloudLogo, class: 'logo-googlecloud', alt: 'Google Cloud Logo' },
     { src: linuxLogo, class: 'logo-linux', alt: 'Linux Logo' },
     { src: m365Logo, class: 'logo-m365', alt: 'Microsoft 365 Logo' },
+    { src: erosourceLogo, class: 'logo-erosource', alt: 'Erosource Logo' },
     { src: mlLogo, class: 'logo-ml', alt: 'Machine Learning Logo' },
-    { src: microsoftLogo, class: 'logo-microsoft', alt: 'Microsoft Logo' },
+    { src: dynamicsLogo, class: 'logo-dynamics', alt: 'Dynamics 365 Logo' },
     { src: pythonLogo, class: 'logo-python', alt: 'Python Logo' },
-    { src: reactLogo, class: 'logo-react', alt: 'React Logo' },
-    { src: terraformLogo, class: 'logo-terraform', alt: 'Terraform Logo' },
     { src: turbo360Logo, class: 'logo-turbo360', alt: 'Turbo360 Logo' },
     { src: adevops, class: 'logo-adevops', alt: 'adevops' },
+    { src: microsoftLogo, class: 'logo-microsoft', alt: 'Microsoft Logo' },
   ];
 
   const handleServiceClick = (path) => {
@@ -160,6 +160,15 @@ const ServiceDescription = () => {
           slidesPerGroup={1}
           allowTouchMove={true}
           watchSlidesProgress={true}
+          centeredSlides={true}
+          grabCursor={true}
+          navigation={false}
+          keyboard={{
+            enabled: true,
+            onlyInViewport: false,
+
+          }}
+
           autoplay={{
             delay: 0,
             disableOnInteraction: false,
@@ -181,7 +190,7 @@ const ServiceDescription = () => {
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className={`logo-img ${logo.class}`}
+                className={logo.class}
                 loading="lazy"
               />
             </SwiperSlide>

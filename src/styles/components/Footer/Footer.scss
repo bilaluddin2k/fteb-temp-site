@@ -92,7 +92,13 @@
     // Company Section
     &.company-section {
       .footer-logo {
+        display: flex;
         margin-bottom: clamp(20px, 3vw, 25px);
+      flex-direction: column;
+
+      img{
+        width: 150px;
+      }
 
         h2 {
           font-family: var(--font-heading);
