@@ -9,19 +9,13 @@ const Footer = () => {
   const [currentYear] = useState(new Date().getFullYear());
 
   const quickLinks = [
-    { name: 'About Us', path: '/about' },
     { name: 'Services', path: '/servicess' },
-    { name: 'Case Studies', path: '/case-studies' },
     { name: 'Contact', path: '/contact' },
-    { name: 'Blog', path: '/blog' }
   ];
 
   const services = [
     { name: 'Cloud Solutions', path: '/services/cloud-services' },
-    { name: 'Microsoft 365', path: '/services/microsoft365' },
-    { name: 'Custom Development', path: '/services/development' },
     { name: 'IT Infrastructure', path: '/services/infrastructure' },
-    { name: 'Cybersecurity', path: '/services/security' }
   ];
 
   const socialLinks = [
@@ -122,6 +116,18 @@ const Footer = () => {
 
               {/* Quick Links */}
               <div className="footer-section">
+                
+                 <h4>Our Services</h4>
+                <ul className="footer-links">
+                  {services.map((service, index) => (
+                    <li key={index}>
+                      <a href={service.path}>
+                        <Icon name="ArrowRight" size={12} />
+                        {service.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
                 <h4>Quick Links</h4>
                 <ul className="footer-links">
                   {quickLinks.map((link, index) => (
@@ -136,61 +142,22 @@ const Footer = () => {
               </div>
 
               {/* Services */}
-              <div className="footer-section">
-                <h4>Our Services</h4>
-                <ul className="footer-links">
-                  {services.map((service, index) => (
-                    <li key={index}>
-                      <a href={service.path}>
-                        <Icon name="ArrowRight" size={12} />
-                        {service.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            
 
               {/* Newsletter & Social */}
-              <div className="footer-section newsletter-section">
-                <h4>Stay Connected</h4>
-                <p>Subscribe to our newsletter for the latest updates and insights.</p>
-                
-                <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
-                  <div className="input-group">
-                    <input 
-                      type="email" 
-                      name="email"
-                      placeholder="Enter your email" 
-                      required 
-                    />
-                    <button type="submit" aria-label="Subscribe">
-                      <Icon name="ArrowRight" size={18} />
-                    </button>
-                  </div>
-                </form>
-
-                {/* Social Links */}
-                <div className="social-section">
-                  <h5>Follow Us</h5>
-                  <div className="social-links">
-                    {socialLinks.map((social, index) => (
-                      <a
-                        key={index}
-                        href={social.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="social-link"
-                        style={{ '--social-color': social.color }}
-                        aria-label={`Follow us on ${social.name}`}
-                      >
-                        <Icon name={social.icon} size={20} />
-                      </a>
-                    ))}
-                  </div>
-                </div>
+              
+                <div className="easter-egg">
+                <button 
+                  className="dino-game-trigger"
+                  onClick={toggleDinoGame}
+                  title="Play Chrome Dino Game"
+                  aria-label="Play Chrome Dino Game"
+                >
+                  🦕 Play Game
+                </button>
+              </div>
               </div>
             </div>
-          </div>
         </div>
 
         {/* Footer Bottom */}
@@ -208,16 +175,7 @@ const Footer = () => {
               </div>
 
               {/* Fun Easter Egg - Dino Game Button */}
-              <div className="easter-egg">
-                <button 
-                  className="dino-game-trigger"
-                  onClick={toggleDinoGame}
-                  title="Play Chrome Dino Game"
-                  aria-label="Play Chrome Dino Game"
-                >
-                  🦕 Play Game
-                </button>
-              </div>
+             
             </div>
           </div>
         </div>

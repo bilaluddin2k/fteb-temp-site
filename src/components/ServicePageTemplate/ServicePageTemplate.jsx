@@ -246,7 +246,7 @@ const ServicePageTemplate = ({ data }) => {
           </div>
           <div className="sidebar-section">
             <div className="contact-card">
-              <h4>Free Assessment worth $ 1000 same content</h4>
+              <h4>Free Assessment worth <span style={{fontSize: '1.5rem',color: '#0ed277'}}>$1000/-</span></h4>
               <p>Get a comprehensive analysis of your current infrastructure and migration roadmap.</p>
               <button className="btn" onClick={handleContactClick}>
                 <Icon name="Phone" size={16} />
@@ -270,7 +270,8 @@ const ServicePageTemplate = ({ data }) => {
               <thead>
                 <tr>
                   <th>Competency</th>
-                  <th>Certification (Exam Code)</th>
+                  <th>Certification</th>
+                  <th>Code</th>
                   <th># of Certified Professionals</th>
                 </tr>
               </thead>
@@ -283,7 +284,8 @@ const ServicePageTemplate = ({ data }) => {
                           {group.competency}
                         </td>
                       )}
-                      <td>{cert.name} <span className="exam-code">({cert.code})</span></td>
+                      <td>{cert.name}</td>
+                      <td>{cert.code}</td>
                       <td>{cert.count}</td>
                     </tr>
                   ))
