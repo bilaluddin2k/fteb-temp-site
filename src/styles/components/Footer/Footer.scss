@@ -62,7 +62,7 @@
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      grid-template-columns: 2fr 1fr 1.5fr;
       gap: clamp(40px, 6vw, 60px);
       align-items: start;
     }
@@ -175,10 +175,17 @@
     // Newsletter Section
    
   }
-  .easter-egg .dino-game-trigger {
+  .easter-egg{
+      display: flex;
+    flex-direction: column;
+    gap: 13px;
+   .dino-game-trigger {
           padding: clamp(6px, 1.2vw, 8px) clamp(10px, 2vw, 12px);
           font-size: clamp(0.7rem, 1.4vw, 0.8rem);
+          color: #ffffff;
+          border: 1px solid rgba(255, 255, 255, 0.2);
         }
+      }
   // Footer Links
   .footer-links {
     list-style: none;

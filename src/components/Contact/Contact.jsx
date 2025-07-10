@@ -32,17 +32,17 @@ const Contact = () => {
           <p className="para scroll-animate" data-animation="slide-up" data-delay="300">Have questions or need assistance? Our team is here to help you with any inquiries.</p>
         </div>
 
-        <div className="contact-wrapper">
+        <div className="contact-wrapper scroll-animate" data-animation="fade-in" data-delay="350">
           <div className="contact-infos scroll-animate" data-animation="slide-up" data-delay="400">
             <h3 className="scroll-animate" data-animation="fade-in" data-delay="500">Contact Information</h3>
 
             <div className="info-list scroll-animate-container">
               {contactInfo.map((info, index) => (
-                <div key={index} className="info-item scroll-animate" data-animation="slide-up" data-delay={`${index * 100 + 600}`}>
-                  <div className="icon-container icon-container-md icon-container-primary">
+                <div key={index} className="info-item scroll-animate" data-animation="slide-up" data-delay={`${index * 150 + 600}`}>
+                  <div className="icon-container icon-container-md icon-container-primary scroll-animate" data-animation="zoom-in" data-delay={`${index * 150 + 650}`}>
                     <Icon name={info.icon} size={24} />
                   </div>
-                  <div className="info-content">
+                  <div className="info-content scroll-animate" data-animation="fade-in" data-delay={`${index * 150 + 700}`}>
                     <h4>{info.title}</h4>
                     {info.isEmail ? (
                       <p>

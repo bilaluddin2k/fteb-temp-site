@@ -349,19 +349,19 @@ ${formData.phone}`;
   };
 
   return (
-    <div className="contact-page">
+    <div className="contact-page scroll-animate" data-animation="fade-in">
       {/* Hero Section */}
-      <section className="contact-hero">
+      <section className="contact-hero scroll-animate" data-animation="fade-in" data-delay="100">
         <Container>
           <Row className="justify-content-center text-center">
             <Col lg={8}>
-              <div className="hero-content">
-                <span className="hero-subtitle">GET IN TOUCH</span>
-                <h1 className="hero-title">
+              <div className="hero-content scroll-animate" data-animation="slide-up" data-delay="200">
+                <span className="hero-subtitle scroll-animate" data-animation="fade-in" data-delay="300">GET IN TOUCH</span>
+                <h1 className="hero-title scroll-animate" data-animation="slide-up" data-delay="400">
                   Let's Build Something 
                   <span className="highlight-text"> Amazing Together</span>
                 </h1>
-                <p className="hero-description">
+                <p className="hero-description scroll-animate" data-animation="slide-up" data-delay="500">
                   Ready to transform your business with cutting-edge technology solutions? 
                   Our expert team is here to help you achieve your goals.
                 </p>
@@ -372,19 +372,19 @@ ${formData.phone}`;
       </section>
 
       {/* Contact Info Cards */}
-      <section className="contact-info-section">
+      <section className="contact-info-section scroll-animate" data-animation="fade-in" data-delay="600">
         <Container>
           <Row className="g-4">
             {contactInfo.map((info, index) => (
-              <Col key={index} lg={3} md={6}>
+              <Col key={index} lg={3} md={6} className="scroll-animate" data-animation="zoom-in" data-delay={`${700 + index * 100}`}>
                 <Card className="contact-info-card h-100">
                   <Card.Body className="text-center">
-                    <div className="info-icon">
+                    <div className="info-icon scroll-animate" data-animation="zoom-in" data-delay={`${750 + index * 100}`}>
                       <FontAwesomeIcon icon={info.icon} />
                     </div>
-                    <h5 className="info-title">{info.title}</h5>
-                    <p className="info-content">{info.content}</p>
-                    <small className="info-subcontent">{info.subContent}</small>
+                    <h5 className="info-title scroll-animate" data-animation="fade-in" data-delay={`${800 + index * 100}`}>{info.title}</h5>
+                    <p className="info-content scroll-animate" data-animation="fade-in" data-delay={`${850 + index * 100}`}>{info.content}</p>
+                    <small className="info-subcontent scroll-animate" data-animation="fade-in" data-delay={`${900 + index * 100}`}>{info.subContent}</small>
                   </Card.Body>
                 </Card>
               </Col>
@@ -394,36 +394,36 @@ ${formData.phone}`;
       </section>
 
       {/* Main Contact Section */}
-      <section className="main-contact-section">
+      <section className="main-contact-section scroll-animate" data-animation="fade-in" data-delay="1000">
         <Container>
           <Row className="g-5">
             {/* Contact Form */}
-            <Col lg={8}>
-              <Card className="contact-form-card">
+            <Col lg={8} className="scroll-animate" data-animation="slide-up" data-delay="1100">
+              <Card className="contact-form-card scroll-animate" data-animation="fade-in" data-delay="1200">
                 <Card.Body>
-                  <div className="form-header">
+                  <div className="form-header scroll-animate" data-animation="slide-up" data-delay="1300">
                     <h2>Send Us a Message</h2>
                     <p>Fill out the form below and we'll help you choose the best email client to send your message.</p>
                   </div>
 
                   {submitStatus === 'success' && (
-                    <Alert variant="success" className="d-flex align-items-center">
+                    <Alert variant="success" className="d-flex align-items-center scroll-animate" data-animation="fade-in" data-delay="1400">
                       <FontAwesomeIcon icon={faCheckCircle} className="me-2" />
                       Your email client should have opened with the message pre-filled. If it didn't open automatically, please check your browser's popup settings.
                     </Alert>
                   )}
 
                   {submitStatus === 'error' && (
-                    <Alert variant="danger" className="d-flex align-items-center">
+                    <Alert variant="danger" className="d-flex align-items-center scroll-animate" data-animation="fade-in" data-delay="1500">
                       <FontAwesomeIcon icon={faExclamationTriangle} className="me-2" />
                       Sorry, there was an error processing your request. Please try again or contact us directly.
                     </Alert>
                   )}
 
-                  <Form onSubmit={handleSubmit} noValidate>
+                  <Form onSubmit={handleSubmit} noValidate className="scroll-animate" data-animation="fade-in" data-delay="1600">
                     <Row className="g-3">
                       {/* Name Fields */}
-                      <Col md={6}>
+                      <Col md={6} className="scroll-animate" data-animation="slide-up" data-delay="1700">
                         <Form.Group>
                           <Form.Label>First Name *</Form.Label>
                           <Form.Control
@@ -439,7 +439,7 @@ ${formData.phone}`;
                           </Form.Control.Feedback>
                         </Form.Group>
                       </Col>
-                      <Col md={6}>
+                      <Col md={6} className="scroll-animate" data-animation="slide-up" data-delay="1800">
                         <Form.Group>
                           <Form.Label>Last Name *</Form.Label>
                           <Form.Control
@@ -457,7 +457,7 @@ ${formData.phone}`;
                       </Col>
 
                       {/* Contact Fields */}
-                      <Col md={6}>
+                      <Col md={6} className="scroll-animate" data-animation="slide-up" data-delay="1900">
                         <Form.Group>
                           <Form.Label>Email Address *</Form.Label>
                           <Form.Control
@@ -473,7 +473,7 @@ ${formData.phone}`;
                           </Form.Control.Feedback>
                         </Form.Group>
                       </Col>
-                      <Col md={6}>
+                      <Col md={6} className="scroll-animate" data-animation="slide-up" data-delay="2000">
                         <Form.Group>
                           <Form.Label>Phone Number *</Form.Label>
                           <Form.Control
@@ -491,7 +491,7 @@ ${formData.phone}`;
                       </Col>
 
                       {/* Company Field */}
-                      <Col md={12}>
+                      <Col md={12} className="scroll-animate" data-animation="slide-up" data-delay="2100">
                         <Form.Group>
                           <Form.Label>Company Name *</Form.Label>
                           <Form.Control
@@ -509,7 +509,7 @@ ${formData.phone}`;
                       </Col>
 
                       {/* Service and Budget */}
-                      <Col md={6}>
+                      <Col md={6} className="scroll-animate" data-animation="slide-up" data-delay="2200">
                         <Form.Group>
                           <Form.Label>Service Interested In *</Form.Label>
                           <Form.Select
@@ -528,7 +528,7 @@ ${formData.phone}`;
                           </Form.Control.Feedback>
                         </Form.Group>
                       </Col>
-                      <Col md={6}>
+                      <Col md={6} className="scroll-animate" data-animation="slide-up" data-delay="2300">
                         <Form.Group>
                           <Form.Label>Project Budget</Form.Label>
                           <Form.Select
@@ -545,7 +545,7 @@ ${formData.phone}`;
                       </Col>
 
                       {/* Message */}
-                      <Col md={12}>
+                      <Col md={12} className="scroll-animate" data-animation="slide-up" data-delay="2400">
                         <Form.Group>
                           <Form.Label>Message *</Form.Label>
                           <Form.Control
@@ -564,7 +564,7 @@ ${formData.phone}`;
                       </Col>
 
                       {/* Terms Checkbox */}
-                      <Col md={12}>
+                      <Col md={12} className="scroll-animate" data-animation="slide-up" data-delay="2500">
                         <Form.Group>
                           <Form.Check
                             type="checkbox"
@@ -595,7 +595,7 @@ ${formData.phone}`;
                       </Col>
 
                       {/* Submit Button */}
-                      <Col md={12}>
+                      <Col md={12} className="scroll-animate" data-animation="zoom-in" data-delay="2600">
                         <Button
                           type="submit"
                           className="btn"
@@ -621,20 +621,20 @@ ${formData.phone}`;
             </Col>
 
             {/* Sidebar */}
-            <Col lg={4}>
-              <div className="contact-sidebar">
+            <Col lg={4} className="scroll-animate" data-animation="fade-in" data-delay="2700">
+              <div className="contact-sidebar scroll-animate" data-animation="fade-in" data-delay="2800">
                 {/* Quick Contact */}
-                <Card className="quick-contact-card mb-4">
+                <Card className="quick-contact-card mb-4 scroll-animate" data-animation="fade-in" data-delay="2900">
                   <Card.Body>
                     <h4>Quick Contact</h4>
                     <p>Need immediate assistance? Reach out to us directly.</p>
                     
-                    <div className="quick-contact-methods">
-                      <a href="tel:+971588481295" className="contact-method-btn">
+                    <div className="quick-contact-methods scroll-animate" data-animation="fade-in" data-delay="3000">
+                      <a href="tel:+971588481295" className="contact-method-btn scroll-animate" data-animation="fade-in" data-delay="3100">
                         <FontAwesomeIcon icon={faPhoneAlt} />
                         <span>Call Now</span>
                       </a>
-                      <a href="mailto:Connect@ftebtech.com" className="contact-method-btn">
+                      <a href="mailto:Connect@ftebtech.com" className="contact-method-btn scroll-animate" data-animation="fade-in" data-delay="3200">
                         <FontAwesomeIcon icon={faEnvelope} />
                         <span>Email Us</span>
                       </a>
@@ -643,19 +643,21 @@ ${formData.phone}`;
                 </Card>
 
                 {/* Social Media */}
-                <Card className="social-media-card mb-4">
+                <Card className="social-media-card mb-4 scroll-animate" data-animation="fade-in" data-delay="3300">
                   <Card.Body>
                     <h4>Follow Us</h4>
                     <p>Stay connected with us on social media for updates and insights.</p>
                     
-                    <div className="social-links">
+                    <div className="social-links scroll-animate" data-animation="fade-in" data-delay="3400">
                       {socialLinks.map((social, index) => (
                         <a
                           key={index}
                           href={social.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="social-link"
+                          className="social-link scroll-animate"
+                          data-animation="fade-in"
+                          data-delay={`${3500 + index * 100}`}
                           aria-label={social.label}
                         >
                           <FontAwesomeIcon icon={social.icon} />
@@ -666,19 +668,19 @@ ${formData.phone}`;
                 </Card>
 
                 {/* Office Hours */}
-                <Card className="office-hours-card">
+                <Card className="office-hours-card scroll-animate" data-animation="fade-in" data-delay="3600">
                   <Card.Body>
                     <h4>Office Hours</h4>
-                    <div className="hours-list">
-                      <div className="hours-item">
+                    <div className="hours-list scroll-animate" data-animation="fade-in" data-delay="3700">
+                      <div className="hours-item scroll-animate" data-animation="fade-in" data-delay="3800">
                         <span>Monday - Friday</span>
                         <span>9:00 AM - 6:00 PM</span>
                       </div>
-                      <div className="hours-item">
+                      <div className="hours-item scroll-animate" data-animation="fade-in" data-delay="3900">
                         <span>Saturday</span>
                         <span>10:00 AM - 4:00 PM</span>
                       </div>
-                      <div className="hours-item">
+                      <div className="hours-item scroll-animate" data-animation="fade-in" data-delay="4000">
                         <span>Sunday</span>
                         <span>Closed</span>
                       </div>

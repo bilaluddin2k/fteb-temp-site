@@ -5,6 +5,7 @@ import { Icon } from '../Icons/IconSystem'
 import DinoGame from '../DinoGame/DinoGame';
 import FlappyBird from '../FlappyBird/FlappyBird';
 import SpaceInvaders from '../SpaceInvaders/SpaceInvaders';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const [showDinoGame, setShowDinoGame] = useState(false);
@@ -138,7 +139,9 @@ const Footer = () => {
               {/* Company Info */}
               <div className="footer-section company-section">
                 <div className="footer-logo">
-                 <img src={footerLogo} width={150} alt="ftechtech" />
+                <Link to="/">
+                        <img src={footerLogo} alt="FTEBTECH" />
+                      </Link>
                   <span className="logo-tagline">Technology Solutions</span>
                 </div>
                 <p className="company-description">
@@ -189,15 +192,9 @@ const Footer = () => {
                   ))}
                 </ul>
               </div>
-
-              {/* Services */}
-            
-
-              {/* Newsletter & Social */}
-              
                 <div className="easter-egg">
                 <button 
-                  className="dino-game-trigger"
+                  className="dino-game-trigger btn"
                   onClick={toggleDinoGame}
                   title="Play Chrome Dino Game"
                   aria-label="Play Chrome Dino Game"
@@ -205,7 +202,7 @@ const Footer = () => {
                   🦕 Play Game
                 </button>
                 <button 
-                  className="dino-game-trigger"
+                  className="dino-game-trigger btn" 
                   onClick={toggleFlappyBird}
                   title="Play Flappy Bird Game"
                   aria-label="Play Flappy Bird Game"
@@ -213,7 +210,7 @@ const Footer = () => {
                   🐦 Flappy Bird
                 </button>
                 <button 
-                  className="dino-game-trigger"
+                  className="dino-game-trigger btn"
                   onClick={toggleSpaceInvaders}
                   title="Play Space Invaders Game"
                   aria-label="Play Space Invaders Game"

@@ -124,29 +124,29 @@ const ServiceDescription = () => {
 
   return (
     <div className="service-description-wrapper">
-      <div className="services-hero-section">
-        <div className="services-hero-content">
-          <span className="services-subtitle">OUR EXPERTISE</span>
-          <h1 className="services-main-title">
+      <div className="services-hero-section scroll-animate" data-animation="fade-in">
+        <div className="services-hero-content scroll-animate" data-animation="slide-up" data-duration="slow">
+          <span className="services-subtitle scroll-animate" data-animation="fade-in" data-delay="100">OUR EXPERTISE</span>
+          <h1 className="services-main-title scroll-animate" data-animation="slide-up" data-delay="200">
             Comprehensive IT Services for 
             <span className="highlight-text"> Modern Businesses</span>
           </h1>
-          <p className="services-hero-description">
+          <p className="services-hero-description scroll-animate" data-animation="slide-up" data-delay="300">
             From cloud infrastructure to custom development, we provide end-to-end technology solutions 
             that drive innovation, enhance security, and accelerate your digital transformation journey.
           </p>
-          <div className="services-stats">
-            <div className="stat-item">
-              <span className="stat-number">500+</span>
-              <span className="stat-label">Projects Delivered</span>
+          <div className="services-stats scroll-animate-container">
+            <div className="stat-item scroll-animate" data-animation="fade-in" data-delay="400">
+              <span className="stat-number scroll-animate" data-animation="fade-in" data-delay="500">500+</span>
+              <span className="stat-label scroll-animate" data-animation="fade-in" data-delay="600">Projects Delivered</span>
             </div>
-            <div className="stat-item">
-              <span className="stat-number">98%</span>
-              <span className="stat-label">Client Satisfaction</span>
+            <div className="stat-item scroll-animate" data-animation="fade-in" data-delay="700">
+              <span className="stat-number scroll-animate" data-animation="fade-in" data-delay="800">98%</span>
+              <span className="stat-label scroll-animate" data-animation="fade-in" data-delay="900">Client Satisfaction</span>
             </div>
-            <div className="stat-item">
-              <span className="stat-number">10+</span>
-              <span className="stat-label">Years Experience</span>
+            <div className="stat-item scroll-animate" data-animation="fade-in" data-delay="1000">
+              <span className="stat-number scroll-animate" data-animation="fade-in" data-delay="1100">10+</span>
+              <span className="stat-label scroll-animate" data-animation="fade-in" data-delay="1200">Years Experience</span>
             </div>
           </div>
         </div>
@@ -198,30 +198,32 @@ const ServiceDescription = () => {
         </Swiper>
       </section>
 
-      <div className="container services-grid-section">
+      <div className="container services-grid-section scroll-animate-container">
         <div className="row">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <div key={service.id} className="col-md-6 col-sm-6 col-lg-4 mb-4 d-flex">
               <div 
-                className="service-card-modern d-flex flex-column"
+                className="service-card-modern d-flex flex-column scroll-animate"
+                data-animation="zoom-in"
+                data-delay={`${1600 + index * 100}`}
                 onClick={() => handleServiceClick(service.path)}
               >
-                <div className="service-card-header">
-                  <div className="service-logo-wrapper">
+                <div className="service-card-header scroll-animate" data-animation="fade-in" data-delay={`${1700 + index * 100}`}>
+                  <div className="service-logo-wrapper scroll-animate" data-animation="slide-right" data-delay={`${1800 + index * 100}`}>
                     <img src={service.logo} alt={`${service.title} Logo`} className="service-logo" />
                   </div>
-                  <h3 className="service-title-modern">{service.title}</h3>
+                  <h3 className="service-title-modern scroll-animate" data-animation="slide-up" data-delay={`${1900 + index * 100}`}>{service.title}</h3>
                 </div>
                 
-                <p className="service-description-modern">{service.description}</p>
+                <p className="service-description-modern scroll-animate" data-animation="slide-up" data-delay={`${2000 + index * 100}`}>{service.description}</p>
                 
-                <div className="service-features">
+                <div className="service-features scroll-animate" data-animation="slide-up" data-delay={`${2100 + index * 100}`}>
                   {service.features.map((feature, idx) => (
-                    <span key={idx} className="feature-tag">{feature}</span>
+                    <span key={idx} className="feature-tag scroll-animate" data-animation="fade-in" data-delay={`${2200 + index * 100 + idx * 50}`}>{feature}</span>
                   ))}
                 </div>
                 
-                <div className="service-card-footer">
+                <div className="service-card-footer scroll-animate" data-animation="fade-in" data-delay={`${2300 + index * 100}`}>
                   <button className="service-btn">
                     Learn More
                   </button>
@@ -232,11 +234,11 @@ const ServiceDescription = () => {
         </div>
       </div>
 
-      <div className="services-cta-section">
-        <div className="cta-content">
+      <div className="services-cta-section scroll-animate" data-animation="fade-in" data-delay="2500">
+        <div className="cta-content scroll-animate" data-animation="slide-up" data-delay="2600">
           <h2>Ready to Transform Your Business?</h2>
           <p>Let's discuss how our IT services can help you achieve your goals and drive growth.</p>
-          <div className="cta-buttons">
+          <div className="cta-buttons scroll-animate" data-animation="zoom-in" data-delay="2700">
             <button 
               className="service-btn primary-btn"
               onClick={() => window.location.href = 'mailto:Connect@ftebtech.com'}
