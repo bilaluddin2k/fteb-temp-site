@@ -24,6 +24,8 @@ import reactLogo from "../../assets/images/ProductLogos/react-logo.png";
 import terraformLogo from "../../assets/images/ProductLogos/terraform.png";
 import turbo360Logo from "../../assets/images/ProductLogos/Turbo360.png";
 import adevops from "../../assets/images/ProductLogos/a-devops.png";
+import Cybersecurity from "../../assets/images/ProductLogos/cyber.png";
+import ITinfrastructureLogo from "../../assets/images/ProductLogos/it-infrastructure.png";
 
 const ServiceDescription = () => {
   const navigate = useNavigate();
@@ -58,7 +60,7 @@ const ServiceDescription = () => {
       id: 'infrastructure',
       title: 'ICT',
       description: 'End-to-end infrastructure planning, implementation, and management for optimal performance, reliability, and business continuity.',
-      logo: microsoftLogo,
+      logo: ITinfrastructureLogo,
       features: ['Network Setup', 'Server Management', 'Hardware Procurement', 'Monitoring'],
       path: '/services/infrastructure'
     },
@@ -66,7 +68,7 @@ const ServiceDescription = () => {
       id: 'security',
       title: 'Cybersecurity Solutions',
       description: 'Protect your business with comprehensive security strategies, advanced threat protection, and compliance management solutions.',
-      logo: microsoftLogo,
+      logo: Cybersecurity,
       features: ['Security Assessment', 'Threat Protection', 'Compliance', '24/7 Monitoring'],
       path: '/services/security'
     },
