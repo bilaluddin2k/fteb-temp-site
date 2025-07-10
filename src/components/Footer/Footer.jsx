@@ -3,9 +3,13 @@ import "../../styles/components/Footer/Footer.scss"
 import footerLogo from '../../assets/images/FTebtech-logo/FTEB-logo-white.png';
 import { Icon } from '../Icons/IconSystem'
 import DinoGame from '../DinoGame/DinoGame';
+import FlappyBird from '../FlappyBird/FlappyBird';
+import SpaceInvaders from '../SpaceInvaders/SpaceInvaders';
 
 const Footer = () => {
   const [showDinoGame, setShowDinoGame] = useState(false);
+  const [showFlappyBird, setShowFlappyBird] = useState(false);
+  const [showSpaceInvaders, setShowSpaceInvaders] = useState(false);
   const [currentYear] = useState(new Date().getFullYear());
 
   const quickLinks = [
@@ -59,6 +63,14 @@ const Footer = () => {
     setShowDinoGame(!showDinoGame);
   };
 
+  const toggleFlappyBird = () => {
+    setShowFlappyBird(!showFlappyBird);
+  };
+
+  const toggleSpaceInvaders = () => {
+    setShowSpaceInvaders(!showSpaceInvaders);
+  };
+
   return (
     <>
       {/* Dino Game Modal */}
@@ -80,6 +92,43 @@ const Footer = () => {
         </div>
       )}
 
+      {/* Flappy Bird Game Modal */}
+      {showFlappyBird && (
+        <div className="dino-game-overlay">
+          <div className="dino-game-container">
+            <div className="dino-game-header">
+              <h3>Flappy Bird Game</h3>
+              <button 
+                className="close-game-btn"
+                onClick={toggleFlappyBird}
+                aria-label="Close game"
+              >
+                <Icon name="Close" size={24} />
+              </button>
+            </div>
+            <FlappyBird />
+          </div>
+        </div>
+      )}
+
+      {/* Space Invaders Game Modal */}
+      {showSpaceInvaders && (
+        <div className="dino-game-overlay">
+          <div className="dino-game-container">
+            <div className="dino-game-header">
+              <h3>Space Invaders Game</h3>
+              <button 
+                className="close-game-btn"
+                onClick={toggleSpaceInvaders}
+                aria-label="Close game"
+              >
+                <Icon name="Close" size={24} />
+              </button>
+            </div>
+            <SpaceInvaders />
+          </div>
+        </div>
+      )}
       <footer className="modern-footer">
         {/* Main Footer Content */}
         <div className="footer-main">
@@ -154,6 +203,22 @@ const Footer = () => {
                   aria-label="Play Chrome Dino Game"
                 >
                   🦕 Play Game
+                </button>
+                <button 
+                  className="dino-game-trigger"
+                  onClick={toggleFlappyBird}
+                  title="Play Flappy Bird Game"
+                  aria-label="Play Flappy Bird Game"
+                >
+                  🐦 Flappy Bird
+                </button>
+                <button 
+                  className="dino-game-trigger"
+                  onClick={toggleSpaceInvaders}
+                  title="Play Space Invaders Game"
+                  aria-label="Play Space Invaders Game"
+                >
+                  👾 Space Invaders
                 </button>
               </div>
               </div>
