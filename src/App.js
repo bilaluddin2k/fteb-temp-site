@@ -26,72 +26,58 @@ import CookiesPolicy from "./pages/Legal/CookiesPolicy"
 import { routes } from './routes.js'
 import { initScrollAnimations } from "./utils/scrollAnimations"
 
-function ScrollToTop() {
-  const { pathname } = useLocation();
+function ScrollAnimationHandler() {
+  const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (window.scrollAnimationObserver && typeof window.scrollAnimationObserver.refresh === 'function') {
+      window.scrollAnimationObserver.refresh();
+    }
+  }, [location]);
 
   return null;
 }
 
 function App() {
-  const location = useLocation();
-
-  useEffect(() => {
-    // Initialize or refresh scroll animations on route change
-    const observer = initScrollAnimations();
-    return () => {
-      observer?.destroy();
-    };
-  }, [location]);
-
   return (
-    <div className="app">
-      <Header />
-      <Routes>
-        <Route path={routes.home.path} element={<Resolution />} />
-        <Route path={routes.servicess.path} element={<Servicess />} />
-        <Route path={routes.contact.path} element={<Contact />} />
-        <Route path={routes.company.path} element={<Resolution />} />
-        <Route path={routes.elements.path} element={<Resolution />} />
-        <Route path={routes.caseStudies.path} element={<Resolution />} />
-        <Route path={routes.blog.path} element={<Resolution />} />
-        
-        {/* Cloud Services */}
-        <Route path={routes.cloudServices.path} element={<CloudServices />} />
-        <Route path={routes.azure.path} element={<AzureServices />} />
-        <Route path={routes.aws.path} element={<AWSServices />} />
-        <Route path={routes.gcp.path} element={<GCPServices />} />
-        
-        {/* Other Individual Service Pages */}
-        <Route path={routes.microsoft365.path} element={<Microsoft365Services />} />
-        <Route path={routes.dynamics365.path} element={<Dynamics365Services />} />
-        <Route path={routes.development.path} element={<DevelopmentServices />} />
-        <Route path={routes.infrastructure.path} element={<InfrastructureServices />} />
-        <Route path={routes.security.path} element={<SecurityServices />} />
-        <Route path={routes.turbo360.path} element={<Turbo360Services />} />
-        <Route path={routes.eresource.path} element={<EresourceServices />} />
-        
-        {/* Legal Pages */}
-        <Route path={routes.privacyPolicy.path} element={<PrivacyPolicy />} />
-        <Route path={routes.termsOfService.path} element={<TermsOfService />} />
-        <Route path={routes.cookiesPolicy.path} element={<CookiesPolicy />} />
-      </Routes>
-      <Footer />
-      <CookieConsent />
-    </div>
+    <Router>
+      <div className="app">
+        <Header />
+        <ScrollAnimationHandler />
+        <Routes>
+          <Route path={routes.home.path} element={<Resolution />} />
+          <Route path={routes.servicess.path} element={<Servicess />} />
+          <Route path={routes.contact.path} element={<Contact />} />
+          <Route path={routes.company.path} element={<Resolution />} />
+          <Route path={routes.elements.path} element={<Resolution />} />
+          <Route path={routes.caseStudies.path} element={<Resolution />} />
+          <Route path={routes.blog.path} element={<Resolution />} />
+          
+          {/* Cloud Services */}
+          <Route path={routes.cloudServices.path} element={<CloudServices />} />
+          <Route path={routes.azure.path} element={<AzureServices />} />
+          <Route path={routes.aws.path} element={<AWSServices />} />
+          <Route path={routes.gcp.path} element={<GCPServices />} />
+          
+          {/* Other Individual Service Pages */}
+          <Route path={routes.microsoft365.path} element={<Microsoft365Services />} />
+          <Route path={routes.dynamics365.path} element={<Dynamics365Services />} />
+          <Route path={routes.development.path} element={<DevelopmentServices />} />
+          <Route path={routes.infrastructure.path} element={<InfrastructureServices />} />
+          <Route path={routes.security.path} element={<SecurityServices />} />
+          <Route path={routes.turbo360.path} element={<Turbo360Services />} />
+          <Route path={routes.eresource.path} element={<EresourceServices />} />
+          
+          {/* Legal Pages */}
+          <Route path={routes.privacyPolicy.path} element={<PrivacyPolicy />} />
+          <Route path={routes.termsOfService.path} element={<TermsOfService />} />
+          <Route path={routes.cookiesPolicy.path} element={<CookiesPolicy />} />
+        </Routes>
+        <Footer />
+        <CookieConsent />
+      </div>
+    </Router>
   )
 }
 
-function AppWrapper() {
-  return (
-    <Router>
-      <ScrollToTop />
-      <App />
-    </Router>
-  );
-}
-
-export default AppWrapper
+export default App
