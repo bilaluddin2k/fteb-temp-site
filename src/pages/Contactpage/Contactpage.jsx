@@ -399,7 +399,7 @@ ${formData.phone}`;
           <Row className="g-5">
             {/* Contact Form */}
             <Col lg={8} className="scroll-animate" data-animation="slide-up" data-delay="1100">
-              <Card className="contact-form-card scroll-animate" data-animation="fade-in" data-delay="1200">
+              <Card id="contact-form" className="contact-form-card scroll-animate" data-animation="fade-in" data-delay="1200">
                 <Card.Body>
                   <div className="form-header scroll-animate" data-animation="slide-up" data-delay="1300">
                     <h2>Send Us a Message</h2>

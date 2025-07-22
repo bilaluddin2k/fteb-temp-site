@@ -1,9 +1,11 @@
 "use client"
 
 import { Icon } from '../Icons/IconSystem'
+import { useNavigate } from 'react-router-dom';
 import "../../styles/components/Contact/Contact.scss"
 
 const Contact = () => {
+  const navigate = useNavigate();
   const contactInfo = [
     {
       icon: "Location",
@@ -24,25 +26,25 @@ const Contact = () => {
   ]
 
   return (
-    <section className="contact section bg-light scroll-animate" data-animation="fade-in">
+    <section className="contact section bg-light " >
       <div className="container">
-        <div className="title-contact scroll-animate" data-animation="slide-up" data-duration="slow">
-          <h6 className="scroll-animate" data-animation="fade-in" data-delay="100">CONTACT US</h6>
-          <h2 className="scroll-animate" data-animation="slide-up" data-delay="200">Get in Touch</h2>
-          <p className="para scroll-animate" data-animation="slide-up" data-delay="300">Have questions or need assistance? Our team is here to help you with any inquiries.</p>
+        <div className="title-contact "  >
+          <h6 className=""  >CONTACT US</h6>
+          <h2 className=""  >Get in Touch</h2>
+          <p className="para "  >Have questions or need assistance? Our team is here to help you with any inquiries.</p>
         </div>
 
-        <div className="contact-wrapper scroll-animate" data-animation="fade-in" data-delay="350">
-          <div className="contact-infos scroll-animate" data-animation="slide-up" data-delay="400">
-            <h3 className="scroll-animate" data-animation="fade-in" data-delay="500">Contact Information</h3>
+        <div className="contact-wrapper "  >
+          <div className="contact-infos "  >
+            <h3 className=""  >Contact Information</h3>
 
-            <div className="info-list scroll-animate-container">
+            <div className="info-list -container">
               {contactInfo.map((info, index) => (
-                <div key={index} className="info-item scroll-animate" data-animation="slide-up" data-delay={`${index * 150 + 600}`}>
-                  <div className="icon-container icon-container-md icon-container-primary scroll-animate" data-animation="zoom-in" data-delay={`${index * 150 + 650}`}>
+                <div key={index} className="info-item "  >
+                  <div className="icon-container icon-container-md icon-container-primary ">
                     <Icon name={info.icon} size={24} />
                   </div>
-                  <div className="info-content scroll-animate" data-animation="fade-in" data-delay={`${index * 150 + 700}`}>
+                  <div className="info-content " >
                     <h4>{info.title}</h4>
                     {info.isEmail ? (
                       <p>
@@ -62,8 +64,11 @@ const Contact = () => {
               ))}
             </div>
 
-             <div className="contact-button-wrapper scroll-animate" data-animation="zoom-in" data-delay="900">
-            <button className="btn" onClick={() => window.location.href = 'mailto:Connect@ftebtech.com'}>
+             <div className="contact-button-wrapper ">
+            <button
+              className="btn"
+              onClick={() => navigate('/contact-us')}
+            >
               <Icon name="Email" size={18} className="button-icon" />
               Contact Us
             </button>

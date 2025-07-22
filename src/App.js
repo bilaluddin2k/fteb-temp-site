@@ -24,26 +24,14 @@ import PrivacyPolicy from "./pages/Legal/PrivacyPolicy"
 import TermsOfService from "./pages/Legal/TermsOfService"
 import CookiesPolicy from "./pages/Legal/CookiesPolicy"
 import { routes } from './routes.js'
-import { initScrollAnimations } from "./utils/scrollAnimations"
-
-function ScrollAnimationHandler() {
-  const location = useLocation();
-
-  useEffect(() => {
-    if (window.scrollAnimationObserver && typeof window.scrollAnimationObserver.refresh === 'function') {
-      window.scrollAnimationObserver.refresh();
-    }
-  }, [location]);
-
-  return null;
-}
+import ScrollToTop from './components/ScrollToTop.jsx'
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="app">
         <Header />
-        <ScrollAnimationHandler />
         <Routes>
           <Route path={routes.home.path} element={<Resolution />} />
           <Route path={routes.servicess.path} element={<Servicess />} />

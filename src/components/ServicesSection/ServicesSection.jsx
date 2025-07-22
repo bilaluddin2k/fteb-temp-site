@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../../styles/components/ServicesSection/ServicesSection.scss";
 import { Icon } from '../Icons/IconSystem';
+import { useNavigate } from 'react-router-dom';
 
 // Import Swiper React components and styles
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -44,6 +45,7 @@ const services = [
 const ServicesSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -135,7 +137,7 @@ const ServicesSection = () => {
                 <button
                   className="service-btn"
                   onClick={() => {
-                    console.log(`Clicked ${service.title}`);
+                    navigate('/contact-us#contact-form');
                   }}
                   style={{
                     transform: hoveredIndex === idx ? 'scale(1.05)' : 'scale(1)'

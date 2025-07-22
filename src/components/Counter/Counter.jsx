@@ -98,24 +98,22 @@ const Counter = () => {
   }, [isVisible]);
 
   return (
-    <section className="counter-section section scroll-animate" data-animation="fade-in" ref={sectionRef}>
+    <section className="counter-section section "  ref={sectionRef}>
       <div className="container">
-        <div className="section-titles scroll-animate" data-animation="slide-up" data-duration="slow">
-          <h6 className="counter-subtitle scroll-animate" data-animation="fade-in" data-delay="100">OUR ACHIEVEMENTS</h6>
-          <h2 className="counter-title scroll-animate" data-animation="slide-up" data-delay="200">Numbers That Speak Our Success</h2>
-          <p className="counter-description scroll-animate" data-animation="slide-up" data-delay="300">
+        <div className="section-titles "  >
+          <h6 className="counter-subtitle "  >OUR ACHIEVEMENTS</h6>
+          <h2 className="counter-title "  >Numbers That Speak Our Success</h2>
+          <p className="counter-description "  >
             We take pride in delivering exceptional results and building lasting relationships 
             with our clients through innovative technology solutions.
           </p>
         </div>
 
-        <div className="counter-grid scroll-animate-container">
+        <div className="counter-grid -container">
           {counterData.map((item, index) => (
             <div 
               key={index} 
-              className={`counter-item scroll-animate ${isVisible ? 'animate' : ''}`}
-              data-animation="zoom-in"
-              data-delay={`${index * 150 + 400}`}
+              className={`counter-item  ${isVisible ? 'animate' : ''}`}
             >
               <div className="counter-icon-wrapper">
                 <div className="icon-container icon-container-xl icon-container-primary">

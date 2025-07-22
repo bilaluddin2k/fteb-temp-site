@@ -36,19 +36,19 @@ const CaseStudies = () => {
   ]
 
   return (
-    <section className="section scroll-animate" data-animation="fade-in">
+    <section className="section " >
       <div className="container">
-        <div className="section-titles scroll-animate" data-animation="slide-up" data-duration="slow">
-          <h6 className="headingser scroll-animate" data-animation="fade-in" data-delay="100">IT SERVICES</h6>
-          <h2 className="headstwo scroll-animate" data-animation="slide-up" data-delay="200">What We Offer</h2>
-          <p className="headsthree scroll-animate" data-animation="slide-up" data-delay="300">
+        <div className="section-titles "  >
+          <h6 className="headingser "  >IT SERVICES</h6>
+          <h2 className="headstwo "  >What We Offer</h2>
+          <p className="headsthree "  >
             Fteb specializes in technological and IT-related services such as product engineering, warranty management, building cloud, infrastructure, network, etc.
           </p>
         </div>
 
-        <div className="servicess-grid scroll-animate-container">
+        <div className="servicess-grid -container">
           {services.map((service, index) => (
-            <div key={index} className="service-item scroll-animate" data-animation="slide-up" data-delay={`${(index % 3) * 100 + 400}`}>
+            <div key={index} className="service-item " >
               <div className="icon-container icon-container-lg icon-container-primary">
                 <Icon name={service.icon} size={32} />
               </div>

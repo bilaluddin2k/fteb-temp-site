@@ -26,20 +26,18 @@ const Features = () => {
 
   return (
     <div className="features">
-      <section className="features-section bg-light scroll-animate" data-animation="fade-in">
+      <section className="features-section bg-light " >
         <div className="container">
           <div className="features-wrapper">
-            <div className="features-content scroll-animate" data-animation="slide-right" data-duration="slow">
-              <h6 className="scroll-animate" data-animation="fade-in" data-delay="100">WHY CHOOSE US</h6>
-              <h2 className="scroll-animate" data-animation="slide-up" data-delay="200">We're Here To Help You Build a Smarter, Secure, and Cost-Efficient Cloud Ecosystem</h2>
+            <div className="features-content "  >
+              <h6 className="" >WHY CHOOSE US</h6>
+              <h2 className="" >We're Here To Help You Build a Smarter, Secure, and Cost-Efficient Cloud Ecosystem</h2>
 
-              <div className="features-list scroll-animate-container">
+              <div className="features-list -container">
                 {features.map((feature, index) => (
                   <div 
                     key={index} 
-                    className="feature-box scroll-animate"
-                    data-animation="slide-up"
-                    data-delay={`${index * 150 + 300}`}
+                    className="feature-box "
                   >
                     <div className="icon-container icon-container-lg icon-container-primary">
                       <Icon name={feature.icon} size={32} />
@@ -53,19 +51,18 @@ const Features = () => {
               </div>
             </div>
 
-            <div className="features-image scroll-animate" data-animation="slide-left" data-delay="400">
+            <div className="features-image " >
               <div className="image-container">
                 <img src={featureImage} alt="IT Professional Team" />
-                <div className="floating-card top scroll-animate" data-animation="zoom-in" data-delay="600">
+                <div className="floating-card top " >
                   <div className="icon-container icon-container-md icon-container-white">
                     <Icon name="Cloud" size={24} />
                   </div>
                   <div className="card-content">
-                    <span className="number">2.5K+</span>
                     <span className="text">Projects Done</span>
                   </div>
                 </div>
-                <div className="floating-card bottom scroll-animate" data-animation="zoom-in" data-delay="800">
+                <div className="floating-card bottom " >
                   <div className="stat">
                     <span className="number">98%</span>
                     <span className="label">Client Satisfaction</span>
@@ -79,7 +76,9 @@ const Features = () => {
             </div>
           </div>
         </div>
+        
       </section>
+
     </div>
   )
 }
