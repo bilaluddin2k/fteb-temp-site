@@ -1,6 +1,6 @@
 // Modern Footer Component - SCSS with Nested Structure
 .modern-footer {
-  background: linear-gradient(135deg, #637184 0%, #5a6f8d 50%, #8a9098 100%);
+  background:linear-gradient(135deg, #2c405f 50%);
   color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -228,7 +228,7 @@
   .footer-bottom {
     background: rgba(0, 0, 0, 0.3);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: clamp(20px, 3vh, 25px) 0;
+    padding:clamp(8px, 2vh, 9px) 0;
     position: relative;
     z-index: 2;
     backdrop-filter: blur(10px);
