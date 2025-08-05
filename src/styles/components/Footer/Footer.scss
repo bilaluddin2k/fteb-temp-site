@@ -1,11 +1,9 @@
-// Modern Footer Component - SCSS with Nested Structure
 .modern-footer {
   background:linear-gradient(135deg, #2c405f 50%);
   color: #ffffff;
   position: relative;
   overflow: hidden;
 
-  // Decorative Elements
   &::before {
     content: '';
     position: absolute;
@@ -17,38 +15,8 @@
     opacity: 0.5;
   }
 
-  .footer-decoration {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    overflow: hidden;
+  
 
-    .decoration-dots {
-      position: absolute;
-      top: 20%;
-      right: 10%;
-      width: 100px;
-      height: 100px;
-      background: radial-gradient(circle, rgba(102, 161, 231, 0.1) 2px, transparent 2px);
-      background-size: 20px 20px;
-      animation: float 8s ease-in-out infinite;
-    }
-
-    .decoration-lines {
-      position: absolute;
-      bottom: 20%;
-      left: 5%;
-      width: 150px;
-      height: 80px;
-      background: linear-gradient(45deg, transparent 40%, rgba(255, 165, 0, 0.1) 50%, transparent 60%);
-      animation: float 6s ease-in-out infinite reverse;
-    }
-  }
-
-  // Main Footer Content
   .footer-main {
     position: relative;
     z-index: 2;
@@ -68,7 +36,6 @@
     }
   }
 
-  // Footer Sections
   .footer-section {
     h4, h5 {
       font-family: var(--font-heading);
@@ -92,7 +59,6 @@
       
     }
 
-    // Company Section
     &.company-section {
       .footer-logo {
         display: flex;
@@ -172,7 +138,6 @@
       }
     }
 
-    // Newsletter Section
    
   }
   .easter-egg{
@@ -186,7 +151,6 @@
           border: 1px solid rgba(255, 255, 255, 0.2);
         }
       }
-  // Footer Links
   .footer-links {
     list-style: none;
     padding: 0;
@@ -224,7 +188,6 @@
     }
   }
 
-  // Footer Bottom
   .footer-bottom {
     background: rgba(0, 0, 0, 0.3);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -324,7 +287,6 @@
     }
   }
 
-  // Animations
   @keyframes float {
     0%, 100% {
       transform: translateY(0) rotate(0deg);
@@ -340,7 +302,6 @@
     }
   }
 
-  // Responsive Design
   @media (max-width: 1200px) {
     .footer-main .footer-grid {
       grid-template-columns: 2fr 1fr 1fr 1.2fr;
@@ -438,7 +399,6 @@
     }
   }
 
-  // Touch Device Optimizations
   @media (hover: none) and (pointer: coarse) {
     .footer-section.company-section .contact-info .contact-item:hover,
     .footer-links li a:hover,
@@ -461,7 +421,6 @@
     }
   }
 
-  // Reduced Motion
   @media (prefers-reduced-motion: reduce) {
     .footer-decoration .decoration-dots,
     .footer-decoration .decoration-lines {
@@ -483,7 +442,6 @@
     }
   }
 
-  // High Contrast Mode
   @media (prefers-contrast: high) {
     background: #000000;
     color: #ffffff;
@@ -504,7 +462,6 @@
     }
   }
 
-  // Print Styles
   @media print {
     background: white;
     color: black;
@@ -537,7 +494,6 @@
     }
   }
 
-  // Focus Styles for Accessibility
   .footer-links li a:focus,
   .social-links .social-link:focus,
   .newsletter-form .input-group input:focus,
@@ -548,7 +504,6 @@
     outline-offset: 2px;
   }
 
-  // Loading States
   .newsletter-form.loading .input-group button {
     opacity: 0.6;
     pointer-events: none;
@@ -572,10 +527,8 @@
   }
 }
 
-// Mario Game Overlay (Modal)
 
 
-// Responsive Design
 @media (max-width: 768px) {
   .dino-game-overlay {
     padding: 10px;

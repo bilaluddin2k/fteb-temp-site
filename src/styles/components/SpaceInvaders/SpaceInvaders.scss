@@ -175,7 +175,6 @@
   }
 }
 
-// Responsive Design
 @media (max-width: 768px) {
   .space-invaders-game {
     .game-info {
@@ -257,7 +256,6 @@
   }
 }
 
-// Landscape Mobile Optimization
 @media (max-height: 500px) and (orientation: landscape) {
   .space-invaders-game {
     .game-container {
@@ -295,7 +293,6 @@
   }
 }
 
-// Animations
 @keyframes blink {
   0%, 50% {
     opacity: 1;
@@ -305,7 +302,6 @@
   }
 }
 
-// Retro CRT effect (optional)
 .space-invaders-game::before {
   content: '';
   position: absolute;
@@ -322,7 +318,6 @@
   z-index: 1;
 }
 
-// Reduced Motion
 @media (prefers-reduced-motion: reduce) {
   .space-invaders-game {
     .game-overlay .new-record {
@@ -339,7 +334,6 @@
   }
 }
 
-// High Contrast Mode
 @media (prefers-contrast: high) {
   .space-invaders-game {
     border: 3px solid white;
@@ -355,7 +349,6 @@
   }
 }
 
-// Touch Device Optimizations
 @media (hover: none) and (pointer: coarse) {
   .space-invaders-game {
     .game-canvas {

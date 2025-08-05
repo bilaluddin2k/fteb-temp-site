@@ -1,11 +1,9 @@
-// Counter Section - SCSS with Nested Structure
 .counter-section {
   background: linear-gradient(135deg, var(--color-bg-light) 0%, #ffffff 100%);
   position: relative;
   overflow: hidden;
   padding: clamp(80px, 12vh, 120px) 0;
 
-  // Section Titles
   .section-titles {
     text-align: center;
     max-width: 800px;
@@ -65,7 +63,6 @@
     }
   }
 
-  // Counter Grid
   .counter-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -76,7 +73,6 @@
     z-index: 2;
   }
 
-  // Counter Items
   .counter-item {
     background: var(--color-white);
     padding: clamp(2px, 3vw, 31px) clamp(19px, 3vw, 22px);
@@ -149,7 +145,6 @@
     }
   }
 
-  // Counter Icon Wrapper
   .counter-icon-wrapper {
     margin-bottom: clamp(20px, 4vw, 25px);
     display: flex;
@@ -159,7 +154,6 @@
     
   }
 
-  // Counter Content
   .counter-content {
     position: relative;
     z-index: 2;
@@ -205,7 +199,6 @@
     margin: 0;
   }
 
-  // Decorative Elements
   .counter-decoration {
     position: absolute;
     bottom: 0;
@@ -232,7 +225,6 @@
     }
   }
 
-  // Background Decorations
   .counter-bg-decoration {
     position: absolute;
     top: 0;
@@ -276,7 +268,6 @@
     }
   }
 
-  // Animations
   @keyframes fadeInUp {
     from {
       opacity: 0;
@@ -303,7 +294,6 @@
     }
   }
 
-  // Responsive Design
   @media (max-width: 1200px) {
     .counter-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -381,7 +371,6 @@
     }
   }
 
-  // Landscape Mobile Optimization
   @media (max-height: 600px) and (orientation: landscape) {
     padding: clamp(40px, 8vh, 60px) 0;
 
@@ -399,7 +388,6 @@
     }
   }
 
-  // Touch Device Optimizations
   @media (hover: none) and (pointer: coarse) {
     .counter-item:hover {
       transform: none;
@@ -411,7 +399,6 @@
     }
   }
 
-  // Reduced Motion Support
   @media (prefers-reduced-motion: reduce) {
     .counter-item,
     .icon-container,
@@ -431,7 +418,6 @@
     }
   }
 
-  // High Contrast Mode
   @media (prefers-contrast: high) {
     .counter-item {
       border: 3px solid currentColor;
@@ -446,7 +432,6 @@
     }
   }
 
-  // Print Styles
   @media print {
     background: white;
     

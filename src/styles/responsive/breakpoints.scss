@@ -1,7 +1,5 @@
-/* Responsive Design System - Breakpoints and Variables */
 
 :root {
-  /* Breakpoint Variables */
   --breakpoint-xs: 320px;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -9,14 +7,12 @@
   --breakpoint-xl: 1200px;
   --breakpoint-xxl: 1400px;
   
-  /* Container Max Widths */
   --container-sm: 540px;
   --container-md: 720px;
   --container-lg: 960px;
   --container-xl: 1140px;
   --container-xxl: 1320px;
   
-  /* Responsive Spacing */
   --spacing-xs: clamp(0.5rem, 2vw, 1rem);
   --spacing-sm: clamp(1rem, 3vw, 1.5rem);
   --spacing-md: clamp(1.5rem, 4vw, 2rem);
@@ -24,7 +20,6 @@
   --spacing-xl: clamp(3rem, 6vw, 4rem);
   --spacing-xxl: clamp(4rem, 8vw, 6rem);
   
-  /* Responsive Font Sizes */
   --text-xs: clamp(0.75rem, 1.5vw, 0.875rem);
   --text-sm: clamp(0.875rem, 2vw, 1rem);
   --text-base: clamp(1rem, 2.5vw, 1.125rem);
@@ -35,22 +30,18 @@
   --text-4xl: clamp(2.5rem, 6vw, 3.5rem);
   --text-5xl: clamp(3rem, 7vw, 4.5rem);
   
-  /* Touch Target Sizes */
   --touch-target-min: 55px;
   --touch-target-comfortable: 48px;
   
-  /* Responsive Borders and Shadows */
   --border-radius-sm: clamp(4px, 1vw, 8px);
   --border-radius-md: clamp(8px, 2vw, 12px);
   --border-radius-lg: clamp(12px, 3vw, 20px);
   
-  /* Responsive Transitions */
   --transition-fast: 0.15s ease;
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
 }
 
-/* Container System */
 .container-fluid {
   width: 100%;
   padding-left: var(--spacing-sm);
@@ -68,7 +59,6 @@
   max-width: var(--container-xl);
 }
 
-/* Responsive Grid System */
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -82,18 +72,15 @@
   padding-right: calc(var(--spacing-sm) * 0.5);
 }
 
-/* Responsive Utilities */
 .d-none { display: none !important; }
 .d-block { display: block !important; }
 .d-flex { display: flex !important; }
 .d-grid { display: grid !important; }
 
-/* Text Alignment */
 .text-left { text-align: left !important; }
 .text-center { text-align: center !important; }
 .text-right { text-align: right !important; }
 
-/* Responsive Spacing Utilities */
 .p-0 { padding: 0 !important; }
 .p-1 { padding: var(--spacing-xs) !important; }
 .p-2 { padding: var(--spacing-sm) !important; }
@@ -108,7 +95,6 @@
 .m-4 { margin: var(--spacing-lg) !important; }
 .m-5 { margin: var(--spacing-xl) !important; }
 
-/* Responsive Breakpoint Classes */
 @media (min-width: 576px) {
   .container { max-width: var(--container-sm); }
   .d-sm-none { display: none !important; }

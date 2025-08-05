@@ -1,8 +1,6 @@
-// Contact Page Styles with Nested SCSS
 .contact-page {
   font-family: var(--font-primary);
   
-  // Hero Section
 
   .tooltip-custom {
     position: relative;
@@ -95,7 +93,6 @@
     }
   }
 
-  // Contact Info Section
   .contact-info-section {
     padding: clamp(60px, 10vh, 80px) 0;
     background: var(--color-bg-light);
@@ -171,7 +168,6 @@
     }
   }
 
-  // Main Contact Section
   .main-contact-section {
     padding: clamp(80px, 12vh, 100px) 0;
     background: var(--color-white);
@@ -205,7 +201,6 @@
           }
         }
 
-        // Form Styles
       
         .btn {
        
@@ -228,7 +223,6 @@
       }
     }
 
-    // Sidebar Styles
     .contact-sidebar {
       .card {
         border: none;
@@ -352,10 +346,8 @@
     }
   }
 
-  // Email Client Modal Styles
 
 
-  // Map Section
   .map-section {
     .map-container {
       position: relative;
@@ -376,7 +368,6 @@
     }
   }
 
-  // Animations
   @keyframes fadeInUp {
     from {
       opacity: 0;
@@ -388,7 +379,6 @@
     }
   }
 
-  // Responsive Breakpoints
   @media (max-width: 991.98px) {
     .contact-hero {
       padding: clamp(100px, 12vh, 120px) 0 clamp(60px, 8vh, 80px);
@@ -517,7 +507,6 @@
     }
   }
 
-  // Touch Device Optimizations
   @media (hover: none) and (pointer: coarse) {
     .contact-info-card:hover,
     .card:hover {
@@ -538,7 +527,6 @@
     }
   }
 
-  // Reduced Motion
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -552,7 +540,6 @@
     }
   }
 
-  // High Contrast Mode
   @media (prefers-contrast: high) {
     .contact-info-card,
     .contact-form-card,
@@ -567,7 +554,6 @@
     }
   }
 
-  // Print Styles
   @media print {
     .contact-hero,
     .map-section,

@@ -115,7 +115,6 @@ const ServiceDescription = () => {
     { src: pythonLogo, class: 'logo-python', alt: 'Python Logo' },
     { src: turbo360Logo, class: 'logo-turbo360', alt: 'Turbo360 Logo' },
     { src: adevops, class: 'logo-adevops', alt: 'adevops' },
-    { src: microsoftLogo, class: 'logo-microsoft', alt: 'Microsoft Logo' },
   ];
 
   const handleServiceClick = (path) => {

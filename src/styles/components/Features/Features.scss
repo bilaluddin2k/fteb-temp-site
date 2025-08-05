@@ -92,7 +92,6 @@
     }
   }
 
-  // Image Container
   .image-container {
     position: relative;
     border-radius: 20px;
@@ -100,7 +99,6 @@
     box-shadow: 0 30px 80px rgba(0, 86, 210, 0.15);
   }
 
-  // Floating Cards
   .floating-card {
     position: absolute;
     background: var(--color-white);
@@ -195,7 +193,6 @@
     }
   }
 
-  // Animations
   @keyframes float {
     0%,
     100% {
@@ -206,7 +203,6 @@
     }
   }
 
-  // Responsive Design
   @media (max-width: 1024px) {
     &-wrapper {
       grid-template-columns: 1fr;

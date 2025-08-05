@@ -1,19 +1,15 @@
-// ServicePageTemplate - Enhanced Responsive Design
-// Clean, sharp, and properly aligned for all devices
 
 .service-page {
   min-height: 100vh;
   background: #f8f9fa;
   font-family: var(--font-body);
   
-  // Base container settings
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 clamp(16px, 3vw, 24px);
   }
 
-  /* ==== HERO SECTION ==== */
   .service-hero {
     padding: clamp(120px, 15vh, 160px) 0 clamp(80px, 12vh, 120px);
     color: white;
@@ -31,7 +27,6 @@
       padding: 0 clamp(16px, 3vw, 24px);
     }
 
-    // Back button
     .btn {
       background: rgba(255, 255, 255, 0.15);
       border: 1px solid rgba(255, 255, 255, 0.25);
@@ -57,7 +52,6 @@
       }
     }
 
-    // Hero main content
     .hero-main {
       display: grid;
       grid-template-columns: 1fr;
@@ -71,7 +65,6 @@
       }
     }
 
-    // Hero text content
     .hero-text {
       max-width: 100%;
       
@@ -160,7 +153,6 @@
     }
   }
 
-  /* Hero Logo Section - Responsive Image Positioning */
   .hero-logo-section {
     display: flex;
     justify-content: center;
@@ -198,7 +190,6 @@
       }
     }
 
-    /* Multi-Cloud Logos */
     .multi-cloud-logos {
       display: flex
 ;
@@ -257,7 +248,6 @@
         }
       }
 
-      /* Individual logo animations */
       .azure-logo {
         animation-delay: 0s;
         animation: floatAzure 6s ease-in-out infinite;
@@ -275,7 +265,6 @@
     }
   }
 
-  /* Hero Stats - Responsive Grid */
   .hero-stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -312,7 +301,6 @@
     }
   }
 
-  /* Main Content Section */
   .main-content {
     padding: clamp(60px, 10vh, 80px) 0;
     background: #ffffff;
@@ -376,7 +364,6 @@
     }
   }
 
-  /* Services Grid Section */
   .services-grid-container {
     margin: 0 auto;
     padding: clamp(50px, 8vh, 70px) clamp(16px, 4vw, 32px);
@@ -506,7 +493,6 @@
     }
   }
 
-  /* Benefits Section */
   .benefits-section {
     padding: clamp(60px, 10vh, 80px) clamp(16px, 4vw, 32px);
     background: #ffffff;
@@ -561,7 +547,6 @@
     }
   }
 
-  /* Process Section */
   .process-section {
     padding: clamp(60px, 10vh, 80px) clamp(16px, 4vw, 32px);
     background: var(--color-bg-light);
@@ -705,7 +690,6 @@
     }
   }
 
-  /* Technologies Section */
   .technologies-section {
     padding: clamp(60px, 10vh, 80px) clamp(16px, 4vw, 32px);
     background: #ffffff;
@@ -778,7 +762,6 @@
     }
   }
 
-  /* CTA Section */
   .service-cta-section {
     padding: clamp(60px, 10vh, 80px) clamp(16px, 4vw, 32px);
     background: #f2f6fc;
@@ -881,7 +864,6 @@
   }
 }
 
-/* Floating animation for multi-cloud logos */
 @keyframes floatLogos {
   0%, 100% {
     transform: translateY(0) rotate(0deg);
@@ -897,7 +879,6 @@
   }
 }
 
-/* Individual logo floating animations */
 @keyframes floatAzure {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   33% { transform: translateY(-8px) rotate(1deg); }
@@ -915,7 +896,6 @@
   50% { transform: translateY(-10px) rotate(1.5deg); }
 }
 
-/* Responsive Design Enhancements */
 @media (max-width: 480px) {
   .service-page {
     .service-hero {
@@ -968,7 +948,6 @@
   }
 }
 
-/* Landscape Mobile Optimization */
 @media (max-height: 600px) and (orientation: landscape) {
   .service-page {
     .service-hero {
@@ -986,7 +965,6 @@
   }
 }
 
-/* Touch Device Optimizations */
 @media (hover: none) and (pointer: coarse) {
   .service-page {
     .service-card:hover,
@@ -1007,7 +985,6 @@
   }
 }
 
-/* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
   .service-page {
     .multi-cloud-logos,
@@ -1031,7 +1008,6 @@
   }
 }
 
-/* High Contrast Mode */
 @media (prefers-contrast: high) {
   .service-page {
     .service-card,
@@ -1051,7 +1027,6 @@
   }
 }
 
-/* Print Styles */
 @media print {
   .service-page {
     .service-hero {

@@ -1,10 +1,6 @@
-/* Browser-Specific Fixes and Cross-Browser Compatibility */
 
-/* Reset and Normalize */
 
-/* Safari Specific Fixes */
 @supports (-webkit-appearance: none) {
-  /* Safari button styling */
   button,
   input[type="submit"],
   input[type="button"] {
@@ -12,7 +8,6 @@
     border-radius: var(--border-radius-sm);
   }
   
-  /* Safari input styling */
   input[type="text"],
   input[type="email"],
   input[type="password"],
@@ -22,21 +17,17 @@
     border-radius: var(--border-radius-sm);
   }
   
-  /* Safari scroll behavior */
   .scroll-smooth {
     -webkit-overflow-scrolling: touch;
   }
 }
 
-/* Firefox Specific Fixes */
 @-moz-document url-prefix() {
-  /* Firefox button focus outline */
   button::-moz-focus-inner {
     border: 0;
     padding: 0;
   }
   
-  /* Firefox input number spinner */
   input[type="number"] {
     -moz-appearance: textfield;
   }
@@ -48,9 +39,7 @@
   }
 }
 
-/* Chrome/Edge Specific Fixes */
 @supports (-webkit-background-clip: text) {
-  /* Chrome autofill styling */
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus {
@@ -59,7 +48,6 @@
     transition: background-color 5000s ease-in-out 0s;
   }
   
-  /* Chrome scrollbar styling */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -80,9 +68,7 @@
   }
 }
 
-/* Internet Explorer 11 Fixes */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  /* IE11 flexbox fixes */
   .flex {
     display: -ms-flexbox;
     display: flex;
@@ -103,7 +89,6 @@
     justify-content: center;
   }
   
-  /* IE11 grid fallback */
   .grid {
     display: block;
   }
@@ -130,15 +115,12 @@
   }
 }
 
-/* Opera Specific Fixes */
 @supports (-o-appearance: none) {
-  /* Opera button styling */
   button {
     -o-appearance: none;
   }
 }
 
-/* Cross-Browser Input Styling */
 input[type="search"] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -152,7 +134,6 @@ input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance: none;
 }
 
-/* Cross-Browser Selection Styling */
 ::selection {
   background: var(--secondary-color);
   color: white;
@@ -165,7 +146,6 @@ input[type="search"]::-webkit-search-results-decoration {
   text-shadow: none;
 }
 
-/* Cross-Browser Placeholder Styling */
 ::placeholder {
   color: var(--text-muted);
   opacity: 1;
@@ -191,7 +171,6 @@ input[type="search"]::-webkit-search-results-decoration {
   opacity: 1;
 }
 
-/* Cross-Browser Focus Styling */
 :focus {
   outline: 2px solid var(--secondary-color);
   outline-offset: 2px;
@@ -206,7 +185,6 @@ input[type="search"]::-webkit-search-results-decoration {
   outline-offset: 2px;
 }
 
-/* Cross-Browser Transform and Animation Support */
 .transform {
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
@@ -223,26 +201,22 @@ input[type="search"]::-webkit-search-results-decoration {
   transition: var(--transition-normal);
 }
 
-/* Cross-Browser Backdrop Filter Support */
 .backdrop-blur {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
-/* Fallback for browsers that don't support backdrop-filter */
 @supports not (backdrop-filter: blur(10px)) {
   .backdrop-blur {
     background: rgba(255, 255, 255, 0.9);
   }
 }
 
-/* Cross-Browser Sticky Support */
 .sticky {
   position: -webkit-sticky;
   position: sticky;
 }
 
-/* Cross-Browser Grid Support */
 @supports not (display: grid) {
   .grid {
     display: flex;
@@ -255,7 +229,6 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 }
 
-/* Cross-Browser Flexbox Support */
 @supports not (display: flex) {
   .flex {
     display: block;
@@ -267,16 +240,13 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 }
 
-/* High DPI Display Support */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  /* High DPI specific styles */
   .high-dpi {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
   }
 }
 
-/* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -288,15 +258,11 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 }
 
-/* Touch Device Optimizations */
 @media (hover: none) and (pointer: coarse) {
-  /* Touch-specific styles */
   .hover-effect:hover {
-    /* Disable hover effects on touch devices */
     transform: none;
   }
   
-  /* Larger touch targets */
   button,
   .btn,
   a[role="button"] {
@@ -305,7 +271,6 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 }
 
-/* Keyboard Navigation Support */
 .keyboard-navigation button:focus,
 .keyboard-navigation a:focus,
 .keyboard-navigation input:focus,

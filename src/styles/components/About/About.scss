@@ -1,4 +1,4 @@
-// About Component - SCSS with Nested Structure
+
 .about {
   background: var(--color-white);
   position: relative;
@@ -87,7 +87,6 @@
     
   }
 
-  // Experience Badge
   .experience-badge {
     position: absolute;
     bottom: 3px;
@@ -125,10 +124,8 @@
     }
   }
 
-  // Features List
  
 
-  // Animations
   @keyframes float {
     0%, 100% {
       transform: translateY(0);
@@ -138,7 +135,6 @@
     }
   }
 
-  // Responsive Design
   @media (max-width: 992px) {
     &-wrapper {
       grid-template-columns: 1fr;

@@ -163,7 +163,6 @@
   }
 }
 
-// Responsive Design
 @media (max-width: 768px) {
   .flappy-bird-game {
     .game-info {
@@ -228,7 +227,6 @@
   }
 }
 
-// Landscape Mobile Optimization
 @media (max-height: 500px) and (orientation: landscape) {
   .flappy-bird-game {
     .game-container {
@@ -266,7 +264,6 @@
   }
 }
 
-// Animations
 @keyframes pulse {
   0%, 100% {
     transform: scale(1);
@@ -276,7 +273,6 @@
   }
 }
 
-// Reduced Motion
 @media (prefers-reduced-motion: reduce) {
   .flappy-bird-game {
     .game-overlay .new-record {
@@ -289,7 +285,6 @@
   }
 }
 
-// High Contrast Mode
 @media (prefers-contrast: high) {
   .flappy-bird-game {
     border: 3px solid currentColor;
@@ -305,7 +300,6 @@
   }
 }
 
-// Touch Device Optimizations
 @media (hover: none) and (pointer: coarse) {
   .flappy-bird-game {
     .restart-btn:hover {

@@ -1,18 +1,4 @@
-/* Mobile-First Responsive Design */
 
-/* Base Mobile Styles (320px+) */
-
-
-
-
-/* Images and Media */
-
-
-/* Touch-Friendly Interactions */
-
-/* Form Elements */
-
-/* Navigation */
 .mobile-nav {
   position: fixed;
   top: 0;
@@ -30,7 +16,6 @@
   transform: translateY(0);
 }
 
-/* Mobile Menu Toggle */
 .mobile-menu-toggle {
   display: flex;
   flex-direction: column;
@@ -65,7 +50,6 @@
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* Cards and Components */
 .card {
   background: white;
   border-radius: var(--border-radius-lg);
@@ -79,7 +63,6 @@
   }
 }
 
-/* Grid Layouts */
 .grid {
   display: grid;
   gap: var(--spacing-md);
@@ -90,7 +73,6 @@
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
 
-/* Responsive Grid Adjustments */
 @media (max-width: 767px) {
   .grid-2,
   .grid-3,
@@ -112,7 +94,6 @@
   }
 }
 
-/* Flexbox Utilities */
 .flex {
   display: flex;
 }
@@ -149,7 +130,6 @@
   justify-content: space-around;
 }
 
-/* Responsive Text Sizes */
 .text-responsive-xs { font-size: var(--text-xs); }
 .text-responsive-sm { font-size: var(--text-sm); }
 .text-responsive-base { font-size: var(--text-base); }
@@ -160,7 +140,6 @@
 .text-responsive-4xl { font-size: var(--text-4xl); }
 .text-responsive-5xl { font-size: var(--text-5xl); }
 
-/* Responsive Spacing */
 .space-y-responsive > * + * {
   margin-top: var(--spacing-md);
 }
@@ -169,7 +148,6 @@
   margin-left: var(--spacing-md);
 }
 
-/* Accessibility Improvements */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -180,7 +158,6 @@
   }
 }
 
-/* High Contrast Mode */
 @media (prefers-contrast: high) {
   .card {
     border: 2px solid currentColor;
@@ -189,7 +166,6 @@
 
 }
 
-/* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
   :root {
     --text-primary: #e5e7eb;
@@ -200,7 +176,6 @@
   }
 }
 
-/* Print Styles */
 @media print {
   * {
     background: transparent !important;

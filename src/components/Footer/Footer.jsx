@@ -242,11 +242,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Decorative Elements */}
-        <div className="footer-decoration">
-          <div className="decoration-dots"></div>
-          <div className="decoration-lines"></div>
-        </div>
+      
       </footer>
     </>
   );

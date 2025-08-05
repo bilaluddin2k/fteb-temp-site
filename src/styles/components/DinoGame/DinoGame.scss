@@ -129,7 +129,6 @@
   }
 }
 
-// Dino Game Overlay (Modal)
 .dino-game-overlay {
   position: fixed;
   top: 0;
@@ -193,7 +192,6 @@
   }
 }
 
-// Responsive Design
 @media (max-width: 768px) {
   .dino-game-overlay {
     padding: 10px;
@@ -278,7 +276,6 @@
   }
 }
 
-// Animations
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -297,7 +294,6 @@
   }
 }
 
-// Reduced Motion
 @media (prefers-reduced-motion: reduce) {
   .dino-game-overlay,
   .game-overlay .new-record {

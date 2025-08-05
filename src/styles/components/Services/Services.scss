@@ -102,7 +102,6 @@
     }
   }
 
-  /* Services Grid Section */
   .services-grid-section {
     padding: clamp(40px, 8vh, 60px) 0;
     margin: 0 auto;
@@ -110,13 +109,6 @@
     padding-right: clamp(12px, 3vw, 20px);
     padding-top: 0px;
   }
-
-  /* .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: clamp(20px, 4vw, 30px);
-    margin-top: clamp(30px, 6vw, 50px);
-  } */
 
   .service-card-modern {
     background: white;
@@ -198,7 +190,6 @@
     text-align: center;
   }
 
-  /* Service Button */
   .service-btn {
     position: relative;
     display: inline-block;
@@ -258,7 +249,6 @@
     }
   }
 
-  /* CTA Section */
   .services-cta-section {
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
     color: #ffffff;
@@ -309,7 +299,6 @@
     }
   }
 
-  /* Primary CTA Button */
   .service-btn.primary-btn {
     background: #ffffff;
     color: var(--color-secondary);
@@ -331,7 +320,6 @@
     }
   }
 
-  /* Secondary CTA Button */
   .service-btn.secondary-btn {
     background: transparent;
     color: #ffffff;
@@ -410,7 +398,6 @@ width: 180px;
 
 
 
-  /* Responsive Breakpoints */
   @media (max-width: 1200px) {
     .services-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -524,7 +511,6 @@ width: 180px;
     }
   }
 
-  /* Landscape Mobile */
   @media (max-height: 500px) and (orientation: landscape) {
     .services-hero-section {
       padding: 40px 0 30px;
@@ -535,7 +521,6 @@ width: 180px;
     }
   }
 
-  /* Touch Device Optimizations */
   @media (hover: none) and (pointer: coarse) {
     .service-btn:hover {
       transform: none;
@@ -546,7 +531,6 @@ width: 180px;
     }
   }
 
-  /* Reduced Motion */
   @media (prefers-reduced-motion: reduce) {
     .service-card-modern,
     .service-btn,
@@ -560,7 +544,6 @@ width: 180px;
     }
   }
 
-  /* High Contrast Mode */
   @media (prefers-contrast: high) {
     .service-card-modern {
       border: 3px solid currentColor;
@@ -570,8 +553,6 @@ width: 180px;
       border: 3px solid currentColor;
     }
   }
-
-  /* Print Styles */
   @media (print) {
     .services-hero-section,
     .services-cta-section {
