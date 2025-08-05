@@ -1,32 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Form, Button, Alert, Card, Modal } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { Container, Row, Col, Form, Button, Alert, Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faMapMarkerAlt, 
   faPhoneAlt, 
   faEnvelope,
   faClock,
-  faGlobe,
   faCheckCircle,
   faExclamationTriangle,
-  faPaperPlane,
-  faDesktop,
-  faGoogleDrive,
-  faTimes
+  faPaperPlane
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faLinkedinIn,
   faTwitter,
   faFacebookF,
-  faInstagram,
-  faGoogle,
-  faMicrosoft,
-  faYahoo,
-  faApple
+  faInstagram
 } from '@fortawesome/free-brands-svg-icons';
 import '../../styles/components/ContactPage/Contact.scss'; // Import custom styles
 
-const Contact = () => {
+const ContactForm = () => {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -42,8 +36,7 @@ const Contact = () => {
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
-  const [isFormValid, setIsFormValid] = useState(false);
-  const [showEmailModal, setShowEmailModal] = useState(false);
+  // No need for reCAPTCHA state as v3 is invisible
 
   const contactInfo = [
     {
@@ -96,45 +89,6 @@ const Contact = () => {
     { icon: faTwitter, url: 'https://twitter.com/ftebtech', label: 'Twitter' },
     { icon: faFacebookF, url: 'https://facebook.com/ftebtech', label: 'Facebook' },
     { icon: faInstagram, url: 'https://instagram.com/ftebtech', label: 'Instagram' }
-  ];
-
-  const emailClients = [
-    {
-      name: 'Outlook',
-      icon: faMicrosoft,
-      color: '#0078d4',
-      action: 'outlook'
-    },
-    {
-      name: 'Gmail',
-      icon: faGoogle,
-      color: '#ea4335',
-      action: 'gmail'
-    },
-    {
-      name: 'Yahoo Mail',
-      icon: faYahoo,
-      color: '#6001d2',
-      action: 'yahoo'
-    },
-    {
-      name: 'Apple Mail',
-      icon: faApple,
-      color: '#000000',
-      action: 'apple'
-    },
-    {
-      name: 'Default Email App',
-      icon: faDesktop,
-      color: '#6c757d',
-      action: 'default'
-    },
-    {
-      name: 'Other Email Client',
-      icon: faEnvelope,
-      color: '#28a745',
-      action: 'other'
-    }
   ];
 
   // Validation rules
@@ -209,102 +163,84 @@ const Contact = () => {
     }));
   };
 
-  // Validate entire form
-  const validateForm = () => {
+
+  // Check form validity
+  const isFormValid = () => {
     const errors = {};
     Object.keys(formData).forEach(key => {
       const fieldErrors = validateField(key, formData[key]);
       Object.assign(errors, fieldErrors);
     });
-    return errors;
+    return Object.keys(errors).length === 0;
   };
 
-  // Check form validity
-  useEffect(() => {
-    const errors = validateForm();
-    const hasErrors = Object.keys(errors).length > 0;
-    const hasEmptyRequired = !formData.firstName || !formData.lastName || 
-                           !formData.email || !formData.phone || 
-                           !formData.company || !formData.service || 
-                           !formData.message || !formData.agreeToTerms;
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     
-    setIsFormValid(!hasErrors && !hasEmptyRequired);
-  }, [formData]);
-
-  // Generate email content
-  const generateEmailContent = () => {
-    const subject = `New Contact Form Submission from ${formData.firstName} ${formData.lastName}`;
+    // Reset status
+    setSubmitStatus(null);
+    setIsSubmitting(true);
     
-    const body = `Hello FTEB Team,
+    // Validate all fields
+    const errors = {};
+    Object.keys(formData).forEach(key => {
+      const fieldErrors = validateField(key, formData[key]);
+      Object.assign(errors, fieldErrors);
+    });
 
-I am interested in your services and would like to get in touch. Here are my details:
-
-CONTACT INFORMATION:
-• Name: ${formData.firstName} ${formData.lastName}
-• Email: ${formData.email}
-• Phone: ${formData.phone}
-• Company: ${formData.company}
-
-PROJECT DETAILS:
-• Service Interested In: ${formData.service}
-• Project Budget: ${formData.budget || 'Not specified'}
-
-MESSAGE:
-${formData.message}
-
-Please contact me at your earliest convenience to discuss how we can work together.
-
-Best regards,
-${formData.firstName} ${formData.lastName}
-${formData.company}
-${formData.email}
-${formData.phone}`;
-
-    return { subject, body };
-  };
-
-  // Handle email client selection
-  const handleEmailClientSelect = (clientAction) => {
-    const { subject, body } = generateEmailContent();
-    const encodedSubject = encodeURIComponent(subject);
-    const encodedBody = encodeURIComponent(body);
-    
-    let emailUrl = '';
-
-    switch (clientAction) {
-      case 'gmail':
-        emailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=Connect@ftebtech.com&su=${encodedSubject}&body=${encodedBody}`;
-        window.open(emailUrl, '_blank');
-        break;
-      
-      case 'outlook':
-        emailUrl = `https://outlook.live.com/mail/0/deeplink/compose?to=Connect@ftebtech.com&subject=${encodedSubject}&body=${encodedBody}`;
-        window.open(emailUrl, '_blank');
-        break;
-      
-      case 'yahoo':
-        emailUrl = `https://compose.mail.yahoo.com/?to=Connect@ftebtech.com&subject=${encodedSubject}&body=${encodedBody}`;
-        window.open(emailUrl, '_blank');
-        break;
-      
-      case 'apple':
-      case 'default':
-      case 'other':
-        emailUrl = `mailto:Connect@ftebtech.com?subject=${encodedSubject}&body=${encodedBody}`;
-        window.location.href = emailUrl;
-        break;
-      
-      default:
-        emailUrl = `mailto:Connect@ftebtech.com?subject=${encodedSubject}&body=${encodedBody}`;
-        window.location.href = emailUrl;
-        break;
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors);
+      setIsSubmitting(false);
+      return;
     }
 
-    setShowEmailModal(false);
-    setSubmitStatus('success');
-    
-    // Reset form after successful submission
-    setTimeout(() => {
+    if (!executeRecaptcha) {
+      setFormErrors(prev => ({
+        ...prev,
+        submit: 'reCAPTCHA not initialized. Please refresh the page and try again.'
+      }));
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      // Execute reCAPTCHA
+      const token = await executeRecaptcha('contact_form').catch(error => {
+        throw new Error('Failed to execute reCAPTCHA. Please refresh the page and try again.');
+      });
+      
+      if (!token) {
+        throw new Error('reCAPTCHA verification failed. Please try again.');
+      }
+
+      // Submit form
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+      const response = await fetch(`${apiUrl}/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken: token
+        })
+      });
+
+      let data;
+      try {
+        data = await response.json();
+      } catch (error) {
+        throw new Error('Unable to connect to the server. Please ensure the backend server is running.');
+      }
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to send message');
+      }
+
+      // Clear form on success
       setFormData({
         firstName: '',
         lastName: '',
@@ -317,36 +253,19 @@ ${formData.phone}`;
         agreeToTerms: false
       });
       setFormErrors({});
-      setSubmitStatus(null);
-    }, 3000);
-  };
+      setSubmitStatus('success');
 
-  // Handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    const errors = validateForm();
-    if (Object.keys(errors).length > 0) {
-      setFormErrors(errors);
-      return;
-    }
-
-    setIsSubmitting(true);
-    setSubmitStatus(null);
-
-    try {
-      // Simulate processing time
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Show email client selection modal
-      setShowEmailModal(true);
-      
     } catch (error) {
+      setFormErrors(prev => ({
+        ...prev,
+        submit: error.message || 'An error occurred while sending your message. Please try again.'
+      }));
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
     }
   };
+
 
   return (
     <div className="contact-page scroll-animate" data-animation="fade-in">
@@ -403,20 +322,20 @@ ${formData.phone}`;
                 <Card.Body>
                   <div className="form-header scroll-animate" data-animation="slide-up" data-delay="1300">
                     <h2>Send Us a Message</h2>
-                    <p>Fill out the form below and we'll help you choose the best email client to send your message.</p>
+                    <p>Fill out the form below and we'll get back to you as soon as possible.</p>
                   </div>
 
                   {submitStatus === 'success' && (
                     <Alert variant="success" className="d-flex align-items-center scroll-animate" data-animation="fade-in" data-delay="1400">
                       <FontAwesomeIcon icon={faCheckCircle} className="me-2" />
-                      Your email client should have opened with the message pre-filled. If it didn't open automatically, please check your browser's popup settings.
+                      Thank you for your message! We have received your inquiry and will get back to you within 24 hours.
                     </Alert>
                   )}
 
                   {submitStatus === 'error' && (
                     <Alert variant="danger" className="d-flex align-items-center scroll-animate" data-animation="fade-in" data-delay="1500">
                       <FontAwesomeIcon icon={faExclamationTriangle} className="me-2" />
-                      Sorry, there was an error processing your request. Please try again or contact us directly.
+                      {formErrors.submit || 'Sorry, there was an error processing your request. Please try again or contact us directly.'}
                     </Alert>
                   )}
 
@@ -594,12 +513,14 @@ ${formData.phone}`;
                         </Form.Group>
                       </Col>
 
+                      {/* reCAPTCHA v3 is invisible */}
+
                       {/* Submit Button */}
                       <Col md={12} className="scroll-animate" data-animation="zoom-in" data-delay="2600">
                         <Button
                           type="submit"
                           className="btn"
-                          disabled={!isFormValid || isSubmitting}
+                          disabled={!isFormValid() || isSubmitting}
                         >
                           {isSubmitting ? (
                             <>
@@ -693,58 +614,7 @@ ${formData.phone}`;
         </Container>
       </section>
 
-      {/* Email Client Selection Modal */}
-      <Modal
-        className="email-client-modal"
-        show={showEmailModal}
-        onHide={() => setShowEmailModal(false)}
-        centered
-        size="lg"
-      >
-          <div className="modal-header">
-            <h5 className="modal-title">
-              <FontAwesomeIcon icon={faEnvelope} className="me-2" />
-              Choose Your Email Client
-            </h5>
-            <button
-              type="button"
-              className="btn-close-custom"
-              onClick={() => setShowEmailModal(false)}
-            >
-              <FontAwesomeIcon icon={faTimes} />
-            </button>
-          </div>
-
-          <div className="modal-body">
-            <p className="modal-description">
-              Select your preferred email client to send your message. We'll open it with your message pre-filled.
-            </p>
-
-            <div className="email-clients-grid">
-              {emailClients.map((client, index) => (
-                <button
-                  key={index}
-                  className="email-client-option"
-                  onClick={() => handleEmailClientSelect(client.action)}
-                  style={{ '--client-color': client.color }}
-                >
-                  <div className="client-icon">
-                    <FontAwesomeIcon icon={client.icon} />
-                  </div>
-                  <span className="client-name">{client.name}</span>
-                </button>
-              ))}
-            </div>
-
-            <div className="modal-note">
-              <small className="text-muted">
-                <FontAwesomeIcon icon={faCheckCircle} className="me-1" />
-                If your preferred email client doesn't open automatically, please check your browser's popup settings.
-              </small>
-            </div>
-          </div>
-      </Modal>
-
+    
       {/* Map Section */}
       <section className="map-section">
         <Container fluid className="p-0">
@@ -763,6 +633,21 @@ ${formData.phone}`;
         </Container>
       </section>
     </div>
+  );
+};
+
+const Contact = () => {
+  return (
+    <GoogleReCaptchaProvider
+      reCaptchaKey="6Le0-pkrAAAAAE2Xx3kGnLrapSLdXL3g4rAHHYmL"
+      scriptProps={{
+        async: false,
+        defer: false,
+        appendTo: 'head'
+      }}
+    >
+      <ContactForm />
+    </GoogleReCaptchaProvider>
   );
 };
 

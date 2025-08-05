@@ -56,6 +56,7 @@ const ITServices = () => {
   const isVisible = useServicessScroll();
 
   useEffect(() => {
+    // Add smooth scroll behavior
     const handleScroll = () => {
       const scrolled = window.scrollY;
       const header = document.querySelector('.itservices-title');

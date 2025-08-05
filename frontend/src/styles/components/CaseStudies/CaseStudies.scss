@@ -1,3 +1,4 @@
+// Case Studies Component - SCSS with Nested Structure
 .container {
   position: relative;
   z-index: 2;
@@ -136,6 +137,7 @@
   }
 }
 
+// Responsive Design
 @media (max-width: 1200px) {
   .servicess-grid {
     grid-template-columns: minmax(350px, 1fr);
