@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { Container, Row, Col, Form, Button, Alert, Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
@@ -20,7 +19,6 @@ import {
 import '../../styles/components/ContactPage/Contact.scss'; // Import custom styles
 
 const ContactForm = () => {
-  const { executeRecaptcha } = useGoogleReCaptcha();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -195,26 +193,7 @@ const ContactForm = () => {
       return;
     }
 
-    if (!executeRecaptcha) {
-      setFormErrors(prev => ({
-        ...prev,
-        submit: 'reCAPTCHA not initialized. Please refresh the page and try again.'
-      }));
-      setSubmitStatus('error');
-      setIsSubmitting(false);
-      return;
-    }
-
     try {
-      // Execute reCAPTCHA
-      const token = await executeRecaptcha('contact_form').catch(error => {
-        throw new Error('Failed to execute reCAPTCHA. Please refresh the page and try again.');
-      });
-      
-      if (!token) {
-        throw new Error('reCAPTCHA verification failed. Please try again.');
-      }
-
       // Submit form
       const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
       const response = await fetch(`${apiUrl}/contact`, {
@@ -223,10 +202,7 @@ const ContactForm = () => {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify({
-          ...formData,
-          recaptchaToken: token
-        })
+        body: JSON.stringify(formData)
       });
 
       let data;
@@ -636,19 +612,5 @@ const ContactForm = () => {
   );
 };
 
-const Contact = () => {
-  return (
-    <GoogleReCaptchaProvider
-      reCaptchaKey="6Le0-pkrAAAAAE2Xx3kGnLrapSLdXL3g4rAHHYmL"
-      scriptProps={{
-        async: false,
-        defer: false,
-        appendTo: 'head'
-      }}
-    >
-      <ContactForm />
-    </GoogleReCaptchaProvider>
-  );
-};
 
-export default Contact;
+export default ContactForm;
