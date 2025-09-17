@@ -55,28 +55,27 @@
     }
 
     .subtitle {
-      font-family: var(--font-body) !important;
-      display: inline-block;
-      background: rgba(23, 33, 165, 0);
-      color: var(--white);
-      padding: 12px 28px;
-      border-radius: 17px;
-      font-size: clamp(11px, 2vw, 13px);
-      font-weight: var(--font-weight-bold);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin: 20px 0px;
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      animation: pulse 2s infinite;
+  font-family: var(--font-body) !important;
+    display: inline-block;
+    background: rgba(23, 33, 165, 0);
+    color: var(--white);
+    padding: 6px 10px;
+    border-radius: 17px;
+    font-size: clamp(11px, 2vw, 15px);
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 20px 0px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    animation: pulse 2s infinite;
     }
 
     h2 {
       font-family: var(--font-heading) !important;
-      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-size: clamp(1.8rem, 5vw, 2rem);
       line-height: 1.3;
       margin-bottom: 40px;
       color: var(--white);
-      font-weight: var(--font-weight-semibold);
+      font-weight: 400;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
   }
@@ -207,7 +206,35 @@
     }
   }
 
-  @media (min-width: 1025px) {
+  /* Extra large devices (large desktops) */
+    @media screen and (min-width: 1201px) and (min-width: 1399px) {
+    .images-container {
+      .image-wrapper {
+        &.laptop .laptop-image {
+          width: 75652650px;
+        }
+
+        &.headphones img {
+          width: 31200px;
+        }
+
+        &.googlecloud .tech-image {
+          width: 2200px;
+        }
+
+        &.azure .tech-image {
+          width: 190px;
+        }
+
+        &.aws .tech-image {
+          width: 160px;
+        }
+      }
+    }
+  }
+
+ 
+  @media screen and (min-width: 1200px) {
     main {
       flex-direction: row;
       text-align: left;
@@ -236,8 +263,8 @@
         }
 
         &.laptop {
-          top: 20%;
-          right: 18%;
+          top: 25%;
+          right: 22%;
           --x-offset-1: -10px;
           --y-offset-1: 8px;
           --x-offset-2: 7px;
@@ -246,7 +273,7 @@
           --y-offset-3: 12px;
 
           .laptop-image {
-            width: 700px;
+            width: 600px;
           }
         }
 
@@ -295,15 +322,15 @@
           }
         }
 
-        &.devops {
-          top: 8%;
-          right: 30%;
-          --x-offset-1: -6px;
-          --y-offset-1: 10px;
-          --x-offset-2: 8px;
-          --y-offset-2: -5px;
-          --x-offset-3: -4px;
-          --y-offset-3: 12px;
+        &.googlecloud {
+         top: -9%;
+        right: 30%;
+        --x-offset-1: -6px;
+        --y-offset-1: 10px;
+        --x-offset-2: 8px;
+        --y-offset-2: -5px;
+        --x-offset-3: -4px;
+        --y-offset-3: 12px;
 
           .tech-image {
             width: 190px;
@@ -312,7 +339,7 @@
 
         &.azure {
           bottom: 0%;
-          left: 18%;
+          left: 30%;
           --x-offset-1: 12px;
           --y-offset-1: -8px;
           --x-offset-2: -6px;
@@ -326,8 +353,8 @@
         }
 
         &.aws {
-          top: 35%;
-          right: 5%;
+          top: 50%;
+          right: 3%;
           --x-offset-1: -9px;
           --y-offset-1: 6px;
           --x-offset-2: 11px;
@@ -339,11 +366,13 @@
             width: 150px;
           }
         }
+        
       }
     }
   }
 
-  @media (min-width: 769px) and (max-width: 1024px) {
+  /* Large devices (desktops) */
+  @media screen and (min-width: 992px) and (max-width: 1199px) {
     main {
       flex-direction: row;
       text-align: left;
@@ -401,7 +430,7 @@
           }
         }
 
-        &.devops {
+        &.googlecloud {
           top: 6%;
           left: 10%;
 
@@ -427,11 +456,22 @@
             width: clamp(100px, 11vw, 120px);
           }
         }
+         &.headphones,
+        &.mouse,
+        &.watch,
+        &.keyboard,
+        &.googlecloud,
+        &.azure,
+        &.aws {
+          display: none;
+        }
+      
       }
     }
   }
 
-  @media (min-width: 481px) and (max-width: 768px) {
+  /* Medium devices (landscape tablets) */
+  @media screen and (min-width: 768px) and (max-width: 991px) {
     padding: 100px 3% 50px;
 
     main {
@@ -473,7 +513,7 @@
           z-index: 2;
 
           .laptop-image {
-            width: clamp(350px, 70vw, 450px);
+            width: clamp(750px, 90vw, 850px);
           }
 
           &.loaded {
@@ -481,43 +521,18 @@
           }
         }
 
-        &.devops {
-          position: absolute;
-          top: 10%;
-          left: 10%;
-          z-index: 1;
+     
 
-          .tech-image {
-            width: clamp(80px, 12vw, 100px);
-          }
-
-          &.loaded {
-            animation: floatTablet 7s ease-in-out infinite;
-          }
-        }
-
-        &.azure {
-          position: absolute;
-          bottom: 15%;
-          right: 10%;
-          z-index: 1;
-
-          .tech-image {
-            width: clamp(70px, 10vw, 90px);
-          }
-
-          &.loaded {
-            animation: floatTablet 8s ease-in-out infinite;
-          }
-        }
-
-        &.headphones,
+       &.headphones,
         &.mouse,
         &.watch,
         &.keyboard,
+        &.googlecloud,
+        &.azure,
         &.aws {
           display: none;
         }
+      
       }
     }
 
@@ -540,7 +555,8 @@
     }
   }
 
-  @media (max-width: 480px) {
+  /* Small devices (portrait tablets) */
+  @media screen and (min-width: 577px) and (max-width: 767px) {
     padding: 80px 4% 40px;
 
     main {
@@ -592,9 +608,6 @@
           left: 50%;
           transform: translateX(-50%);
 
-          .laptop-image {
-            width: clamp(280px, 85vw, 350px);
-          }
 
           &.loaded {
             animation: floatMobile 6s ease-in-out infinite;
@@ -605,7 +618,7 @@
         &.mouse,
         &.watch,
         &.keyboard,
-        &.devops,
+        &.googlecloud,
         &.azure,
         &.aws {
           display: none;
@@ -632,112 +645,128 @@
     }
   }
 
-  @media (max-width: 360px) {
-    padding: 70px 3% 30px;
+  /* Extra small devices (phones) */
+  @media screen and (max-width: 576px) {
+    .landing-page {
+     min-height: 100vh important;
+    }
+  main {
+      flex-direction: column;
+      text-align: center;
+      padding-top: 10px;
+      min-height: 60vh;
+    }
 
     .content {
+      margin-bottom: 40px;
+      max-width: 100%;
+
       .headingglogo {
         font-size: clamp(1.1rem, 8vw, 1.8rem);
+        margin-bottom: 15px;
       }
 
       h2 {
-        font-size: clamp(0.9rem, 6vw, 1.3rem);
+        font-size: clamp(0.9rem, 6vw, 3.3rem);
+        margin-bottom: 30px;
+      }
+
+      .subtitle {
+        font-size: clamp(10px, 3vw, 12px);
+        padding: 8px 16px;
+        margin: 15px 0;
       }
     }
 
+    .browse-btn {
+      padding: 14px 28px;
+      font-size: 14px;
+    }
+
     .images-container {
+      position: relative;
       height: 240px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-      .image-wrapper.laptop .laptop-image {
-        width: clamp(250px, 90vw, 300px);
+      .image-wrapper {
+        &.laptop {
+          position: relative;
+          top: auto;
+          right: auto;
+
+          .laptop-image {
+            width:300px;
+          }
+
+          &.loaded {
+            animation: floats 6s ease-in-out infinite;
+          }
+        }
+
+        &.headphones,
+        &.mouse,
+        &.watch,
+        &.keyboard {
+          display: none;
+        }
       }
     }
-  }
 
-  @media (max-height: 600px) and (orientation: landscape) {
-    padding: 60px 4% 30px;
-
-    main {
-      min-height: 50vh;
-      flex-direction: row;
-      text-align: left;
-    }
-
-    .content {
-      margin-bottom: 30px;
-      max-width: 50%;
-
-      .headingglogo {
-        font-size: clamp(1.2rem, 5vw, 2rem);
-      }
-
-      h2 {
-        font-size: clamp(1rem, 4vw, 1.5rem);
-      }
-    }
+ 
 
     .images-container {
-      height: 200px;
-      width: 50%;
+      height: 250px;
+      width: 100%;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
 
-      .image-wrapper.laptop {
-        position: relative;
-        top: auto;
-        right: auto;
-        left: 50%;
-        transform: translateX(-50%);
+     
 
-        .laptop-image {
-          width: clamp(300px, 60vw, 400px);
-        }
-      }
-
-      .image-wrapper.devops {
+      .image-wrapper.googlecloud {
         position: absolute;
-        top: 10%;
-        left: 10%;
+        top: -14%;
+        left: 5%;
+        display: block !important;
 
         .tech-image {
-          width: clamp(60px, 8vw, 80px);
+          width: clamp(50px, 15vw, 70px);
         }
       }
 
-      .image-wrapper:not(.laptop):not(.devops) {
+      .image-wrapper.azure {
+        position: absolute;
+        bottom: -21%;
+        left: 28%;
+        display: block !important;
+
+        .tech-image {
+          width: clamp(50px, 15vw, 70px);
+        }
+      }
+
+      .image-wrapper.aws {
+        position: absolute;
+        top: -10%;
+        right: 5%;
+        display: block !important;
+
+        .tech-image {
+          width: clamp(50px, 15vw, 70px);
+        }
+      }
+
+      .image-wrapper:not(.laptop):not(.googlecloud):not(.azure):not(.aws) {
         display: none;
       }
     }
   }
 
-  @media (min-width: 1400px) {
-    .images-container {
-      .image-wrapper {
-        &.laptop .laptop-image {
-          width: 750px;
-        }
-
-        &.headphones img {
-          width: 300px;
-        }
-
-        &.devops .tech-image {
-          width: 200px;
-        }
-
-        &.azure .tech-image {
-          width: 190px;
-        }
-
-        &.aws .tech-image {
-          width: 160px;
-        }
-      }
-    }
-  }
-
+ 
   .images-container .image-wrapper {
     will-change: transform;
     transform: translateZ(0);

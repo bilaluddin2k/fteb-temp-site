@@ -223,8 +223,7 @@
         }
 
         img {
-          width: clamp(50px, 12vw, 80px);
-          height: clamp(50px, 12vw, 80px);
+          width: clamp(50px, 12vw, 120px);
           object-fit: contain;
           border-radius: 12px;
           background: white;
@@ -419,7 +418,6 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    min-height: clamp(350px, 50vh, 400px);
     transition: all 0.3s ease;
 
     &:hover {
@@ -462,7 +460,6 @@
     line-height: 1.6;
     margin-bottom: clamp(16px, 3vh, 20px);
     font-size: clamp(0.85rem, 2vw, 0.95rem);
-    flex-grow: 1;
     text-align: center;
 
     @media (min-width: 768px) {

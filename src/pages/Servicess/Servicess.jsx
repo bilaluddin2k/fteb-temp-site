@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "../../styles/pages/Servicess/Servicess.scss";
-import PageWrapper from "../../components/PageWrapper/PageWrapper";
 import { Icon } from '../../components/Icons/IconSystem';
 import men from "../../assets/men.png";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -56,6 +55,7 @@ const ITServices = () => {
   const isVisible = useServicessScroll();
 
   useEffect(() => {
+    // Add smooth scroll behavior
     const handleScroll = () => {
       const scrolled = window.scrollY;
       const header = document.querySelector('.itservices-title');
@@ -70,7 +70,6 @@ const ITServices = () => {
 
   return (
     <div className="it-services-page">
-      <PageWrapper />
 
       <ServiceDescription />
       

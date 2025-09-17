@@ -18,34 +18,34 @@ const InfrastructureServices = () => {
 
     services: [
       {
-        title: "Network Design & Implementation",
+        title: " Networking Infrastructure and Structure Cabling",
         description: "Design and implement robust network infrastructure with optimal performance and security.",
-        features: ["Network Architecture", "LAN/WAN Setup", "Wireless Networks", "Network Security"]
+        features: [" Networking Infrastructure ,Network Architecture", "LAN/WAN Setup", "Wireless Networks", "Network Security"]
       },
       {
-        title: "Server Management",
-        description: "Complete server lifecycle management from procurement to maintenance and monitoring.",
-        features: ["Server Installation", "Virtualization", "Server Monitoring", "Backup Solutions"]
+        title: "Server Infrastucture Management",
+        description: "Efficient lifecycle management of physical and virtual server environments.",
+        features: ["Server Provisioning & Configuration", "Virtualization & Hypervisor Management", "Performance Monitoring & Alerts", "Backup & Backup & Disaster Recovery" , "Patch Management & Updates"]
       },
       {
-        title: "Cloud Infrastructure",
-        description: "Hybrid and multi-cloud infrastructure solutions for scalability and flexibility.",
-        features: ["Cloud Migration", "Hybrid Cloud", "Multi-cloud Strategy", "Cloud Optimization"]
+        title: "Cloud & IP PBX Telephony Solutions",
+        description: "Secure, scalable telephony systems for modern business communication.",
+        features: ["Custom On-Site VoIP Systems", "Enterprise-Grade Control & Security", "PSTN & SIP Integration", "Features: IVR, Voicemail, Call Queues","Fully Cloud-Based Setup","Fast Deployment & Easy Scaling","Desktop & Mobile Access","Perfect for Remote & Multi-Site Teams"]
       },
       {
-        title: "Security Infrastructure",
-        description: "Comprehensive security infrastructure to protect your organization from cyber threats.",
-        features: ["Firewall Management", "VPN Setup", "Intrusion Detection", "Security Monitoring"]
+        title: "Security Infrastructure Management",
+        description: "Comprehensive setup and support for physical and digital security systems.",
+        features: ["Firewall Deployment & Configuration", "Secure VPN Connectivity", "CCTV Supply, Installation & Maintenance", "Biometric Access Control Systems","Email Threat Protection & Filtering","Setup of Additional Security Components (e.g., IDS/IPS, Endpoint Protection, Network Segmentation)"]
       },
       {
-        title: "Disaster Recovery",
-        description: "Business continuity planning with robust disaster recovery and backup solutions.",
-        features: ["Backup Strategy", "Disaster Recovery", "Business Continuity", "Data Protection"]
+        title: "Data Recovery Services",
+        description: "Reliable recovery solutions for lost, corrupted, or compromised data across platforms.",
+        features: ["Ransomware-Affected Data Restoration", "Recovery from Laptops, Desktops, HDDs, SSDs, USB Drives & Other Storage Devices", "Email Data Retrieval & Restoration", "Cloud-Based Data Recovery Solutions"]
       },
       {
-        title: "Hardware Procurement",
-        description: "Strategic hardware procurement and lifecycle management for optimal ROI.",
-        features: ["Hardware Selection", "Vendor Management", "Lifecycle Planning", "Asset Management"]
+        title: "Hardware Sales, Service & Support",
+        description: "End-to-end solutions for IT hardware procurement, maintenance, and lifecycle support.",
+        features: ["Sales of Laptops, Desktops, Servers, Firewalls, Switches, Routers, Access Points, Printers & Other IT Components", "Flexible AMC (Annual Maintenance Contract) Plans for Hardware Support", "Professional Hardware Repair & Servicing"]
       }
     ],
 

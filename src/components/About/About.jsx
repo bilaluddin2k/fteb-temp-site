@@ -1,27 +1,8 @@
-import "../../styles/components/About/About.scss"
-import aboutImage from "../../assets/images/about-us.jpg"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheckCircle, faAward, faUsers, faLightbulb } from '@fortawesome/free-solid-svg-icons'
+import "../../styles/components/About/About.scss";
+import aboutImage from "../../assets/images/about-us.jpg";
 
 const About = () => {
-  const features = [
-    {
-      icon: faCheckCircle,
-      title: "Proven Track Record"
-    },
-    {
-      icon: faAward,
-      title: "Industry Recognition"
-    },
-    {
-      icon: faUsers,
-      title: "Expert Team"
-    },
-    {
-      icon: faLightbulb,
-      title: "Innovative Solutions"
-    }
-  ]
+
 
   return (
     <section className="about section bg-light" >

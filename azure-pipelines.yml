@@ -1,7 +1,4 @@
-trigger:
-  branches:
-    include:
-      - dev-01
+trigger: none
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -36,7 +33,7 @@ steps:
 
   - task: AzureWebApp@1
     inputs:
-      azureSubscription: 'fteb-devops'
+      azureSubscription: 'azure-devops2'
       appName: 'fteb-website'
       package: '$(Build.ArtifactStagingDirectory)/app.zip'
       appType: 'webAppLinux'

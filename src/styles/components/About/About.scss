@@ -207,6 +207,15 @@
   }
 
   @media (max-width: 576px) {
+  
+
+    .about-title {
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-bold);
+    }
+      .about-lead {
+      font-size: var(--font-size-sm);
+    }
     .features-list {
       .feature-item {
         padding: 15px;

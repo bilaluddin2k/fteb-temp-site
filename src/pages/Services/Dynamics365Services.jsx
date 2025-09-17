@@ -8,7 +8,7 @@ const Dynamics365Services = () => {
     subtitle: "Intelligent Business Applications for Modern Enterprises",
     description: "Transform your business operations with comprehensive Dynamics 365 ERP and CRM solutions tailored to your industry needs and business processes.",
     logo: dynamicsLogo,
-    heroGradient: "linear-gradient(135deg, #742774 0%, #9c4a9c 100%)",
+    heroGradient: "linear-gradient(135deg, #6a55b1 0%, rgb(113 62 121) 100%)",
     
     stats: [
       { number: "150+", label: "D365 Implementations" },
@@ -18,35 +18,50 @@ const Dynamics365Services = () => {
 
     services: [
       {
-        title: "Dynamics 365 Business Central",
+        title: " Business Central",
         description: "Complete ERP solution for small to medium businesses with financial management and operations.",
         features: ["Financial Management", "Supply Chain", "Project Management", "Manufacturing"]
       },
       {
-        title: "Dynamics 365 Sales",
+        title: " Sales",
         description: "Comprehensive CRM solution to manage your sales pipeline and customer relationships.",
         features: ["Lead Management", "Opportunity Tracking", "Sales Analytics", "Mobile CRM"]
       },
       {
-        title: "Dynamics 365 Customer Service",
+        title: " Customer Service",
         description: "Deliver exceptional customer service with omnichannel support and case management.",
         features: ["Case Management", "Knowledge Base", "Omnichannel Support", "Service Analytics"]
       },
       {
-        title: "Dynamics 365 Field Service",
+        title: " Field Service",
         description: "Optimize field operations with intelligent scheduling and mobile workforce management.",
         features: ["Work Order Management", "Resource Scheduling", "Mobile App", "IoT Integration"]
       },
       {
-        title: "Power Platform Integration",
-        description: "Extend Dynamics 365 capabilities with custom apps, workflows, and business intelligence.",
-        features: ["Power Apps", "Power Automate", "Power BI", "Custom Development"]
+        title: " Finance & Operations",
+        description: "Enterprise-grade ERP for large and growing businesses",
+        features: ["Financial Management", "Supply Chain & Logistics", "Procurement & Sourcing", "Manufacturing & Production Control","Project Operations","Global Compliance & Risk ManagementGlobal Compliance & Risk Management" ]
       },
       {
-        title: "Data Migration & Integration",
-        description: "Seamless data migration from legacy systems with ongoing integration support.",
-        features: ["Data Migration", "System Integration", "API Development", "Data Synchronization"]
-      }
+        title: "Supply Chain Management",
+        description: "Optimize operations with intelligent, resilient supply chains",
+        features: ["Inventory & Warehouse Management", "Production Planning", "Procurement & Sourcing", "Transportation Management","Asset Management"]
+      },
+        {
+        title: " Human Resources",
+        description: "Empower your workforce with modern HR capabilities",
+        features: ["Employee Self-Service", "Leave & Absence Management", "Compensation & Benefits", "Performance & Development","Compliance & Safety"]
+      },
+      {
+        title: " Marketing",
+        description: "Personalize customer journeys and drive engagement",
+        features: ["Customer Segmentation", "Email & Social Campaigns", "Lead Scoring & Nurturing", "Event Management","Analytics & Insights"]
+      },
+      {
+        title: " Project Operations",
+        description: "Connect project sales, planning, and delivery.",
+        features: ["Project Planning & Scheduling", "Resource Management", "Time & Expense Tracking", "Project Accounting","Profitability Analysis"]
+      },
     ],
 
     benefits: [

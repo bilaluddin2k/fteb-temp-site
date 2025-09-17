@@ -1,5 +1,5 @@
 .modern-footer {
-  background:linear-gradient(135deg, #2c405f 50%);
+  background:linear-gradient(135deg, #204988 50%);
   color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -30,7 +30,7 @@
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1.5fr;
+      grid-template-columns: 2fr 1fr;
       gap: clamp(40px, 6vw, 60px);
       align-items: start;
     }
@@ -211,10 +211,9 @@
 
       .copyright {
         p {
-          font-family: var(--font-body);
-          font-size: clamp(0.8rem, 1.6vw, 0.9rem);
-          color: rgba(255, 255, 255, 0.7);
-          margin: 0;
+    font-size: clamp(0.2rem, 1.6vw, 0.9rem);
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
         }
       }
 
@@ -227,9 +226,8 @@
           font-family: var(--font-body);
           color: rgba(255, 255, 255, 0.7);
           text-decoration: none;
-          font-size: clamp(0.8rem, 1.6vw, 0.9rem);
+          font-size: 14px;
           transition: all 0.3s ease;
-          padding: clamp(4px, 1vw, 6px);
 
           &:hover {
             color: var(--color-white);
@@ -304,14 +302,14 @@
 
   @media (max-width: 1200px) {
     .footer-main .footer-grid {
-      grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      grid-template-columns: 2fr 1fr;
       gap: clamp(30px, 5vw, 50px);
     }
   }
 
   @media (max-width: 992px) {
     .footer-main .footer-grid {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr ;
       gap: clamp(40px, 6vw, 50px);
 
       .footer-section.company-section {
@@ -320,9 +318,9 @@
     }
 
     .footer-bottom .footer-bottom-content {
-      flex-direction: column;
+      flex-direction: row;
       text-align: center;
-      gap: clamp(15px, 2.5vw, 20px);
+      gap:10px;
 
       .footer-bottom-links {
         justify-content: center;
@@ -335,7 +333,6 @@
       padding: clamp(50px, 8vh, 60px) 0 clamp(30px, 5vh, 40px);
 
       .footer-grid {
-        grid-template-columns: 1fr;
         gap: clamp(35px, 5vw, 45px);
         text-align: center;
 
@@ -390,10 +387,23 @@
 
       .footer-bottom-content {
         .footer-bottom-links {
-          flex-direction: column;
+          flex-direction: row;
           gap: clamp(10px, 2vw, 15px);
         }
 
+
+      .footer-bottom-links {
+        justify-content: center;
+        a {
+          font-family: var(--font-body);
+          color: rgba(255, 255, 255, 0.7);
+          text-decoration: none;
+          font-size: 4px !important;
+          transition: all 0.3s ease;
+
+        
+    }
+    }
         
       }
     }
@@ -474,7 +484,7 @@
     }
 
     .footer-main .footer-grid {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 30px;
     }
 

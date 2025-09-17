@@ -7,7 +7,7 @@
     padding: clamp(60px, 12vh, 80px) 0 clamp(40px, 8vh, 60px);
     text-align: center;
     position: relative;
-    background: linear-gradient(135deg, var(--color-primary) 0%, #0056d2 100%);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 50%, var(--secondary-blue) 100%);
     color: white;
     padding-bottom: 10rem;
 
@@ -142,6 +142,40 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    .cloud-logos-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+      
+      .cloud-service-logo {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+
+        &.logo-1 { // Azure
+          width: 85px;
+          height: 85px;
+        }
+
+        &.logo-2 { // AWS
+          width: 90px;
+          height: 90px;
+        }
+
+        &.logo-3 { // GCP
+          width: 85px;
+          height: 85px;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
   }
 
   .service-logo {
@@ -351,7 +385,7 @@ width: 90px;
   }
   
   .logo-development{
-width: 200px;  
+width: 110px;  
   }
   
   .logo-dynamics{
@@ -496,6 +530,22 @@ width: 180px;
     .service-logo {
       width: 60px;
       height: 60px;
+    }
+
+    .cloud-logos-container {
+      gap: 10px;
+      
+      .cloud-service-logo {
+        width: 60px !important;
+        height: 60px !important;
+
+        &.logo-1,
+        &.logo-2,
+        &.logo-3 {
+          width: 65px !important;
+          height: 65px !important;
+        }
+      }
     }
 
     .services-cta-section {

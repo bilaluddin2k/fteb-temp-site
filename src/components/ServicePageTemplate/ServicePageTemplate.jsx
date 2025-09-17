@@ -14,12 +14,10 @@ const ServicePageTemplate = ({ data }) => {
   };
 
   const handleContactClick = () => {
-    window.location.href = 'mailto:Connect@ftebtech.com';
+    navigate('/contact-us');
   };
 
-  const handleCallClick = () => {
-    window.location.href = 'tel:+971588481295';
-  };
+ 
   
   const certificationsData = [
     {
@@ -85,12 +83,8 @@ const ServicePageTemplate = ({ data }) => {
               <p className="service-hero-description">{data.description}</p>
               
               <div className="hero-actions "  >
-                <button className="btn primary" onClick={handleContactClick}>
+                <button className="btn primary large" onClick={handleContactClick}>
                   Get Started
-                </button>
-                <button className="btn secondary" onClick={handleCallClick}>
-                  <Icon name="Phone" size={16} />
-                  Call Us
                 </button>
               </div>
             </div>
@@ -183,15 +177,17 @@ const ServicePageTemplate = ({ data }) => {
                 </div>
                 
                 <p className="service-description">{service.description}</p>
-                
-                <ul className="service-features">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx}>
-                      <Icon name="Check" size={14} className="icon-success" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+
+                {service.features && service.features.length > 0 && (
+                  <ul className="service-features">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx}>
+                        <Icon name="Check" size={14} className="icon-success" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>
@@ -225,39 +221,38 @@ const ServicePageTemplate = ({ data }) => {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="process-section "  >
-        <div className="section-header">
-          <h2>Our Implementation Process</h2>
-          <p>A proven methodology for successful project delivery</p>
-        </div>
-        
-        <div className="container d-flex flex-row align-items-center">
-          <div className="process-timeline">
-            {data.process.map((step, index) => (
-              <div key={index} className="process-step "  >
-                <div className="step-number">{step.step}</div>
-                <div className="step-content">
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
-                </div>
-              </div>
-            ))}
+        <section className="process-section "  >
+          <div className="section-header">
+            <h2>Our Implementation Process</h2>
+            <p>A proven methodology for successful project delivery</p>
           </div>
-          <div className="sidebar-section">
-            <div className="contact-card "  >
-              <h4>Free Assessment worth <span style={{fontSize: '1.5rem',color: '#0ed277'}}>$1000/-</span></h4>
-              <p>Get a comprehensive analysis of your current infrastructure and migration roadmap.</p>
-              <button className="btn" onClick={handleContactClick}>
-                <Icon name="Phone" size={16} />
-                Schedule Assessment
-              </button>
+          
+          <div className="container align-items-center">
+            <div className="process-timeline">
+          {data.process.map((step, index) => (
+            <div key={index} className="process-step "  >
+              <div className="step-number">{step.step}</div>
+              <div className="step-content">
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
+              </div>
+            </div>
+          ))}
+            </div>
+            <div className="sidebar-section">
+          <div className="contact-card "  >
+            <h4>Free Assessment worth <span style={{fontSize: '1.5rem',color: '#0ed277'}}>$1000/-</span></h4>
+            <p>Get a comprehensive analysis of your current infrastructure and migration roadmap.</p>
+            <button className="btn primary" onClick={handleContactClick}>
+              <Icon name="Phone" size={16} />
+              Schedule Assessment
+            </button>
+          </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Technologies Section */}
+        {/* Technologies Section */}
       <section className="technologies-section "  >
         <div className="container">
           <div className="section-header">
@@ -308,18 +303,15 @@ const ServicePageTemplate = ({ data }) => {
                 <Icon name="Email" size={16} />
                 Contact Us Today
               </button>
-              <button className="btn secondary large" onClick={handleCallClick}>
-                <Icon name="Phone" size={16} />
-                Schedule a Call
-              </button>
+            
             </div>
             
             <div className="contact-info">
-              <div className="contact-item">
+              <div className="contact-item" onClick={() => navigate('/contact')} style={{ cursor: 'pointer' }}>
                 <Icon name="Phone" size={16} />
                 <span>+971588481295</span>
               </div>
-              <div className="contact-item">
+              <div className="contact-item" onClick={() => navigate('/contact')} style={{ cursor: 'pointer' }}>
                 <Icon name="Email" size={16} />
                 <span>Connect@ftebtech.com</span>
               </div>

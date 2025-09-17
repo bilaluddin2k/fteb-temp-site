@@ -1,5 +1,4 @@
 import React from 'react';
-import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import { Icon } from '../../components/Icons/IconSystem';
 import '../../styles/pages/Legal/LegalPages.scss';
 
@@ -282,15 +281,9 @@ const CookiesPolicy = () => {
   ];
 
   return (
-    <PageWrapper 
-      title="Cookies Policy" 
-      description="Learn about how FTEB Technology uses cookies and tracking technologies"
-    >
+   
       <div className="legal-page">
-        <div className="container">
-          
-          {/* Introduction */}
-          <div className="legal-intro">
+        <div className="legal-intro">
             <div className="intro-content">
               <h2>Cookie Policy</h2>
               <p>
@@ -305,6 +298,10 @@ const CookiesPolicy = () => {
             </div>
           </div>
 
+        <div className="container">
+          
+          {/* Introduction */}
+          
           {/* Cookie Types Overview */}
           <div className="cookie-types-overview">
             <h3>Types of Cookies We Use</h3>
@@ -449,7 +446,10 @@ const CookiesPolicy = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="legal-contact">
+          
+
+        </div>
+        <div className="legal-contact">
             <div className="contact-card">
               <h3>Questions About Cookies?</h3>
               <p>
@@ -481,10 +481,7 @@ const CookiesPolicy = () => {
               </div>
             </div>
           </div>
-
-        </div>
       </div>
-    </PageWrapper>
   );
 };
 

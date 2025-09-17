@@ -54,14 +54,7 @@ const Features = () => {
             <div className="features-image " >
               <div className="image-container">
                 <img src={featureImage} alt="IT Professional Team" />
-                <div className="floating-card top " >
-                  <div className="icon-container icon-container-md icon-container-white">
-                    <Icon name="Cloud" size={24} />
-                  </div>
-                  <div className="card-content">
-                    <span className="text">Projects Done</span>
-                  </div>
-                </div>
+             
                 <div className="floating-card bottom " >
                   <div className="stat">
                     <span className="number">98%</span>

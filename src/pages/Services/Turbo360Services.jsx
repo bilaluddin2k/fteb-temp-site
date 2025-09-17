@@ -46,6 +46,26 @@ const Turbo360Services = () => {
         title: "Analytics & Reporting",
         description: "Detailed analytics and customizable reports to gain insights into your cloud environment performance.",
         features: ["Custom Dashboards", "Performance Metrics", "Usage Analytics", "Executive Reports"]
+      },
+      {
+        title: "Incident & Alert Management",
+        description: "Real-time incident tracking and alerting for faster resolution and improved reliability.",
+        features: ["Alert Rules", "Incident Dashboard", "Notification Channels", "SLA Monitoring"]
+      },
+      {
+        title: "Role-Based Access Control (RBAC)",
+        description: "Granular access management to ensure secure and compliant resource usage.",
+        features: ["Role Assignment", "Access Reviews", "Privileged Identity Management", "Audit Logs"]
+      },
+      {
+        title: "Integration Hub",
+        description: "Connect and automate across platforms with pre-built connectors and APIs.",
+        features: ["API Management", "Connector Library", "Integration Flows", "Event Triggers"]
+      },
+      {
+        title: "Governance Insights",
+        description: "Advanced analytics to assess governance maturity and identify gaps.",
+        features: ["Governance Scorecards", "Policy Impact Analysis", "Compliance Trends", "Recommendations Engine"]
       }
     ],
 

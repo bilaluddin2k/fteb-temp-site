@@ -1,8 +1,8 @@
 import "../../styles/components/Header/Header.scss"
 import { useState, useEffect, useRef } from "react"
 import { Link, NavLink } from "react-router-dom"
-import { routes } from '../../routes.js'
 import { Icon } from '../Icons/IconSystem'
+import { routes } from '../../routes.js'
 import fteb from '../../assets/images/FTebtech-logo/FTEB-logo.png'
 import ftebs from '../../assets/images/FTebtech-logo/FTEB-logo-white.png'
 
@@ -61,13 +61,21 @@ const Header = () => {
     }
   }, [mobileMenuOpen])
 
-  const toggleMobileMenu = () => {
+  const toggleMobileMenu = (event) => {
+    event.stopPropagation()
     setMobileMenuOpen(!mobileMenuOpen)
+    // Add animation class to body
+    if (!mobileMenuOpen) {
+      document.body.classList.add('menu-open')
+    } else {
+      document.body.classList.remove('menu-open')
+    }
   }
 
   // Close mobile menu when clicking on a link
   const closeMobileMenu = () => {
     setMobileMenuOpen(false)
+    document.body.classList.remove('menu-open')
   }
 
   // Navigation component to avoid repetition
@@ -112,7 +120,7 @@ const Header = () => {
     const Logos = () => (
     <div className="logo">
       <Link to={routes.home.path} onClick={closeMobileMenu}>
-        <img src={ftebs} alt="FTEBTECH" />
+        <img src={scrolled ? fteb : ftebs} alt="FTEBTECH" />
       </Link>
     </div>
   )
@@ -128,9 +136,9 @@ const Header = () => {
       aria-controls="mobile-navigation"
     >
       {mobileMenuOpen ? (
-        <Icon name="Close" size={24} color="currentColor" />
+        <Icon name="Close" size={24}  />
       ) : (
-        <Icon name="Menu" size={24} color="currentColor" />
+        <Icon name="Menu" size={24}  />
       )}
     </button>
   )
@@ -139,11 +147,11 @@ const Header = () => {
     <>
       {/* Primary Header - Always visible in hero section */}
       <header className="header-primary" ref={headerRef}>
-        <div className="main-header">
+        <div className={`main-header ${scrolled ? "scrolled" : ""}`}>
           <div className="wrapper">
             <div className="main-header-inner">
               <Logos />
-              <MobileMenuToggle color="var(--color-white)" />
+              <MobileMenuToggle color={scrolled ? "var(--color-text)" : "var(--color-white)"} />
               <Navigation />
             </div>
           </div>
@@ -157,7 +165,7 @@ const Header = () => {
             <div className="main-header-inner">
               <Logo />
               <MobileMenuToggle color="var(--color-text)" />
-              <Navigation />
+              {scrolled && <Navigation />}
             </div>
           </div>
         </div>

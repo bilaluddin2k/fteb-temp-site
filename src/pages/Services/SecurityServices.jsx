@@ -8,7 +8,7 @@ const SecurityServices = () => {
     subtitle: "Protecting Your Digital Assets with Advanced Security",
     description: "Comprehensive cybersecurity services to protect your organization from evolving threats with advanced security strategies, monitoring, and compliance management.",
     logo: cyberLogo,
-    heroGradient: "linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)",
+    heroGradient: "linear-gradient(136deg, rgb(21, 73, 146) 50%, rgb(48, 173, 233) 101%)",
     
     stats: [
       { number: "250+", label: "Security Assessments" },

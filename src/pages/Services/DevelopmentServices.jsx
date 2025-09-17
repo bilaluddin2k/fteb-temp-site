@@ -8,7 +8,7 @@ const DevelopmentServices = () => {
     subtitle: "Building Tomorrow's Digital Solutions Today",
     description: "Create powerful, scalable applications with our expert development team. From web applications to mobile apps, we deliver cutting-edge solutions that drive business growth.",
     logo: developmentLogo,
-    heroGradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+    heroGradient: "linear-gradient(135deg, rgb(102, 126, 234) 0%, rgb(35 214 215) 100%)",
     
     stats: [
       { number: "200+", label: "Applications Built" },

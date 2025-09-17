@@ -9,12 +9,12 @@ import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 
 // Import existing logos from your project
-import azureLogo from '../../assets/images/ProductLogos/azure.jpg';
+import azureLogo from '../../assets/images/ProductLogos/azure.png';
 import m365Logo from '../../assets/images/ProductLogos/m365.png';
 import dynamicsLogo from '../../assets/images/ProductLogos/Dynamics-365.png';
 import developmentLogo from '../../assets/images/ProductLogos/Development.png';
 import microsoftLogo from '../../assets/images/ProductLogos/Microsoft-Logo.png';
-import awsLogo from "../../assets/images/ProductLogos/aws.jpg";
+import awsLogo from "../../assets/images/ProductLogos/aws.png";
 import erosourceLogo from "../../assets/images/ProductLogos/erosource.png";
 import googlecloudLogo from "../../assets/images/ProductLogos/googlecloud.png";
 import linuxLogo from "../../assets/images/ProductLogos/linux.png";
@@ -31,15 +31,16 @@ const ServiceDescription = () => {
   const navigate = useNavigate();
 
   const services = [
-       {
+    {
       id: 'cloud-services',
       title: 'Cloud Services (Azure, AWS, GCP)',
       description: 'Complete multi-cloud infrastructure solutions. From migration to optimization, we handle your entire cloud journey across Azure, AWS, and Google Cloud with enterprise-grade security and scalability.',
-      logo: azureLogo,
+      // Instead of a single logo, use an array of logos for cloud providers
+      logos: [azureLogo, awsLogo, googlecloudLogo],
       features: ['Multi-Cloud Strategy', 'Cloud Migration', 'Infrastructure Setup', 'Cost Optimization'],
       path: '/services/cloud-services'
     },
-        {
+    {
       id: 'microsoft365',
       title: 'Microsoft 365 Solutions',
       description: 'Empower your workforce with comprehensive M365 implementation, security configuration, and ongoing support for maximum productivity.',
@@ -47,7 +48,7 @@ const ServiceDescription = () => {
       features: ['Email Migration', 'Teams Setup', 'Security Configuration', 'User Training'],
       path: '/services/microsoft365'
     },
-      {
+    {
       id: 'dynamics365',
       title: 'Dynamics 365 Implementation',
       description: 'Transform your business operations with intelligent ERP and CRM solutions tailored to your specific industry needs and requirements.',
@@ -55,8 +56,7 @@ const ServiceDescription = () => {
       features: ['Business Central', 'Sales & Marketing', 'Field Service', 'Custom Development'],
       path: '/services/dynamics365'
     },
-    
-     {
+    {
       id: 'infrastructure',
       title: 'ICT',
       description: 'End-to-end infrastructure planning, implementation, and management for optimal performance, reliability, and business continuity.',
@@ -64,7 +64,7 @@ const ServiceDescription = () => {
       features: ['Network Setup', 'Server Management', 'Hardware Procurement', 'Monitoring'],
       path: '/services/infrastructure'
     },
-        {
+    {
       id: 'security',
       title: 'Cybersecurity Solutions',
       description: 'Protect your business with comprehensive security strategies, advanced threat protection, and compliance management solutions.',
@@ -72,8 +72,7 @@ const ServiceDescription = () => {
       features: ['Security Assessment', 'Threat Protection', 'Compliance', '24/7 Monitoring'],
       path: '/services/security'
     },
-  
-        {
+    {
       id: 'turbo360',
       title: 'Turbo360 Management',
       description: 'Comprehensive Azure and Office 365 management platform for monitoring, governance, and optimization of your cloud environment.',
@@ -89,7 +88,7 @@ const ServiceDescription = () => {
       features: ['ERP Implementation', 'Business Intelligence', 'Data Analytics', 'Process Automation'],
       path: '/services/eresource'
     },
-        {
+    {
       id: 'development',
       title: 'Custom Development',
       description: 'Build powerful web applications and business tools with modern technologies, ensuring scalability, performance, and user experience.',
@@ -97,8 +96,6 @@ const ServiceDescription = () => {
       features: ['Web Applications', 'Mobile Apps', 'API Development', 'System Integration'],
       path: '/services/development'
     },
-
-
   ];
  const productLogos = [
     { src: awsLogo, class: 'logo-aws', alt: 'AWS Logo' },
@@ -115,6 +112,7 @@ const ServiceDescription = () => {
     { src: pythonLogo, class: 'logo-python', alt: 'Python Logo' },
     { src: turbo360Logo, class: 'logo-turbo360', alt: 'Turbo360 Logo' },
     { src: adevops, class: 'logo-adevops', alt: 'adevops' },
+    { src: microsoftLogo, class: 'logo-microsoft', alt: 'microsoftLogo' },
   ];
 
   const handleServiceClick = (path) => {
@@ -207,18 +205,33 @@ const ServiceDescription = () => {
               >
                 <div className="service-card-header "  >
                   <div className="service-logo-wrapper " >
-                    <img src={service.logo} alt={`${service.title} Logo`} className="service-logo" />
+                    {Array.isArray(service.logos) ? (
+                      <div className="cloud-logos-container">
+                        {service.logos.map((logo, idx) => (
+                          <img 
+                            key={idx} 
+                            src={logo} 
+                            alt={`${service.title} Logo ${idx + 1}`} 
+                            className={`cloud-service-logo logo-${idx + 1}`} 
+                          />
+                        ))}
+                      </div>
+                    ) : (
+                      <img src={service.logo} alt={`${service.title} Logo`} className="service-logo" />
+                    )}
                   </div>
                   <h3 className="service-title-modern "  >{service.title}</h3>
                 </div>
                 
                 <p className="service-description-modern " >{service.description}</p>
-                
-                <div className="service-features "  >
-                  {service.features.map((feature, idx) => (
-                    <span key={idx} className="feature-tag "  >{feature}</span>
-                  ))}
-                </div>
+
+                {service.features && service.features.length > 0 && (
+                  <div className="service-features "  >
+                    {service.features.map((feature, idx) => (
+                      <span key={idx} className="feature-tag "  >{feature}</span>
+                    ))}
+                  </div>
+                )}
                 
                 <div className="service-card-footer "  >
                   <button className="service-btn">
@@ -238,16 +251,11 @@ const ServiceDescription = () => {
           <div className="cta-buttons " data-animation="zoom-in" data-delay="2700">
             <button 
               className="service-btn primary-btn"
-              onClick={() => window.location.href = 'mailto:Connect@ftebtech.com'}
+              onClick={() => window.location.href = '/contact-us'}
             >
               Get Started Today
             </button>
-            <button 
-              className="service-btn secondary-btn"
-              onClick={() => window.location.href = 'tel:+971588481295'}
-            >
-              Schedule a Call
-            </button>
+         
           </div>
         </div>
       </div>

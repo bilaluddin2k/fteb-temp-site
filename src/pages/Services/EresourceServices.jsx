@@ -8,7 +8,7 @@ const EresourceServices = () => {
     subtitle: "Advanced ERP & Business Intelligence Platform",
     description: "Transform your business operations with Eresource's comprehensive enterprise resource planning and business intelligence solutions. Streamline processes, gain insights, and drive data-driven decisions.",
     logo: eresourceLogo,
-    heroGradient: "linear-gradient(135deg, #059669 0%, #10b981 100%)",
+    heroGradient: "linear-gradient(135deg, rgb(14 178 240) 0%, rgb(17 179 240) 100%)",
     
     stats: [
       { number: "150+", label: "ERP Implementations" },
@@ -18,35 +18,43 @@ const EresourceServices = () => {
 
     services: [
       {
-        title: "ERP Implementation",
-        description: "Complete enterprise resource planning implementation with modules for finance, HR, supply chain, and operations.",
-        features: ["Financial Management", "Human Resources", "Supply Chain", "Manufacturing"]
+        title: "Excel Manufacturing ERP",
+        description: "Unified platform for managing all manufacturing and production processes.",
       },
       {
-        title: "Business Intelligence",
-        description: "Advanced analytics and reporting platform to transform data into actionable business insights.",
-        features: ["Data Analytics", "Custom Reports", "Real-time Dashboards", "Predictive Analytics"]
+        title: "Bro ERP (Process Manufacturing)",
+        description: "CGMP, FDA & 21CFR compliant ERP for batch and process industries.",
       },
       {
-        title: "Process Automation",
-        description: "Automate business processes to improve efficiency, reduce errors, and accelerate operations.",
-        features: ["Workflow Automation", "Document Management", "Approval Processes", "Task Scheduling"]
+        title: "NFRA ERP (Construction & Contracting)",
+        description: "Tailored ERP for construction and project-based industries.",
       },
       {
-        title: "Data Integration",
-        description: "Seamless integration with existing systems and third-party applications for unified data management.",
-        features: ["API Integration", "Data Migration", "System Connectivity", "Real-time Sync"]
+        title: "3GL ERP (Transport & Fleet)",
+        description: "Controls fleet costs, maintenance, and maximizes utilization.",
       },
       {
-        title: "Custom Development",
-        description: "Tailored solutions and custom modules to meet specific business requirements and industry needs.",
-        features: ["Custom Modules", "Industry Solutions", "API Development", "System Extensions"]
+        title: "ETrade ERP (Trading & Distribution)",
+        description: "Supports global trading and distribution operations.",
       },
       {
-        title: "Training & Support",
-        description: "Comprehensive training programs and ongoing support to ensure successful adoption and optimization.",
-        features: ["User Training", "Admin Training", "24/7 Support", "System Optimization"]
-      }
+        title: "Rental Management ERP",
+        description: "Complete solution for leasing and rental businesses.",
+      },
+      {
+        title: "CRM 360 Solution",
+        description: "Streamlines customer relationship management processes.",
+      },
+      {
+        title: "HRMS 360",
+        description: "End-to-end HR and payroll management from hire to retire.",
+      },
+      {
+        title: "FreightX ERP",
+        description: "Cloud-based ERP for logistics, freight forwarding, 3PL, and multimodal operations.",
+      },
+     
+
     ],
 
     benefits: [

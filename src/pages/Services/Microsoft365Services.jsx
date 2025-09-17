@@ -8,7 +8,7 @@ const Microsoft365Services = () => {
     subtitle: "Empower Your Workforce with Modern Collaboration",
     description: "Transform your workplace with comprehensive Microsoft 365 implementation, security configuration, and ongoing support for maximum productivity and collaboration.",
     logo: m365Logo,
-    heroGradient: "linear-gradient(135deg, #ff6b35 0%, #f7931e 100%)",
+    heroGradient: "linear-gradient(135deg, rgb(112 80 159) 0%, rgb(75 66 128) 100%)",
     
     stats: [
       { number: "300+", label: "M365 Deployments" },

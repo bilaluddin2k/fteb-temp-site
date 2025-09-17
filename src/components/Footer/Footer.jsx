@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import "../../styles/components/Footer/Footer.scss"
 import footerLogo from '../../assets/images/FTebtech-logo/FTEB-logo-white.png';
 import { Icon } from '../Icons/IconSystem'
@@ -11,7 +11,6 @@ const Footer = () => {
   const [showDinoGame, setShowDinoGame] = useState(false);
   const [showFlappyBird, setShowFlappyBird] = useState(false);
   const [showSpaceInvaders, setShowSpaceInvaders] = useState(false);
-  const [currentYear] = useState(new Date().getFullYear());
 
   const quickLinks = [
     { name: 'Services', path: '/servicess' },
@@ -23,42 +22,8 @@ const Footer = () => {
     { name: 'IT Infrastructure', path: '/services/infrastructure' },
   ];
 
-  const socialLinks = [
-    { 
-      name: 'LinkedIn', 
-      icon: 'LinkedIn', 
-      url: 'https://linkedin.com/company/ftebtech',
-      color: '#0077b5'
-    },
-    { 
-      name: 'Twitter', 
-      icon: 'Twitter', 
-      url: 'https://twitter.com/ftebtech',
-      color: '#1da1f2'
-    },
-    { 
-      name: 'Facebook', 
-      icon: 'Facebook', 
-      url: 'https://facebook.com/ftebtech',
-      color: '#4267b2'
-    },
-    { 
-      name: 'Instagram', 
-      icon: 'Instagram', 
-      url: 'https://instagram.com/ftebtech',
-      color: '#e4405f'
-    }
-  ];
+ 
 
-  const handleNewsletterSubmit = (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
-    if (email) {
-      // Handle newsletter subscription
-      console.log('Newsletter subscription:', email);
-      e.target.reset();
-    }
-  };
 
   const toggleDinoGame = () => {
     setShowDinoGame(!showDinoGame);
@@ -167,31 +132,7 @@ const Footer = () => {
               </div>
 
               {/* Quick Links */}
-              <div className="footer-section">
-                
-                 <h4>Our Services</h4>
-                <ul className="footer-links">
-                  {services.map((service, index) => (
-                    <li key={index}>
-                      <a href={service.path}>
-                        <Icon name="ArrowRight" size={12} />
-                        {service.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-                <h4>Quick Links</h4>
-                <ul className="footer-links">
-                  {quickLinks.map((link, index) => (
-                    <li key={index}>
-                      <a href={link.path}>
-                        <Icon name="ArrowRight" size={12} />
-                        {link.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              
                 <div className="easter-egg">
                 <button 
                   className="dino-game-trigger btn"
@@ -227,7 +168,7 @@ const Footer = () => {
           <div className="container">
             <div className="footer-bottom-content">
               <div className="copyright">
-                <p>&copy; {currentYear} FTEB Technology Solutions. All rights reserved.</p>
+                <p>&copy; 2015 FTEB Technology Solutions. All rights reserved.</p>
               </div>
               
               <div className="footer-bottom-links">

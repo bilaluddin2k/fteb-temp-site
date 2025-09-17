@@ -1,13 +1,11 @@
 import React from 'react';
 import ServicePageTemplate from '../../components/ServicePageTemplate/ServicePageTemplate';
-import azureLogo from '../../assets/images/ProductLogos/googlecloud.png';
 
 const CloudServices = () => {
   const serviceData = {
     title: "Multi-Cloud Services",
     subtitle: "Azure, AWS & Google Cloud Platform Solutions",
     description: "Transform your business with comprehensive multi-cloud infrastructure solutions. From migration to optimization, we provide end-to-end cloud services across Azure, AWS, and Google Cloud Platform that ensure scalability, security, and cost-effectiveness.",
-    logo: azureLogo,
     heroGradient: "linear-gradient(136deg, rgb(21 73 146) 50%, rgb(48 173 233) 101%)",
     
     stats: [
